@@ -13,4 +13,10 @@ Since this mod relies on a customized entityclasses.xml file, it is not compatib
 I'm new to making my mods available to others so if you have tips on how else I might approach the task of modding 7DTD in a more
 modular manner, I'm open to suggestions.
 
+INSTRUCTIONS:
+Always begin by making a backup of your entityclasses.xml file! 
+
+Once the mod is extracted, copy the modified entityclasses.xml into the steamapps > common > 7 Days to Die > Data > Config folder
+and replace the existing file.
+
 As of V1.0.0 this mod is compatible with the Alpha 0.16 release.
