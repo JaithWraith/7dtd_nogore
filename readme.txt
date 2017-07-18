@@ -1,4 +1,4 @@
-JaithWraith's 7DTD No Gore Mod - V1.0.1
+JaithWraith's 7DTD No Gore Mod - V1.0.2
 Author: JaithWraith
 
 For additional information, you can find this project at www.github.com/JaithWraith/7dtd_nogore.
