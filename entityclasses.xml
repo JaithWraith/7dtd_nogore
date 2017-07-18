@@ -28,12 +28,12 @@
 	<property name="CrouchYOffsetFP" value="-0.65"/>
 	<property name="IsMale" value="true"/>
 	<property name="TimeStayAfterDeath" value="10"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
+
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="PushFactor" value="5"/>
 	<property name="Weight" value="70"/>
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
 	<property name="SoundDeath" value="Player_Male/player1death"/>
@@ -141,11 +141,10 @@
 
 	<property name="NoiseAlertThreshold" value="30"/> <!-- for awake zombies -->
 	<property name="SmellAlertThreshold" value="40"/> <!-- for awake zombies -->
-	
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/> <!-- determines the particle effect played on hit -->
+
+	<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
 	<property name="WalkType" value="7"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
 	<property name="SoundRandom" value="Enemies/Base_Zombie_Male/zombiemaleroam"/>
 	<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
@@ -169,17 +168,17 @@
 	<property name="HasDeathAnim" value="true"/>
 	<property name="HeadDismemberBaseChance" value="0"/>
 	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="0.99"/> <!-- if the total damage exceeds that value, there is a chance for dismemberment -->
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0.23"/> <!-- if the total damage exceeds that value, there is a chance for dismemberment -->
+	<property name="LowerLegDismemberThreshold" value="0.175"/>
 	<property name="LowerLegDismemberBaseChance" value="0"/>
 	<property name="LowerLegDismemberBonusChance" value="0.9"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
+	<property name="UpperLegDismemberThreshold" value="0.175"/>
 	<property name="UpperLegDismemberBaseChance" value="0"/>
 	<property name="UpperLegDismemberBonusChance" value="0.9"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
+	<property name="LowerArmDismemberThreshold" value="0.105"/>
 	<property name="LowerArmDismemberBaseChance" value="0"/>
 	<property name="LowerArmDismemberBonusChance" value="0.9"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="UpperArmDismemberThreshold" value="0.105"/>
 	<property name="UpperArmDismemberBaseChance" value="0"/>
 	<property name="UpperArmDismemberBonusChance" value="0.9"/>
 	<property name="LegCrawlerThreshold" value="0"/> <!-- at like .175 nearly every zombie knocked down from a leg hit turns into a crawler -->
@@ -217,11 +216,11 @@
 	<property name="ExperienceGain" value="3429"/>
 	<property name="LootListOnDeath" value="61"/>
 	<property name="PhysicsBody" value="zombieStandardFemale"/>
-	<property name="HeadDismemberThreshold" value="0.99"/>
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0.2"/>
+	<property name="LowerLegDismemberThreshold" value="0.105"/>
+	<property name="UpperLegDismemberThreshold" value="0.105"/>
+	<property name="LowerArmDismemberThreshold" value="0.063"/>
+	<property name="UpperArmDismemberThreshold" value="0.063"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/feral_rad"/>-->
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
@@ -237,17 +236,17 @@
 	<!-- Radiated zombie decap rules -->
 	<property name="HeadDismemberBaseChance" value="-.15"/>
 	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="0.99"/>
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0.38"/>
+	<property name="LowerLegDismemberThreshold" value="0.325"/>
 	<property name="LowerLegDismemberBaseChance" value="-.15"/>
 	<property name="LowerLegDismemberBonusChance" value="0.9"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
+	<property name="UpperLegDismemberThreshold" value="0.325"/>
 	<property name="UpperLegDismemberBaseChance" value="-.15"/>
 	<property name="UpperLegDismemberBonusChance" value="0.9"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
+	<property name="LowerArmDismemberThreshold" value="0.255"/>
 	<property name="LowerArmDismemberBaseChance" value="-.15"/>
 	<property name="LowerArmDismemberBonusChance" value="0.9"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="UpperArmDismemberThreshold" value="0.255"/>
 	<property name="UpperArmDismemberBaseChance" value="-.15"/>
 	<property name="UpperArmDismemberBonusChance" value="0.9"/>
 	<property name="LegCrawlerThreshold" value="0"/>
@@ -776,11 +775,11 @@
 	<property name="NightApproachSpeed" value="1.1"/>
 	<property name="PanicSpeed" value="1.2"/>
 	<property name="ExperienceGain" value="1039"/>
-	<property name="HeadDismemberThreshold" value="0.99"/>
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0"/>
+	<property name="LowerLegDismemberThreshold" value="0"/>
+	<property name="UpperLegDismemberThreshold" value="0"/>
+	<property name="LowerArmDismemberThreshold" value="0"/>
+	<property name="UpperArmDismemberThreshold" value="0"/>
 	<property name="LegCrawlerThreshold" value="0"/>
 	<property name="LegCrippleThreshold" value="0"/>
 	<property name="KnockdownProneDamageThreshold" value="0"/>
@@ -813,17 +812,17 @@
 	<!-- Radiated zombie decap rules -->
 	<property name="HeadDismemberBaseChance" value="-.15"/>
 	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="0.99"/>
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0.38"/>
+	<property name="LowerLegDismemberThreshold" value="0.325"/>
 	<property name="LowerLegDismemberBaseChance" value="-.15"/>
 	<property name="LowerLegDismemberBonusChance" value="0.9"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
+	<property name="UpperLegDismemberThreshold" value="0.325"/>
 	<property name="UpperLegDismemberBaseChance" value="-.15"/>
 	<property name="UpperLegDismemberBonusChance" value="0.9"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
+	<property name="LowerArmDismemberThreshold" value="0.255"/>
 	<property name="LowerArmDismemberBaseChance" value="-.15"/>
 	<property name="LowerArmDismemberBonusChance" value="0.9"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="UpperArmDismemberThreshold" value="0.255"/>
 	<property name="UpperArmDismemberBaseChance" value="-.15"/>
 	<property name="UpperArmDismemberBonusChance" value="0.9"/>
 	<property name="LegCrawlerThreshold" value="0"/>
@@ -975,11 +974,11 @@
 	<property name="Explosion.EntityDamage" value="150"/>
 	<property name="Explosion.DamageBonus.earth" value="0"/>
 	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="0.99"/>
-	<property name="LowerLegDismemberThreshold" value="0.99"/>
-	<property name="UpperLegDismemberThreshold" value="0.99"/>
-	<property name="LowerArmDismemberThreshold" value="0.99"/>
-	<property name="UpperArmDismemberThreshold" value="0.99"/>
+	<property name="HeadDismemberThreshold" value="0"/>
+	<property name="LowerLegDismemberThreshold" value="0"/>
+	<property name="UpperLegDismemberThreshold" value="0"/>
+	<property name="LowerArmDismemberThreshold" value="0"/>
+	<property name="UpperArmDismemberThreshold" value="0"/>
 	<property name="LegCrawlerThreshold" value="0"/>
 	<property name="LegCrippleThreshold" value="0"/>
 	<property name="KnockdownProneDamageThreshold" value="0"/>
@@ -1338,9 +1337,8 @@
 	<property name="NoiseAlertThreshold" value="20"/> <!-- for awake zombies -->
 	<property name="SmellAlertThreshold" value="20"/> <!-- for awake zombies -->
 
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="SurfaceCategory" value="organic"/>
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
 	<property name="TimeStayAfterDeath" value="300"/>
@@ -1370,9 +1368,8 @@
 	<property name="MaxViewAngle" value="180"/>
 	<property name="WanderSpeed" value="0.7"/>
 	<property name="PanicSpeed" value="2.0"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="SurfaceCategory" value="organic"/>
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
 	<property name="TimeStayAfterDeath" value="300"/>
@@ -1486,9 +1483,8 @@
 	<property name="NoiseAlertThreshold" value="20"/> <!-- for awake zombies -->
 	<property name="SmellAlertThreshold" value="20"/> <!-- for awake zombies -->
 
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="SurfaceCategory" value="organic"/>
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="TimeStayAfterDeath" value="300"/>
 	<property name="ExperienceGain" value="2509"/>
 	<property name="CorpseBlock" value="animalGore"/>
@@ -1505,8 +1501,7 @@
 	<property name="ModelType" value="Standard"/>
 	<property name="Parent" value="Enemies"/>
 	<property name="HasRagdoll" value="true"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.1"/>
 	<property name="Prefab" value="Dog"/>
@@ -1986,7 +1981,7 @@
 	<property name="Faction" value="none"/>
 </entity_class>
 
-<entity_class name="invisibleAnimal"> <!-- A hack to thin the amount of animals spawned -->
+<entity_class name="invisibleAnimal"> <!-- A hack to thin the amount of animals spawned (friendly animals) -->
 	<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
 	<property name="ModelType" value="Custom"/>
 	<property name="Prefab" value="Backpack"/>
@@ -1994,6 +1989,18 @@
 	<property name="Parent" value="Animals"/>
 	<property name="TimeStayAfterDeath" value="1"/>
 	<property name="IsEnemyEntity" value="false"/>
+	<property name="LootListOnDeath" value="47"/> <!-- used to determine container X/Y size -->
+	<property name="Faction" value="none"/>
+</entity_class>
+
+<entity_class name="invisibleAnimalEnemy"> <!-- A hack to thin the amount of animals spawned (enemy animals) -->
+	<property name="Mesh" value="Gore/gore_block1_bonesPrefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Animals"/>
+	<property name="TimeStayAfterDeath" value="1"/>
+	<property name="IsEnemyEntity" value="true"/>
 	<property name="LootListOnDeath" value="47"/> <!-- used to determine container X/Y size -->
 	<property name="Faction" value="none"/>
 </entity_class>
@@ -2026,10 +2033,9 @@
 	<property name="PanicSpeed" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
 	<property name="SoundRandom" value="Player_Male/player1stamina"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
@@ -2084,10 +2090,9 @@
 	<property name="PanicSpeed" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
 	<property name="SoundRandom" value="malehateroam"/>
 	<property name="SoundAlert" value="malehatealert"/>
@@ -2154,10 +2159,9 @@
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="LootListAlive" value="62"/>
-	<!-- changed SurfaceCategory value to "earth" -->
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
-	<!-- <property name="ParticleOnDeath" value="blood_death"/> Commented out of xml -->
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
 	<property name="Archetype" value="Trader Joel"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
