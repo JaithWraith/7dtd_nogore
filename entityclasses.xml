@@ -1236,8 +1236,8 @@
 <!-- Missing: zombieFarmerFeralRadiated -->
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
-	<property name="HandItem" value="handZombieStripper"/>
+	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
+	<!-- property name="HandItem" value="handZombieStripper"/ -->
 	<property name="MaxHealth" value="250"/>
 	<property name="ExperienceGain" value="1039"/>
 	<property name="LootListOnDeath" value="84"/>
@@ -1247,8 +1247,8 @@
 <!-- Missing: zombieStripperRadiated -->
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
-	<property name="HandItem" value="handZombieStripperFeral"/>
+	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
+	<!-- property name="HandItem" value="handZombieStripperFeral"/ -->
 	<property name="MaxHealth" value="350"/>
 	<property name="ExperienceGain" value="1556"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
