@@ -1,4 +1,4 @@
-JaithWraith's 7DTD No Gore Mod - V1.0.3
+JaithWraith's 7DTD No Gore Mod - V1.1.0
 Author: JaithWraith
 
 For additional information, you can find this project at www.github.com/JaithWraith/7dtd_nogore.
@@ -19,4 +19,4 @@ Always begin by making a backup of your entityclasses.xml file!
 Once the mod is extracted, copy the modified entityclasses.xml into the steamapps > common > 7 Days to Die > Data > Config folder
 and replace the existing file.
 
-As of V1.0.0 this mod is compatible with the Alpha 0.16 release.
+As of V1.0.0 this mod is compatible with the Alpha 0.16 release. V1.1.0 changes textures for the Zombie Stripper.
