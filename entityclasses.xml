@@ -29,11 +29,11 @@
 	<property name="IsMale" value="true"/>
 	<property name="TimeStayAfterDeath" value="10"/>
 
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="PushFactor" value="5"/>
 	<property name="Weight" value="70"/>
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
 	<property name="SoundDeath" value="Player_Male/player1death"/>
