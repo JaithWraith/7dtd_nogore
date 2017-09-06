@@ -144,7 +144,7 @@
 
 	<property name="SurfaceCategory" value="earth"/> <!-- determines the particle effect played on hit -->
 	<property name="WalkType" value="7"/>
-	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
+	<!-- property name="ParticleOnDeath" value="blood_death" -->
 	<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
 	<property name="SoundRandom" value="Enemies/Base_Zombie_Male/zombiemaleroam"/>
 	<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
@@ -168,7 +168,7 @@
 	<property name="HasDeathAnim" value="true"/>
 	<property name="HeadDismemberBaseChance" value="0"/>
 	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="10"/> <!-- if the total damage exceeds that value, there is a chance for dismemberment -->
+	<property name="HeadDismemberThreshold" value="0.23"/> <!-- if the total damage exceeds that value, there is a chance for dismemberment -->
 	<property name="LowerLegDismemberThreshold" value="10"/>
 	<property name="LowerLegDismemberBaseChance" value="0"/>
 	<property name="LowerLegDismemberBonusChance" value="0.9"/>
@@ -215,8 +215,7 @@
 	<property name="MaxHealth" value="750"/>
 	<property name="ExperienceGain" value="3429"/>
 	<property name="LootListOnDeath" value="61"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
-	<property name="HeadDismemberThreshold" value="10"/>
+	<property name="HeadDismemberThreshold" value="0.2"/>
 	<property name="LowerLegDismemberThreshold" value="10"/>
 	<property name="UpperLegDismemberThreshold" value="10"/>
 	<property name="LowerArmDismemberThreshold" value="10"/>
@@ -305,7 +304,6 @@
 	<property name="WalkType" value="2"/>
 	<property name="ExperienceGain" value="1039"/>
 	<property name="MaxHealth" value="200"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/Z_eye1"/>
@@ -340,7 +338,6 @@
 	<property name="WalkType" value="6"/>
 	<property name="MaxHealth" value="400"/>
 	<property name="HandItem" value="handZombieFootballPlayer"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="WanderSpeed" value="0.75"/>
 	<property name="ApproachSpeed" value="1.15"/>
 	<property name="NightWanderSpeed" value="0.75"/>
@@ -406,7 +403,6 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="5"/>
-	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="TintMaterial2" value="79,40,26"/>
@@ -444,7 +440,6 @@
 	<property name="Weight" value="70"/>
 	<property name="PushFactor" value="20"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
@@ -480,7 +475,6 @@
 	<property name="HandItem" value="handZombie"/>
 	<property name="MaxHealth" value="100"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
@@ -516,7 +510,6 @@
 	<property name="HandItem" value="handZombie"/>
 	<property name="MaxHealth" value="100"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
@@ -551,7 +544,6 @@
 	<property name="HandItem" value="handZombie"/>
 	<property name="MaxHealth" value="100"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
@@ -587,7 +579,6 @@
 	<property name="HandItem" value="handZombie"/>
 	<property name="MaxHealth" value="100"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="38"/>
@@ -614,7 +605,6 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="5"/>
-	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="TintMaterial3" value="23,17,13"/>
@@ -641,7 +631,6 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="6"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="TintMaterial2" value="36,38,45"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
@@ -671,7 +660,6 @@
 	<property name="WalkType" value="4"/>
 	<property name="CanClimbLadders" value="false"/>
 	<property name="RotateToGround" value="true"/>
-	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="RootMotion" value="true"/>
 	<property name="TintMaterial2" value="36,38,45"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
@@ -695,7 +683,6 @@
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="7"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="TintMaterial1" value="36,38,45"/>
 	<property name="LootListOnDeath" value="89"/>
@@ -724,7 +711,6 @@
 	<property name="WalkType" value="2"/>
 	<property name="MaxHealth" value="450"/>
 	<property name="ExperienceGain" value="1556"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="SoundRandom" value="Enemies/Snow_Zombie_Male/zombiemalesnowroam"/>
@@ -756,7 +742,6 @@
 <entity_class name="zombieSpider" extends="zombieTemplateMale">
 	<property name="Mesh" value="Zombies/zombieStandardSpiderRagdoll"/>
 	<property name="AvatarController" value="AvatarZombie01Controller"/>
-	<property name="PhysicsBody" value="zombieStandard"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ModelType" value="Standard"/>
@@ -775,11 +760,11 @@
 	<property name="NightApproachSpeed" value="1.1"/>
 	<property name="PanicSpeed" value="1.2"/>
 	<property name="ExperienceGain" value="1039"/>
-	<property name="HeadDismemberThreshold" value="0"/>
-	<property name="LowerLegDismemberThreshold" value="0"/>
-	<property name="UpperLegDismemberThreshold" value="0"/>
-	<property name="LowerArmDismemberThreshold" value="0"/>
-	<property name="UpperArmDismemberThreshold" value="0"/>
+	<property name="HeadDismemberThreshold" value="10"/>
+	<property name="LowerLegDismemberThreshold" value="10"/>
+	<property name="UpperLegDismemberThreshold" value="10"/>
+	<property name="LowerArmDismemberThreshold" value="10"/>
+	<property name="UpperArmDismemberThreshold" value="10"/>
 	<property name="LegCrawlerThreshold" value="0"/>
 	<property name="LegCrippleThreshold" value="0"/>
 	<property name="KnockdownProneDamageThreshold" value="0"/>
@@ -809,34 +794,6 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
 	<property name="Buffs" value="zombieRadiatedBuff40"/>
-	<!-- Radiated zombie decap rules -->
-	<property name="HeadDismemberBaseChance" value="-.15"/>
-	<property name="HeadDismemberBonusChance" value="0.08"/>
-	<property name="HeadDismemberThreshold" value="10"/>
-	<property name="LowerLegDismemberThreshold" value="10"/>
-	<property name="LowerLegDismemberBaseChance" value="-.15"/>
-	<property name="LowerLegDismemberBonusChance" value="0.9"/>
-	<property name="UpperLegDismemberThreshold" value="10"/>
-	<property name="UpperLegDismemberBaseChance" value="-.15"/>
-	<property name="UpperLegDismemberBonusChance" value="0.9"/>
-	<property name="LowerArmDismemberThreshold" value="10"/>
-	<property name="LowerArmDismemberBaseChance" value="-.15"/>
-	<property name="LowerArmDismemberBonusChance" value="0.9"/>
-	<property name="UpperArmDismemberThreshold" value="10"/>
-	<property name="UpperArmDismemberBaseChance" value="-.15"/>
-	<property name="UpperArmDismemberBonusChance" value="0.9"/>
-	<property name="LegCrawlerThreshold" value="0"/>
-	<property name="LegCrippleThreshold" value="0.01"/>
-	<property name="KnockdownProneDamageThreshold" value="0.45"/>
-	<property name="KnockdownProneStunDuration" value="4,6"/>
-	<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-	<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-	<property name="KnockdownKneelStunDuration" value="5,6"/>
-	<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
-	<property name="LegsExplosionDamageMultiplier" value=".85"/>
-	<property name="ArmsExplosionDamageMultiplier" value=".85"/>
-	<property name="HeadExplosionDamageMultiplier" value=".85"/>
-	<property name="ChestExplosionDamageMultiplier" value=".85"/>
 </entity_class>
 
 <entity_class name="zombieBurnt" extends="zombieTemplateMale">
@@ -850,6 +807,7 @@
 	<property name="SoundSense" value="Enemies/Burnt_Zombie/zombieburntsense"/>
 	<property name="SoundFootstepModifier" value="Enemies/Burnt_Zombie/zombieburntfootstep"/>
 	<property name="HandItem" value="handZombieBurning"/>
+	<property name="HandItemCrawler" value="handZombieBurningCrawler"/> <!-- override the default replacement of handZombie02 with a specific hand item -->
 	<property name="MaxHealth" value="80"/>
 	<property name="ExperienceGain" value="798"/>
 	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="0"/>
@@ -875,7 +833,6 @@
 	<property name="WalkType" value="7"/>
 	<property name="HandItem" value="handZombie"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="21"/>
@@ -1045,7 +1002,6 @@
 	<property name="WalkType" value="6"/>
 	<property name="MaxHealth" value="200"/>
 	<property name="ExperienceGain" value="1407"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="HandItem" value="handZombieWorker"/>
@@ -1081,7 +1037,6 @@
 	<property name="WalkType" value="2"/>
 	<property name="MaxHealth" value="500"/>
 	<property name="ExperienceGain" value="2509"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="HandItem" value="handZombieWorker"/>
@@ -1145,7 +1100,6 @@
 	<property name="HandItem" value="handZombie"/>
 	<property name="MaxHealth" value="120"/>
 	<property name="CanClimbLadders" value="true"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="LootListOnDeath" value="79"/>
@@ -1344,10 +1298,9 @@
 	<property name="TimeStayAfterDeath" value="300"/>
 	<property name="IsEnemyEntity" value="false"/> <!-- Set this if you want this entity to be spawned when user chooses 'enemy entities off' -->
 	<property name="ExperienceGain" value="327"/>
-	<property name="CorpseBlock" value="animalGore"/>
-	<property name="CorpseBlockChance" value="1"/>
+	<!--<property name="CorpseBlock" value="animalGore"/>
+	<property name="CorpseBlockChance" value="0"/>-->
 	<property name="DeadBodyHitPoints" value="350"/>
-	<drop event="Harvest" name="rawMeat" count="1"/>
 </entity_class>
 
 <entity_class name="animalStag" extends="animalTemplateTimid">
@@ -1368,19 +1321,18 @@
 	<property name="MaxViewAngle" value="180"/>
 	<property name="WanderSpeed" value="0.7"/>
 	<property name="PanicSpeed" value="2.0"/>
-	<property name="SurfaceCategory" value="earth"/>
-	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
+	<property name="SurfaceCategory" value="organic"/>
+	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
 	<property name="TimeStayAfterDeath" value="300"/>
 	<property name="IsEnemyEntity" value="false"/>
 	<property name="ExperienceGain" value="327"/>
-	<property name="CorpseBlock" value="animalGore"/>
-	<property name="CorpseBlockChance" value="1"/>
 	<property name="HasRagdoll" value="true"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="6"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="6"/> <!-- animalStag -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="9"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="4"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
 </entity_class>
 
 <entity_class name="animalRabbit" extends="animalTemplateTimid">
@@ -1394,13 +1346,12 @@
 	<property name="SoundHurt" value="Animals/rabbitpain"/>
 	<property name="SoundDeath" value="Animals/rabbitdeath"/>
 	<property name="PanicSpeed" value="1.5"/>
-	<property name="CorpseBlockChance" value="0"/>
 	<property name="ExperienceGain" value="173"/>
 	<property name="SwimOffset" value="2"/>
 	<property name="Faction" value="animals"/>
 	<property name="HasRagdoll" value="true"/>
 	<property name="DeadBodyHitPoints" value="175"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/> <!-- animalRabbit -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="2"/>
 </entity_class>
 
@@ -1415,16 +1366,17 @@
 	<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
 	<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
 	<property name="PanicSpeed" value="1"/>
-	<property name="CorpseBlockChance" value="0"/>
 	<property name="ExperienceGain" value="173"/>
 	<property name="SwimOffset" value="2"/>
 	<property name="Faction" value="animals"/>
 	<property name="HasRagdoll" value="true"/>
+	<property name="HasDeathAnim" value="false"/>
 	<property name="DeadBodyHitPoints" value="175"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/> <!-- animalChicken -->
 	<drop event="Harvest" name="feather" tool_category="Butcher" count="30"/>
 </entity_class>
 
+<!--
 <entity_class name="animalPig" extends="animalTemplateTimid">
 	<property name="Mesh" value="Animals/Pig/PIG"/>
 	<property name="Prefab" value="NPC"/>
@@ -1441,8 +1393,9 @@
 	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="5"/>
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="7"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="6"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
 </entity_class>
-
+-->
 
 
 <!-- HOSTILE ANIMALS -->
@@ -1487,10 +1440,9 @@
 	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="TimeStayAfterDeath" value="300"/>
 	<property name="ExperienceGain" value="2509"/>
-	<property name="CorpseBlock" value="animalGore"/>
-	<property name="CorpseBlockChance" value="1"/>
+	<!--<property name="CorpseBlock" value="animalGore"/>
+	<property name="CorpseBlockChance" value="0"/>-->
 	<property name="DeadBodyHitPoints" value="350"/>
-	<!-- <drop event="Harvest" name="rawMeat" count="1"/> -->
 </entity_class>
 
 <entity_class name="animalZombieDog" extends="animalTemplateHostile">
@@ -1501,7 +1453,7 @@
 	<property name="ModelType" value="Standard"/>
 	<property name="Parent" value="Enemies"/>
 	<property name="HasRagdoll" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.1"/>
 	<property name="Prefab" value="Dog"/>
@@ -1548,8 +1500,7 @@
 	<property name="SmellAlertThreshold" value="5"/> <!-- for awake zombies -->
 
 	<property name="PhysicsBody" value="zombieDog"/>
-	<property name="CorpseBlockChance" value="0"/>
-	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="4"/>
+	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="4"/> <!-- animalZombieDog -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="4"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="1"/>
 	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
@@ -1607,9 +1558,10 @@
 	<property name="SoundGiveUp" value="Animals/Bear/beargiveup"/>
 	<property name="ExperienceGain" value="2509"/>
 	<property name="DeadBodyHitPoints" value="600"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="10"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="10"/> <!-- animalBear -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="15"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="7"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="4"/>
 </entity_class>
 
 <entity_class name="animalZombieBear" extends="animalBear">
@@ -1618,8 +1570,7 @@
 	<property name="HandItem" value="handAnimalZombieBear"/>
 	<property name="ReplaceMaterial0" value="Materials/UMAFur_ZombieBear"/>
 	<property name="DeadBodyHitPoints" value="600"/>
-	<property name="CorpseBlockChance" value="0"/>
-	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="7"/>
+	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="7"/> <!-- animalZombieBear -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="12"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="3"/>
 	<drop event="Harvest" name="femur" tool_category="Butcher" count="4"/>
@@ -1680,9 +1631,10 @@
 	<property name="SoundSense" value="Animals/Wolf/wolfsense"/>
 	<property name="SoundGiveUp" value="Animals/Wolf/wolfgiveup"/>
 	<property name="ExperienceGain" value="1407"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="5"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="5"/> <!-- animalWolf -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="10"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="5"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
 </entity_class>
 
 <entity_class name="animalDireWolf" extends="animalWolf">
@@ -1704,9 +1656,10 @@
 	<property name="AITarget-3" value="SetNearestEntityAsTarget" param1="EntityPlayer" param2="30"/>
 	<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityAnimalStag"/>
 	<property name="DeadBodyHitPoints" value="450"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="7"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="7"/> <!-- animalDireWolf -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="12"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="7"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
 </entity_class>
 
 <entity_class name="animalZombieVulture" extends="animalTemplateHostile">
@@ -1747,8 +1700,7 @@
 	<property name="SoundGiveUp" value="Animals/Vulture/vulturegiveup"/>
 	<property name="ExperienceGain" value="798"/>
 	<property name="DeadBodyHitPoints" value="175"/>
-	<property name="CorpseBlockChance" value="0"/>
-	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="3"/>
+	<drop event="Harvest" name="rottingFlesh" tool_category="Butcher" count="3"/> <!-- animalZombieVulture -->
 	<drop event="Harvest" name="feather" tool_category="Butcher" count="40"/>
 </entity_class>
 
@@ -1796,10 +1748,7 @@
 	<property name="SoundAttack" value="Animals/Snake/snakeattack"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.1"/>
-	<property name="CorpseBlockChance" value="0"/>
 	<property name="ExperienceGain" value="384"/>
-	<property name="DeadBodyHitPoints" value="150"/>
-	<property name="CorpseBlockChance" value="0"/>
 	<property name="RootMotion" value="false"/>
 	<property name="HasDeathAnim" value="true"/>
 
@@ -1812,7 +1761,8 @@
 	<property class="MechanimDeathTriggers">
 		<property name="state0" value="DeathTrigger"/>
 	</property>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/>
+	<property name="DeadBodyHitPoints" value="150"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="2"/> <!-- animalSnake -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="2"/>
 </entity_class>
 
@@ -1860,9 +1810,10 @@
 	<property name="SoundSense" value="Animals/Boar/boarsense"/>
 	<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
 	<property name="ExperienceGain" value="1407"/>
-	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="5"/>
+	<drop event="Harvest" name="rawMeat" tool_category="Butcher" count="5"/> <!-- animalBoar -->
 	<drop event="Harvest" name="animalHide" tool_category="Butcher" count="7"/>
 	<drop event="Harvest" name="animalFat" tool_category="Butcher" count="6"/>
+	<drop event="Harvest" name="femur" tool_category="Butcher" count="2"/>
 </entity_class>
 
 <!-- VEHICLES -->
@@ -1977,7 +1928,7 @@
 	<property name="Parent" value="Backpack"/>
 	<property name="TimeStayAfterDeath" value="60"/>
 	<property name="IsEnemyEntity" value="false"/>
-	<property name="LootListOnDeath" value="47"/> <!-- used to determine container X/Y size -->
+	<property name="LootListOnDeath" value="99"/> <!-- used to determine container X/Y size and sounds -->
 	<property name="Faction" value="none"/>
 </entity_class>
 
