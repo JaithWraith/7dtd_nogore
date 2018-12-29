@@ -237,8 +237,8 @@
 
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
+	<property name="SurfaceCategory" value="earth"/> <!-- determines the particle effect played on hit -->
 
 	<property name="DismemberMultiplierHead" value="1"/>
 	<property name="DismemberMultiplierArms" value="1"/>
@@ -1975,10 +1975,10 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="zombie,walker"/>
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
+	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
 
 	<!-- Gameplay -->
-	<property name="HandItem" value="meleeHandZombieStripper"/>
+	<!-- property name="HandItem" value="meleeHandZombieStripper"/ -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="125"/>
@@ -1988,13 +1988,13 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="zombie,walker,feral"/>
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
+	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
 	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
-	<property name="HandItem" value="meleeHandZombieStripperFeral"/>
+	<!-- property name="HandItem" value="meleeHandZombieStripperFeral"/ -->
 
 	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
@@ -2069,8 +2069,8 @@
 	<property name="PhysicsBody" value="Stag"/>
 	<property name="Mass" value="20"/>
 	<property name="Weight" value="70"/>
-	<property name="SurfaceCategory" value="organic"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<property name="SurfaceCategory" value="earth"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
 
@@ -2131,8 +2131,8 @@
 	<property name="PhysicsBody" value="Doe"/>
 	<property name="Mass" value="140"/>
 	<property name="Weight" value="70"/>
-	<property name="SurfaceCategory" value="organic"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<property name="SurfaceCategory" value="earth"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
 
@@ -2281,8 +2281,8 @@
 	<property name="AITarget-3" value="BlockingTargetTask"/>
 	<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,15,EntityNPC,10"/>
 
-	<property name="SurfaceCategory" value="organic"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<property name="SurfaceCategory" value="earth"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 
 	<!-- Stealth settings -->
 	<property name="MaxViewAngle" value="180"/>
@@ -3282,10 +3282,10 @@
 
 	<property name="Weight" value="70"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="WalkType" value="7"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="SoundRandomTime" value="200.0"/>
 	<property name="Archetype" value="TraderJoel"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
@@ -3340,8 +3340,8 @@
 	<property name="Weight" value="70"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="WalkType" value="7"/>
-	<property name="SurfaceCategory" value="organic"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
+	<property name="SurfaceCategory" value="earth"/>
+	<!-- property name="ParticleOnDeath" value="blood_death"/ -->
 	<property name="HasDeathAnim" value="true"/>
 	<property name="SoundRandomTime" value="200.0"/>
 	<property name="Archetype" value="TraderJoel"/>
