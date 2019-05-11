@@ -31,7 +31,7 @@
 	<property name="IsMale" value="true"/>
 	<property name="TimeStayAfterDeath" value="10"/>
 
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="PushFactor" value="5"/>
 	<property name="Weight" value="70"/>
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
