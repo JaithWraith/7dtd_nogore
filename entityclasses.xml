@@ -205,11 +205,20 @@
 		-->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="5" tags="Upgrading"/>
 
-		<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value=".25"/>
-		<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value=".5"/>
-
 		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffStatusCheck01,buffStatusCheck02"/>
 		<triggered_effect trigger="onSelfRespawn" action="AddBuff" target="self" buff="buffStatusCheck01,buffStatusCheck02,buffPerkAbilityUpdate,buffNearDeathTraumaTrigger"/>
+	</effect_group>
+
+	<effect_group>
+		<requirement name="PlayerLevel" operation="LT" value="300"/>
+			<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value=".25"/>
+			<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value=".5"/>
+	</effect_group>
+
+	<effect_group>
+		<requirement name="PlayerLevel" operation="GTE" value="300"/>
+			<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value="0"/>
+			<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value="0"/>
 	</effect_group>
 </entity_class>
 
@@ -874,7 +883,7 @@
 	<property name="Tags" value="entity,zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardLabRagdoll"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
-	<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
+	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
 	<property name="PainResistPerHit" value=".25"/><!-- Feral -->
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 	<property name="MoveSpeedAggro" value=".5, 1.35"/>
@@ -2682,9 +2691,9 @@
 	<property name="ExperienceGain" value="750"/> <!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="600"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="7"/> <!-- animalZombieBear -->
-	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="12"/>
-	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="50"/> <!-- animalZombieBear -->
+	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="15"/>
+	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="5"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="25"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
 	<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
@@ -2934,7 +2943,7 @@
 
 	<property name="DeadBodyHitPoints" value="175"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="3"/> <!-- animalZombieVulture -->
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="4"/> <!-- animalZombieVulture -->
 	<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="30"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
@@ -2961,11 +2970,11 @@
 
 	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
 
-	<property name="DeadBodyHitPoints" value="100"/>
+	<property name="DeadBodyHitPoints" value="200"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="3"/> <!-- animalZombieVultureRadiated -->
-	<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="30"/>
-	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="6"/> <!-- animalZombieVultureRadiated -->
+	<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="35"/>
+	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
 
 	<effect_group name="Base Effects">
@@ -3021,7 +3030,7 @@
 	<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="4"/> <!-- animalZombieDog -->
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/> <!-- animalZombieDog -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
 	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/>
@@ -3536,7 +3545,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
@@ -3592,7 +3601,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 
 	<property name="Weight" value="70"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
