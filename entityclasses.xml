@@ -2220,7 +2220,7 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
+	<!-- <property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/> -->
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStripper"/>
@@ -2233,7 +2233,7 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
+	<!-- <property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/> -->
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
