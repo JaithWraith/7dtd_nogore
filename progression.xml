@@ -28,7 +28,7 @@
 		<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="attPerception"/>
+			<requirement name="ItemHasTags" tags="attPerception"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -80,7 +80,7 @@
 		<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="attStrength"/>
+			<requirement name="ItemHasTags" tags="attStrength"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -111,7 +111,7 @@
 		<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="attFortitude"/>
+			<requirement name="ItemHasTags" tags="attFortitude"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -143,7 +143,7 @@
 		<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="attAgility"/>
+			<requirement name="ItemHasTags" tags="attAgility"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -174,7 +174,7 @@
 		<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="attIntellect"/>
+			<requirement name="ItemHasTags" tags="attIntellect"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -284,7 +284,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.32,.45,.60"/>
@@ -327,7 +327,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDemolitionsExpert"/>
+			<requirement name="ItemHasTags" tags="perkDemolitionsExpert"/>
 
 			<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
@@ -359,7 +359,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkJavelinMaster"/>
+			<requirement name="ItemHasTags" tags="perkJavelinMaster"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 			<!--
@@ -453,12 +453,12 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/></level_requirements>
 		<effect_group>
 			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.1,-.2,-.3,-.35,-.35">
-				<requirement name="HoldingItemHasTags" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner"/>
+				<requirement name="ItemHasTags" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner"/>
 			</passive_effect>
 
 			<!-- Note: the 1 penetration effect is on <item name="ammo762mmBulletAP"> and other AP bullets -->
 			<passive_effect name="EntityPenetrationCount" operation="perc_add" level="3,5" value="1,3">
-				<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+				<requirement name="ItemHasTags" tags="perkDeadEye"/>
 			</passive_effect>
 			<!--	All AP ammo has 1 penetration -->
 
@@ -505,7 +505,7 @@
 			<passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-0.1,-.5" tags="salvageScrap"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkSalvageOperations"/>
+			<requirement name="ItemHasTags" tags="perkSalvageOperations"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 				<!-- wrench (or other relevant tools) do a base_add=1 to hop on the salvage train -->
@@ -532,7 +532,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunDoubleBarrelShotgun"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+			<requirement name="ItemHasTags" tags="perkBoomstick"/>
 
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
@@ -578,12 +578,12 @@
 		</effect_group>
 
 		<effect_group name="clubs perk">
-			<requirement name="HoldingItemHasTags" tags="perkPummelPete"/>
+			<requirement name="ItemHasTags" tags="perkPummelPete"/>
 			<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value="0.4,2"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkPummelPete"/>
+			<requirement name="ItemHasTags" tags="perkPummelPete"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
@@ -645,18 +645,18 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ItemHasTags" tags="perkSkullCrusher"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ItemHasTags" tags="perkSkullCrusher"/>
 			<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value="0.4,2" tags="secondary"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ItemHasTags" tags="perkSkullCrusher"/>
 
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
 				<requirement name="ProgressionLevel" progression_name="perkSkullCrusher" operation="Equals" value="1"/>
@@ -709,7 +709,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="7" desc_key="reqStrengthLevel07"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="melee"/>
+			<requirement name="ItemHasTags" tags="melee"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" level="1,5" value="-0.05,-0.25"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" level="1,5" value="-0.05,-0.25" tags="secondary"/>
 
@@ -791,9 +791,9 @@
 				tags="drinkJarGrandpasMoonshine,drinkJarGrandpasAwesomeSauce,drinkJarGrandpasLearningElixir"/>
 
 			<effect_description level="1" desc_key="perkMasterChefRank1Desc" long_desc_key="perkMasterChefRank1LongDesc"/>
-			<effect_description level="2" desc_key="perkMasterChefRank2Desc" long_desc_key="perkMasterChefRank2LongDesc"/>
-			<effect_description level="3" desc_key="perkMasterChefRank3Desc" long_desc_key="perkMasterChefRank3LongDesc"/>
-			<effect_description level="4" desc_key="perkMasterChefRank4Desc" long_desc_key="perkMasterChefRank4LongDesc"/>
+			<effect_description level="2" desc_key="perkMasterChefRank2Desc" long_desc_key="perkMasterChefRank2LongDescA18"/>
+			<effect_description level="3" desc_key="perkMasterChefRank3Desc" long_desc_key="perkMasterChefRank3LongDescA18"/>
+			<effect_description level="4" desc_key="perkMasterChefRank4Desc" long_desc_key="perkMasterChefRank4LongDescA18"/>
 			<effect_description level="5" desc_key="perkMasterChefRank5Desc" long_desc_key="perkMasterChefRank5LongDesc"/>
 		</effect_group>
 	</perk>
@@ -812,7 +812,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
+			<requirement name="ItemHasTags" tags="perkMiner69r"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".3,1.5"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
@@ -868,7 +868,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBrawler"/>
+			<requirement name="ItemHasTags" tags="perkBrawler"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
@@ -876,7 +876,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBrawler"/>
+			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="HitLocation" body_parts="Head"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffBrawlerNoTeeth">
 					<requirement name="ProgressionLevel" progression_name="perkBrawler" operation="GTE" value="1"/>
@@ -921,7 +921,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunAK47"/>
 		</effect_group>
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkMachineGunner"/>
+			<requirement name="ItemHasTags" tags="perkMachineGunner"/>
 
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
@@ -1023,7 +1023,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkLivingOffTheLand"/>
+			<requirement name="ItemHasTags" tags="perkLivingOffTheLand"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".3,1.5"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 		</effect_group>
@@ -1145,12 +1145,12 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="bowDrawPenalty"/>
+			<requirement name="ItemHasTags" tags="bowDrawPenalty"/>
 				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".1,.15,.25,.35,.5"/>
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+			<requirement name="ItemHasTags" tags="perkArchery"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
@@ -1178,7 +1178,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
+			<requirement name="ItemHasTags" tags="perkGunslinger"/>
 
 				<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5"/>
@@ -1226,26 +1226,26 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 		</effect_group>
 
 		<effect_group name="primary, always">
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
 
 		<effect_group>
 			<!-- all attacks refresh / extend bleeding even if no stacks can be added -->
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 
 		<effect_group name="Secondary">
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="set" value="2">
 					<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="0"/>
@@ -1303,7 +1303,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="GTE" value="1"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="LT" value="3"/>
 			<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.1" target="other"/>
@@ -1312,7 +1312,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="GTE" value="3"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="LT" value="5"/>
 			<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.15" target="other"/>
@@ -1321,7 +1321,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="5"/>
 			<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.2" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.2"/>
@@ -1329,7 +1329,7 @@
 		</effect_group>
 
 		<effect_group name="grazing hits T3">
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="3"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="5" target="other"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
@@ -1339,7 +1339,7 @@
 				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 		<effect_group name="grazing hits T4">
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="4"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="6" target="other"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
@@ -1349,7 +1349,7 @@
 				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 		<effect_group name="grazing hits T5">
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="5"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="7" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
@@ -1359,7 +1359,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
@@ -1374,8 +1374,8 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="ranged"/>
-			<requirement name="!HoldingItemHasTags" tags="shotgun"/>
+			<requirement name="ItemHasTags" tags="ranged"/>
+			<requirement name="!ItemHasTags" tags="shotgun"/>
 				<passive_effect name="SpreadMultiplierHip" operation="perc_add" level="0,5" value="0,-.25"/>
 
 			<effect_description level="1" desc_key="perkRunAndGunRank1Desc" long_desc_key="perkRunAndGunRank1LongDesc"/>
@@ -1394,7 +1394,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/></level_requirements>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkFlurryOfBlows"/>
+			<requirement name="ItemHasTags" tags="perkFlurryOfBlows"/>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" level="1,5" value="0.05,0.25"/>
 
 			<effect_description level="1" desc_key="perkFlurryOfBlowsRank1Desc" long_desc_key="perkFlurryOfBlowsRank1LongDesc"/>
@@ -1506,7 +1506,7 @@
 		</effect_group>
 
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ItemHasTags" tags="perkElectrocutioner"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5"/>
 
@@ -1526,7 +1526,7 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/></level_requirements>
 
 		<effect_group name="Holding a turret">
-			<requirement name="HoldingItemHasTags" tags="perkTurrets"/>
+			<requirement name="ItemHasTags" tags="perkTurrets"/>
 				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.6,.9,1.2,1.2" tags="deployed" invert_tag_check="true"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.1,0.2" tags="deployed" invert_tag_check="true"/>
 				<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50"/>
@@ -1751,7 +1751,7 @@
 
 	<perk name="perkFiremansAlmanacSpeed" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" desc_key="perkFiremansAlmanacSpeedDesc" long_desc_key="perkFiremansAlmanacSpeedLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="axe"/>
+			<requirement name="ItemHasTags" tags="axe"/>
 				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value="0.05"/>
 		</effect_group>
 	</perk>
@@ -1801,7 +1801,7 @@
 	</perk>
 	<perk name="perkNeedleAndThreadFootwear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadFootwear" desc_key="perkNeedleAndThreadFootwearDesc" long_desc_key="perkNeedleAndThreadFootwearLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelWornBoots,apparelRunningShoes,apparelCowboyBoots,apparelSuitDressShoes"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelWornBoots,apparelRunningShoesRegular,apparelCowboyBoots,apparelSuitDressShoes"/>
 		</effect_group>
 	</perk>
 	<perk name="perkNeedleAndThreadDesertWear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadDesertWear" desc_key="perkNeedleAndThreadDesertWearDesc" long_desc_key="perkNeedleAndThreadDesertWearLongDesc">
@@ -1853,7 +1853,7 @@
 	<perk name="perkNightStalkerBlades" parent="skillNightStalker" max_level="1" base_skill_point_cost="0" desc_key="perkNightStalkerBladesDesc" long_desc_key="perkNightStalkerBladesLongDesc">
 		<effect_group>
 			<requirement name="IsNight"/>
-			<requirement name="HoldingItemHasTags" tags="perkDeepCuts"/>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
@@ -1868,7 +1868,7 @@
 	<perk name="perkNightStalkerArchery" parent="skillNightStalker" max_level="1" base_skill_point_cost="0" desc_key="perkNightStalkerArcheryDesc" long_desc_key="perkNightStalkerArcheryLongDesc">
 		<effect_group>
 			<requirement name="IsNight"/>
-			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+			<requirement name="ItemHasTags" tags="perkArchery"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
@@ -1895,7 +1895,7 @@
 		<!-- old: 50% vampiric damage from killing blows <passive_effect name="HealthSteal" operation="base_add" level="1" value=".5"/> -->
 		<effect_group>
 			<requirement name="IsNight"/>
-			<requirement name="HoldingItemHasTags" tags="knife"/>
+			<requirement name="ItemHasTags" tags="knife"/>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="2"/>
@@ -1949,7 +1949,7 @@
 
 	<perk name="perkEnforcerDamage" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerDamageDesc" long_desc_key="perkEnforcerDamageLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="revolver"/>
+			<requirement name="ItemHasTags" tags="revolver"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.1"/>
 		</effect_group>
 	</perk>
@@ -1959,14 +1959,14 @@
 	</perk>
 	<perk name="perkEnforcerPunks" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerPunksDesc" long_desc_key="perkEnforcerPunksLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="revolver"/>
+			<requirement name="ItemHasTags" tags="revolver"/>
 			<requirement name="RoundsInMagazine" operation="LTE" value="0"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="1"/>
 		</effect_group>
 	</perk>
 	<perk name="perkEnforcerIntimidation" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerIntimidationDesc" long_desc_key="perkEnforcerIntimidationLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="revolver"/>
+			<requirement name="ItemHasTags" tags="revolver"/>
 				<passive_effect name="BarteringBuying" operation="base_add" level="1" value="0.05"/>
 				<passive_effect name="BarteringSelling" operation="base_add" level="1" value="0.05"/>
 		</effect_group>
@@ -1983,7 +1983,7 @@
 	</perk>
 	<perk name="perkEnforcerCriminalPursuit" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerCriminalPursuitDesc" long_desc_key="perkEnforcerCriminalPursuitLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="revolver"/>
+			<requirement name="ItemHasTags" tags="revolver"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value=".2" tags="running"/>
 		</effect_group>
 	</perk>
@@ -1997,7 +1997,7 @@
 
 	<perk name="perkBatterUpBigHits" parent="skillBatterUp" max_level="1" base_skill_point_cost="0" desc_key="perkBatterUpBigHitsDesc" long_desc_key="perkBatterUpBigHitsLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="club"/>
+			<requirement name="ItemHasTags" tags="club"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
@@ -2010,7 +2010,7 @@
 	<perk name="perkBatterUpSlowPitch" parent="skillBatterUp" max_level="1" base_skill_point_cost="0" desc_key="perkBatterUpSlowPitchDesc" long_desc_key="perkBatterUpSlowPitchLongDesc">
 		<effect_group>
 			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffBatterUpSlowDown">
-				<requirement name="HoldingItemHasTags" tags="perkPummelPete"/>
+				<requirement name="ItemHasTags" tags="perkPummelPete"/>
 				<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 				<requirement name="ProgressionLevel" progression_name="perkBatterUpSlowPitch" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -2019,7 +2019,7 @@
 	<perk name="perkBatterUpKnockdown" parent="skillBatterUp" max_level="1" base_skill_point_cost="0" desc_key="perkBatterUpKnockdownDesc" long_desc_key="perkBatterUpKnockdownLongDesc">
 		<effect_group>
 			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryKnockdown01">
-				<requirement name="HoldingItemHasTags" tags="perkPummelPete"/>
+				<requirement name="ItemHasTags" tags="perkPummelPete"/>
 				<requirement name="ProgressionLevel" progression_name="perkBatterUpKnockdown" operation="Equals" value="1"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 			</triggered_effect>
@@ -2044,7 +2044,7 @@
 		<effect_group>
 			<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="1000">
 				<requirement name="ProgressionLevel" progression_name="perkBatterUpComplete" operation="Equals" value="1"/>
-				<requirement name="HoldingItemHasTags" tags="club"/>
+				<requirement name="ItemHasTags" tags="club"/>
 				<requirement name="IsSecondaryAttack"/>
 			</triggered_effect>
 		</effect_group>
@@ -2212,13 +2212,13 @@
 	<perk name="perkArtOfMiningCoffee" parent="skillArtOfMining" max_level="1" base_skill_point_cost="0" name_key="bookArtOfMiningCoffee" desc_key="perkArtOfMiningCoffeeDesc" long_desc_key="perkArtOfMiningCoffeeLongDesc">
 		<effect_group>
 			<requirement name="HasBuff" buff="buffCoffee"/>
-			<requirement name="HoldingItemHasTags" tags="miningTool"/>
+			<requirement name="ItemHasTags" tags="miningTool"/>
 				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".1" tags="oreWoodHarvest"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.05" tags="Harvesting"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="HasBuff" buff="buffBlackStrapCoffee"/>
-			<requirement name="HoldingItemHasTags" tags="miningTool"/>
+			<requirement name="ItemHasTags" tags="miningTool"/>
 				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".1" tags="oreWoodHarvest"/>
 				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.05" tags="Harvesting"/>
 		</effect_group>
@@ -2246,7 +2246,7 @@
 	<perk name="perkArtOfMiningComplete" parent="skillArtOfMining" max_level="1" base_skill_point_cost="0" desc_key="perkArtOfMiningCompleteDesc" long_desc_key="perkArtOfMiningCompleteLongDesc">
 		<effect_group>
 			<passive_effect name="BlockDamage" operation="base_add" level="1" value="10000" tags="ore">
-				<requirement name="HoldingItemHasTags" tags="miningTool"/>
+				<requirement name="ItemHasTags" tags="miningTool"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 			</passive_effect>
 		</effect_group>
@@ -2300,7 +2300,7 @@
 	<perk name="perkPistolPeteTakeAim" parent="skillPistolPete" max_level="1" base_skill_point_cost="0" desc_key="perkPistolPeteTakeAimDesc" long_desc_key="perkPistolPeteTakeAimLongDesc">
 		<effect_group>
 			<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
-			<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+			<requirement name="ItemHasTags" tags="9mmGun"/>
 				<passive_effect name="MaxRange" operation="perc_add" level="1" value=".2"/>
 				<passive_effect name="DamageFalloffRange" operation="perc_add" level="1" value=".2"/>
 		</effect_group>
@@ -2308,7 +2308,7 @@
 	<perk name="perkPistolPeteSwissKnees" parent="skillPistolPete" max_level="1" base_skill_point_cost="0" desc_key="perkPistolPeteSwissKneesDesc" long_desc_key="perkPistolPeteSwissKneesLongDesc">
 		<effect_group>
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffPistolPeteSwissKnees">
-				<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+				<requirement name="ItemHasTags" tags="9mmGun"/>
 				<requirement name="ProgressionLevel" progression_name="perkPistolPeteSwissKnees" operation="Equals" value="1"/>
 				<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 			</triggered_effect>
@@ -2316,7 +2316,7 @@
 	</perk>
 	<perk name="perkPistolPeteSteadyHand" parent="skillPistolPete" max_level="1" base_skill_point_cost="0" desc_key="perkPistolPeteSteadyHandDesc" long_desc_key="perkPistolPeteSteadyHandLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+			<requirement name="ItemHasTags" tags="9mmGun"/>
 				<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="1" value="-.08"/>
 		</effect_group>
 	</perk>
@@ -2337,7 +2337,7 @@
 	</perk>
 	<perk name="perkPistolPeteDamage" parent="skillPistolPete" max_level="1" base_skill_point_cost="0" desc_key="perkPistolPeteDamageDesc" long_desc_key="perkPistolPeteDamageLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+			<requirement name="ItemHasTags" tags="9mmGun"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
@@ -2345,14 +2345,14 @@
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundle9mmBulletBall,ammoBundle9mmBulletHP,ammoBundle9mmBulletAP"/>
 			<passive_effect name="TargetArmor" operation="perc_add" level="1" value="-.2">
-				<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+				<requirement name="ItemHasTags" tags="9mmGun"/>
 				<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 			</passive_effect>
 		</effect_group>
 
 		<effect_group>
 			<requirement name="ProgressionLevel" progression_name="perkPistolPeteComplete" operation="Equals" value="1"/>
-			<requirement name="HoldingItemHasTags" tags="9mmGun"/>
+			<requirement name="ItemHasTags" tags="9mmGun"/>
 			<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1">
 					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1" target="other"/>
@@ -2365,7 +2365,7 @@
 
 	<perk name="perkShotgunMessiahDamage" parent="skillShotguns" max_level="1" base_skill_point_cost="0" desc_key="perkShotgunMessiahDamageDesc" long_desc_key="perkShotgunMessiahDamageLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+			<requirement name="ItemHasTags" tags="perkBoomstick"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
@@ -2376,8 +2376,8 @@
 	</perk>
 	<perk name="perkShotgunMessiahLimbShot" parent="skillShotguns" max_level="1" base_skill_point_cost="0" desc_key="perkShotgunMessiahLimbShotDesc" long_desc_key="perkShotgunMessiahLimbShotLongDesc">
 		<effect_group>
-			<passive_effect name="DismemberChance" operation="base_add" level="1" value=".3">
-				<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+			<passive_effect name="DismemberChance" operation="base_add" level="1" value="0">
+				<requirement name="ItemHasTags" tags="perkBoomstick"/>
 				<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 			</passive_effect>
 		</effect_group>
@@ -2399,7 +2399,7 @@
 	</perk>
 	<perk name="perkShotgunMessiahPartyStarter" parent="skillShotguns" max_level="1" base_skill_point_cost="0" desc_key="perkShotgunMessiahPartyStarterDesc" long_desc_key="perkShotgunMessiahPartyStarterLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+			<requirement name="ItemHasTags" tags="perkBoomstick"/>
 			<requirement name="StatComparePercCurrentToMax" target="other" stat="Health" operation="GTE" value="1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".2"/>
 		</effect_group>
@@ -2419,9 +2419,9 @@
 	<perk name="perkSniperCripplingShot" parent="skillSniper" max_level="1" base_skill_point_cost="0" desc_key="perkSniperCripplingShotDesc" long_desc_key="perkSniperCripplingShotLongDesc">
 		<effect_group>
 			<requirement name="ProgressionLevel" progression_name="perkSniperCripplingShot" operation="Equals" value="1"/>
-			<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 			<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="1" value=".15"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
 					<requirement name="!EntityTagCompare" target="other" tags="feral,radiated"/>
@@ -2440,7 +2440,7 @@
 	<perk name="perkSniperHeadShot" parent="skillSniper" max_level="1" base_skill_point_cost="0" desc_key="perkSniperHeadShotDesc" long_desc_key="perkSniperHeadShotLongDesc">
 		<effect_group>
 			<requirement name="ProgressionLevel" progression_name="perkSniperHeadShot" operation="Equals" value="1"/>
-			<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 			<requirement name="HitLocation" body_parts="Head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
@@ -2459,9 +2459,9 @@
 				</triggered_effect>
 		</effect_group>
 	</perk>
-	<perk name="perkSniperGhost" parent="skillSniper" max_level="1" base_skill_point_cost="0" name_key="bookSniperGhost" desc_key="perkSniperGhostDesc" long_desc_key="perkSniperGhostLongDesc">
+	<perk name="perkSniperGhost" parent="skillSniper" max_level="1" base_skill_point_cost="0" desc_key="perkSniperGhostDesc" long_desc_key="perkSniperGhostLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkDeadEye"/>
+			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1" value="0.1"/>
 		</effect_group>
 	</perk>
@@ -2491,14 +2491,14 @@
 
 	<perk name="perkAutoWeaponsDamage" parent="skillAutoWeapons" max_level="1" base_skill_point_cost="0" desc_key="perkAutoWeaponsDamageDesc" long_desc_key="perkAutoWeaponsDamageLongDesc">
 		<effect_group>
-			<requirement name="HoldingItemHasTags" tags="perkBookAutoWeapons"/>
+			<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</perk>
 	<perk name="perkAutoWeaponsUncontrolledBurst" parent="skillAutoWeapons" max_level="1" base_skill_point_cost="0" desc_key="perkAutoWeaponsUncontrolledBurstDesc" long_desc_key="perkAutoWeaponsUncontrolledBurstLongDesc">
 		<effect_group>
 			<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsUncontrolledBurst" operation="Equals" value="1"/>
-			<requirement name="HoldingItemHasTags" tags="perkBookAutoWeapons"/>
+			<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".AutoWeaponsUBCount" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfRangedBurstShot" action="ModifyCVar" cvar=".AutoWeaponsUBCount" operation="add" value="1"/>
 
@@ -2540,7 +2540,7 @@
 
 		<effect_group>
 			<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsRecoil" operation="Equals" value="1"/>
-			<requirement name="HoldingItemHasTags" tags="perkBookAutoWeapons"/>
+			<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".AutoWeaponsRecoilCount" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".AutoWeaponsRecoilCount" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfRangedBurstShot" action="ModifyCVar" cvar=".AutoWeaponsRecoilCount" operation="add" value="1"/>
@@ -2572,7 +2572,7 @@
 	<perk name="perkAutoWeaponsRagdoll" parent="skillAutoWeapons" max_level="1" base_skill_point_cost="0" desc_key="perkAutoWeaponsRagdollDesc" long_desc_key="perkAutoWeaponsRagdollLongDesc">
 		<effect_group>
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffAutoWeaponsRagdoll">
-				<requirement name="HoldingItemHasTags" tags="perkBookAutoWeapons"/>
+				<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsRagdoll" operation="Equals" value="1"/>
 			<!-- to do
 			Fully automatic mode has an INCREASING CHANCE to ragdoll an enemy with each hit.
@@ -2589,7 +2589,7 @@
 	<perk name="perkAutoWeaponsComplete" parent="skillAutoWeapons" max_level="1" base_skill_point_cost="0" desc_key="perkAutoWeaponsCompleteDesc" long_desc_key="perkAutoWeaponsCompleteLongDesc">
 		<effect_group>
 			<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffAutoWeaponsComplete">
-				<requirement name="HoldingItemHasTags" tags="perkBookAutoWeapons"/>
+				<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsComplete" operation="Equals" value="1"/>
 			</triggered_effect>
 		</effect_group>

@@ -75,7 +75,7 @@
 
 		<passive_effect name="DamageModifier" operation="perc_set" value="1"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="head"/>
-		<passive_effect name="DismemberChance" operation="base_set" value=".05"/>
+		<passive_effect name="DismemberChance" operation="base_set" value="0"/>
 
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allHarvest,oreWoodHarvest,cropHarvest,wildCropsHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allToolsHarvest"/> <!-- all tools but not player hands, they come later in the OOO and set this back to 0. -->
@@ -428,7 +428,7 @@
 		<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 		<passive_effect name="HealthMax" operation="base_set" value="532"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -438,7 +438,7 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
-	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
+	<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".5"/><!-- Radiated -->
 
 	<property name="LegCrawlerThreshold" value="0"/>
@@ -462,7 +462,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="1010"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8.1"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -537,7 +537,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -556,7 +556,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -648,7 +648,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="380"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -657,7 +657,7 @@
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/fatLadyZS_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
+	<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".5"/><!-- Radiated -->
 	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
@@ -666,7 +666,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="722"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="6.5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -705,7 +705,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -723,7 +723,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -777,7 +777,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="475"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -793,7 +793,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="902"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -845,7 +845,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -862,7 +862,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -910,7 +910,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -974,7 +974,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="142"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -994,7 +994,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="270"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2.5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1041,7 +1041,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1057,7 +1057,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1103,7 +1103,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1119,7 +1119,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1158,7 +1158,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1175,7 +1175,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1215,7 +1215,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1233,7 +1233,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1274,7 +1274,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="152"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1313,7 +1313,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1381,7 +1381,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="570"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1454,7 +1454,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1474,7 +1474,7 @@
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<triggered_effect event="onSelfFirstSpawn" action="AddBuff" buff="zombieRadiatedBuff40"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -1555,7 +1555,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1609,7 +1609,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="570"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1695,7 +1695,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="475"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 	</effect_group>
 </entity_class>
@@ -1718,7 +1718,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="902"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -1787,7 +1787,7 @@
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1854,7 +1854,7 @@
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1877,7 +1877,7 @@
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -1969,7 +1969,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -1985,7 +1985,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -2032,7 +2032,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -2048,7 +2048,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -2083,7 +2083,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -2100,7 +2100,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
@@ -2212,7 +2212,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -2220,7 +2220,7 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
+	<!-- <property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/> -->
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStripper"/>
@@ -2233,7 +2233,7 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<!-- property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/ -->
+	<!-- <property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/> -->
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
@@ -2248,7 +2248,7 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
@@ -2389,6 +2389,7 @@
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
+  <property name="SightRange" value="37"/>  <!-- distance in m -->
 
 	<!-- Gameplay -->
 	<property name="MaxTurnSpeed" value="220"/>
