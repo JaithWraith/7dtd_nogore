@@ -438,7 +438,7 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
-	<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/><!-- Radiated -->
+	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".5"/><!-- Radiated -->
 
 	<property name="LegCrawlerThreshold" value="0"/>
