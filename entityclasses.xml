@@ -2378,7 +2378,7 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressHDRagdoll.prefab"/>
+	<!-- <property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressHDRagdoll.prefab"/> -->
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStripper"/>
@@ -2391,7 +2391,7 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressFeralHDRagdoll.prefab"/>
+	<!-- <property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressFeralHDRagdoll.prefab"/> -->
 
 	<!-- Gameplay -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
