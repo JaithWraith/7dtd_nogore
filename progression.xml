@@ -31,7 +31,7 @@
 			<requirement name="ItemHasTags" tags="attPerception"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 
 			<effect_description level="1"  desc_key="attPerceptionRank01Desc" long_desc_key="attPerceptionRank01LongDesc"/>
 			<effect_description level="2"  desc_key="attPerceptionRank02Desc" long_desc_key="attPerceptionRank02LongDesc"/>
@@ -83,7 +83,7 @@
 			<requirement name="ItemHasTags" tags="attStrength"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 
 			<effect_description level="1" desc_key="attStrengthRank01Desc" long_desc_key="attStrengthRank01LongDesc"/>
 			<effect_description level="2" desc_key="attStrengthRank02Desc" long_desc_key="attStrengthRank02LongDesc"/>
@@ -114,7 +114,7 @@
 			<requirement name="ItemHasTags" tags="attFortitude"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
 		<effect_group>
@@ -146,7 +146,7 @@
 			<requirement name="ItemHasTags" tags="attAgility"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 		<effect_group>
 			<effect_description level="1" desc_key="attAgilityRank01Desc" long_desc_key="attAgilityRank01LongDesc"/>
@@ -177,7 +177,7 @@
 			<requirement name="ItemHasTags" tags="attIntellect"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 
 			<!-- <passive_effect name="PlayerExpGain" operation="perc_add" level="1,9" value="0.0,0.40"/>
 			<passive_effect name="PlayerExpGain" operation="perc_add" level="10" value="0.5"/>
@@ -323,7 +323,7 @@
 		</effect_group>
 
 		<effect_group>
-				<passive_effect name="DismemberChance" operation="base_add" level="1,2,3,4,5" value=".05,.1,.2,.3,.45" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="1,2,3,4,5" value="0,0,0,0,0" tags="perkDemolitionsExpert"/>
 				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,5" value="0.1,0.5" tags="perkDemolitionsExpert"/>
@@ -885,7 +885,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 
-				<passive_effect name="DismemberChance" operation="base_add" level="5" value=".2" tags="head"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="5" value="0" tags="head"/>
 
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryStunned01">
 					<requirement name="ProgressionLevel" progression_name="perkBrawler" operation="GTE" value="2"/>
@@ -2317,7 +2317,7 @@
 	</perk>
 	<perk name="perkShotgunMessiahLimbShot" parent="skillShotguns" max_level="1" base_skill_point_cost="0" desc_key="perkShotgunMessiahLimbShotDesc" long_desc_key="perkShotgunMessiahLimbShotLongDesc">
 		<effect_group>
-			<passive_effect name="DismemberChance" operation="base_add" level="1" value=".3">
+			<passive_effect name="DismemberChance" operation="base_add" level="1" value="0">
 				<requirement name="ItemHasTags" tags="perkBoomstick"/>
 				<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 			</passive_effect>
@@ -2365,7 +2365,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkSniperCripplingShot" operation="Equals" value="1"/>
 			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 			<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="1" value=".15"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
 					<requirement name="!EntityTagCompare" target="other" tags="feral,radiated"/>
@@ -2386,7 +2386,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkSniperHeadShot" operation="Equals" value="1"/>
 			<requirement name="ItemHasTags" tags="perkDeadEye"/>
 			<requirement name="HitLocation" body_parts="Head"/>
-				<passive_effect name="DismemberChance" operation="base_add" level="1" value=".15"/>
+				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryStunned02">
 					<requirement name="!EntityTagCompare" target="other" tags="feral,radiated"/>
