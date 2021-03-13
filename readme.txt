@@ -16,4 +16,4 @@ Always begin by making a backup of your entityclasses.xml, items.xml, and progre
 
 Once the mod is extracted, copy the modified entityclasses.xml, items.xml, and progression.xml into the steamapps > common > 7 Days to Die > Data > Config folder and replace the existing files.
 
-v1.7.3 is compatible with the Alpha 19.3 release.
+v1.7.3 is compatible with the Alpha 19.4 release.
