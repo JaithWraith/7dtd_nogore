@@ -31,7 +31,7 @@
 	<property name="IsMale" value="true"/>
 	<property name="TimeStayAfterDeath" value="10"/>
 
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="PushFactor" value="5"/>
 	<property name="Weight" value="70"/>
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
@@ -386,7 +386,7 @@
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SurfaceCategory" value="dirt"/> <!-- determines the particle effect played on hit -->
+	<property name="SurfaceCategory" value="earth"/> <!-- determines the particle effect played on hit -->
 
 	<property name="DismemberMultiplierHead" value="0"/>
 	<property name="DismemberMultiplierArms" value="0"/>
@@ -2481,7 +2481,7 @@
 	<property name="Weight" value="70"/>
 	<property name="LookAtAngle" value="50"/>
 
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
@@ -2548,7 +2548,7 @@
 	<property name="PhysicsBody" value="Doe"/>
 	<property name="Mass" value="180"/>
 	<property name="Weight" value="70"/>
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="Animals/stagpain"/>
 	<property name="SoundDeath" value="Animals/stagdeath"/>
@@ -2745,7 +2745,7 @@
 	<property name="AITarget-3" value="BlockingTargetTask"/>
 	<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,20,15,EntityNPC,15,10"/>
 
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 
 	<!-- Stealth settings -->
@@ -3942,7 +3942,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityAlive"/>
 
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="WalkType" value="7"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
@@ -4135,7 +4135,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="NPCID" value="traderric"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="WalkType" value="7"/>
-	<property name="SurfaceCategory" value="dirt"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="SoundRandomTime" value="200.0"/>
