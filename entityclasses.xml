@@ -1715,7 +1715,7 @@
 
 <entity_class name="zombieFatHawaiian" extends="zombieTemplateMale">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardHawaiianRagdoll.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardHawaiianHDRagdoll.prefab"/>
 	<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
 	<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
 	<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
@@ -1746,7 +1746,7 @@
 
 <entity_class name="zombieFatHawaiianFeral" extends="zombieFatHawaiian">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="ReplaceMaterial1" value="#Entities/Zombies?Zombies/Materials/feral_eye.mat"/>
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardHawaiianFeralHDRagdoll.prefab"/>
 
 	<!-- Gameplay -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -2378,7 +2378,7 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<!-- <property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressHDRagdoll.prefab"/> -->
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardDarleneHDRagdoll.prefab"/>
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStripper"/>
@@ -2391,7 +2391,7 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<!-- <property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressFeralHDRagdoll.prefab"/> -->
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardDarleneHDRagdoll.prefab"/>
 
 	<!-- Gameplay -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -3797,7 +3797,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
@@ -3853,7 +3853,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 
 	<property name="Weight" value="70"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
