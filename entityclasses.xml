@@ -76,7 +76,7 @@
 
 		<passive_effect name="DamageModifier" operation="perc_set" value="1"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="head"/>
-		<passive_effect name="DismemberChance" operation="base_set" value=".05"/>
+		<passive_effect name="DismemberChance" operation="base_set" value="0"/>
 
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allHarvest,oreWoodHarvest,cropHarvest,wildCropsHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allToolsHarvest"/> <!-- all tools but not player hands, they come later in the OOO and set this back to 0. -->
