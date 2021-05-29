@@ -454,7 +454,7 @@
 	<property name="TimeStayAfterDeath" value="30"/>
 	<property name="DeadBodyHitPoints" value="1000"/> <!-- For harvesting or resisting corpse destruction --> <!-- to adjust corpse destruction speed for the non-harvest zombie corpses. This property does not extend. -->
 
-	<property name="NavObject" value="clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,clear_sleeper" />
 
 	<effect_group name="Base Effects"> <!-- zombieTemplateMale -->
 		<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
@@ -2378,7 +2378,7 @@
 
 <entity_class name="zombieStripper" extends="zombieDarlene">
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardDarleneHDRagdoll.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressHDRagdoll.prefab"/>
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStripper"/>
@@ -2391,7 +2391,7 @@
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardDarleneHDRagdoll.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieStandardCocktailWaitressFeralHDRagdoll.prefab"/>
 
 	<!-- Gameplay -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -2779,7 +2779,7 @@
 
 	<property name="HandItem" value="meleeHandAnimalBear"/>
 
-	<property name="NavObject" value="animaltracking_hostile,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_hostile,clear_sleeper" />
 
 	<property name="TimeStayAfterDeath" value="300"/>
 	<property name="ExperienceGain" value="413"/> <!-- XP grunt -->
@@ -2853,7 +2853,7 @@
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 
-	<property name="NavObject" value="animaltracking_bear,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_bear,clear_sleeper" />
 </entity_class>
 
 <!-- Test. Works, but ragdoll stretches to full size
@@ -2979,7 +2979,7 @@
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 
-	<property name="NavObject" value="animaltracking_wolf,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_wolf,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalCoyote" extends="animalWolf">
@@ -3031,7 +3031,7 @@
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 
-	<property name="NavObject" value="animaltracking_coyote,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_coyote,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalDireWolf" extends="animalWolf">
@@ -3074,7 +3074,7 @@
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 
-	<property name="NavObject" value="animaltracking_direwolf,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_direwolf,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalMountainLion" extends="animalDireWolf">
@@ -3124,7 +3124,7 @@
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 
-	<property name="NavObject" value="animaltracking_mountainlion,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_mountainlion,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalZombieVulture" extends="animalTemplateHostile">
@@ -3343,7 +3343,7 @@
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 
-	<property name="NavObject" value="animaltracking_snake,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_snake,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalBoar" extends="animalTemplateHostile">
@@ -3392,7 +3392,7 @@
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 
-	<property name="NavObject" value="animaltracking_boar,clear_sleeper" />
+	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_boar,clear_sleeper" />
 </entity_class>
 
 <entity_class name="animalBossGrace" extends="animalBoar">
@@ -3797,7 +3797,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
@@ -3853,7 +3853,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 
 	<property name="Weight" value="70"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
@@ -4213,6 +4213,259 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Mesh" value="#Entities/Traders?JoelRagdoll.prefab"/>
 	<property name="NPCID" value="traderTest"/>
 </entity_class>
+
+<entity_class name="twitch_crate_template">
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="TimeStayAfterDeath" value="2400"/>
+	<property name="Faction" value="none"/>
+	<property name="NavObject" value="twitch_supply,twitch_supply_other" />
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyWeapon1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="500"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyWeapon2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="501"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyWeapon3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="502"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyWeapon4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="503"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyTool1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_WorkingStiffsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="504"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyTool2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_WorkingStiffsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="505"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyTool3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_WorkingStiffsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="506"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyMedicine1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PopNPillsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="507"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyMedicine2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PopNPillsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="508"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyMedicine3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PopNPillsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="509"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyResource1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="510"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyResource2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="511"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyResource3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="512"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyResource4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="513"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyAmmo1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="514"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyAmmo2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="515"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyAmmo3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="516"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyAmmo4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="517"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplySpecialAmmo1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="518"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplySpecialAmmo2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="519"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyBooks1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_CrackABookPrefab.prefab"/>
+	<property name="LootListOnDeath" value="520"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyBooks2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_CrackABookPrefab.prefab"/>
+	<property name="LootListOnDeath" value="521"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyBooks3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_CrackABookPrefab.prefab"/>
+	<property name="LootListOnDeath" value="522"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyUtility1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_WorkingStiffsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="523"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyUtility2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_WorkingStiffsPrefab.prefab"/>
+	<property name="LootListOnDeath" value="524"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyArmor1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_SavagePrefab.prefab"/>
+	<property name="LootListOnDeath" value="525"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyArmor2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_SavagePrefab.prefab"/>
+	<property name="LootListOnDeath" value="526"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyArmor3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_SavagePrefab.prefab"/>
+	<property name="LootListOnDeath" value="527"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyFoodWater1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShamwayPrefab.prefab"/>
+	<property name="LootListOnDeath" value="528"/>
+</entity_class>  
+
+<entity_class name="TwitchAction_SupplyFoodWater2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShamwayPrefab.prefab"/>
+	<property name="LootListOnDeath" value="529"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyFoodWater3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShamwayPrefab.prefab"/>
+	<property name="LootListOnDeath" value="530"/>
+</entity_class>  
+
+<entity_class name="TwitchAction_SupplyFoodWater4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShamwayPrefab.prefab"/>
+	<property name="LootListOnDeath" value="531"/>
+</entity_class>  
+
+<entity_class name="TwitchAction_SupplyBicycle" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PassNGasPrefab.prefab"/>
+	<property name="LootListOnDeath" value="532"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyMinibike" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PassNGasPrefab.prefab"/>
+	<property name="LootListOnDeath" value="533"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyMotorcycle" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PassNGasPrefab.prefab"/>
+	<property name="LootListOnDeath" value="534"/>
+</entity_class>
+
+<entity_class name="TwitchAction_Supply4x4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_PassNGasPrefab.prefab"/>
+	<property name="LootListOnDeath" value="535"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyExplosives1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="536"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyExplosives2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="537"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyExplosives3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="538"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyExplosives4" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_ShotgunPrefab.prefab"/>
+	<property name="LootListOnDeath" value="539"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyRobo1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_MoPowerPrefab.prefab"/>
+	<property name="LootListOnDeath" value="540"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyRobo2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_MoPowerPrefab.prefab"/>
+	<property name="LootListOnDeath" value="541"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyRobo3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_MoPowerPrefab.prefab"/>
+	<property name="LootListOnDeath" value="542"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyMods1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="543"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyMods2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="544"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyMods3" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_storeSignablePrefab.prefab"/>
+	<property name="LootListOnDeath" value="545"/>
+</entity_class> 
+
+<entity_class name="TwitchAction_SupplyElectrical1" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_MoPowerPrefab.prefab"/>
+	<property name="LootListOnDeath" value="546"/>
+</entity_class>
+
+<entity_class name="TwitchAction_SupplyElectrical2" extends="twitch_crate_template"> 
+	<property name="Mesh" value="#Entities/LootContainers?crate_store_MoPowerPrefab.prefab"/>
+	<property name="LootListOnDeath" value="547"/>
+</entity_class>
+
 
 </entity_classes>
 
