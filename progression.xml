@@ -112,6 +112,7 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attFortitude"/>
+			<requirement name="!IsAttachedToEntity" />
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
@@ -274,7 +275,7 @@
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunRifleT1HuntingRifle"/>
-			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunRifleT2MarksmanRifle"/> -->
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunRifleT2LeverActionRifle"/> -->
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkDeadEye"/>
 
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDeadEye"/>
@@ -324,8 +325,8 @@
 
 		<effect_group>
 				<passive_effect name="DismemberChance" operation="base_add" level="1,2,3,4,5" value="0,0,0,0,0" tags="perkDemolitionsExpert"/>
-				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,5" value="0.1,0.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.15,0.35" tags="perkDemolitionsExpert"/>
 
@@ -424,7 +425,8 @@
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="6" desc_key="reqPerceptionLevel06"/></level_requirements>
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="8" desc_key="reqPerceptionLevel08"/></level_requirements>
 		<effect_group>
-			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.15,-.25,-.35,-.35" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkPenetrator,perkArchery,perkJavelinMaster"/>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.10,-.15,-.2,-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,turretRanged,perkPenetrator,perkArchery"/>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.2,-.3,-.4-.5" tags="perkJavelinMaster"/>
 
 			<!-- Note: the 1 penetration effect is on <item name="ammo762mmBulletAP"> and other AP bullets -->
 			<passive_effect name="EntityPenetrationCount" operation="perc_add" level="2,4" value="1,3" tags="perkDeadEye"/>
@@ -1013,7 +1015,8 @@
 			<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkLivingOffTheLandCrafting"/><!-- fake crafting perk that is used to scale resources -->
 
 			<passive_effect name="HarvestCount" operation="perc_add" level="1,2,3" value="1,1,2" tags="cropHarvest,wildCropsHarvest"/>
-
+			<passive_effect name="HarvestCount" operation="base_set" level="2,3" value="1,1" tags="bonusCropHarvest"/>
+			
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags="plantedAloe1,plantedChrysanthemum1,plantedGoldenrod1,plantedYucca1"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="plantedBlueberry1,plantedCoffee1,plantedCorn1,plantedCotton1,plantedMushroom1,plantedPotato1,plantedHop1,plantedPumpkin1,plantedGraceCorn1"/>
 
@@ -1127,7 +1130,7 @@
 
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".1,.15,.25,.35,.5" tags="bowDrawPenalty"/>
 
-			<effect_description level="1" desc_key="perkArcheryRank1Desc" long_desc_key="perkArcheryRank1LongDesc"/>/>
+			<effect_description level="1" desc_key="perkArcheryRank1Desc" long_desc_key="perkArcheryRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkArcheryRank2Desc" long_desc_key="perkArcheryRank2LongDesc"/>
 			<effect_description level="3" desc_key="perkArcheryRank3Desc" long_desc_key="perkArcheryRank3LongDesc"/>
 			<effect_description level="4" desc_key="perkArcheryRank4Desc" long_desc_key="perkArcheryRank4LongDesc"/>
@@ -1441,7 +1444,7 @@
 		<effect_group>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 				<passive_effect name="LightMultiplier" operation="perc_add" level="0,5" value="0,-.65">
-					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="50"/>
+					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
 				</passive_effect>
 				<passive_effect name="NoiseMultiplier" operation="perc_add" level="0,5" value="0,-.5"/>
 				<passive_effect name="CrouchSpeed" operation="perc_add" level="0,5" value="0,0.5"/>
@@ -1616,7 +1619,7 @@
 			<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,4" value="1" tags="chemistryStation,medicalFirstAidBandage,medicalPlasterCast"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="drugPainkillers"/>
+			<!--<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="drugPainkillers"/>-->
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,4" value="1" tags="medicalFirstAidKit,drugSteroids"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4" value="1" tags="drugFortBites,drugRecog,drugAntibiotics"/>
 
@@ -1722,11 +1725,19 @@
 
 	<perk name="perkFiremansAlmanacComplete" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" desc_key="perkFiremansAlmanacCompleteDesc" long_desc_key="perkFiremansAlmanacCompleteLongDesc">
 		<effect_group>
+			<requirement name="InBiome" biome="8"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
+				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
+		</effect_group>
+
+		<effect_group>
 			<requirement name="InBiome" biome="9"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
 				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
 		</effect_group>
+
 	</perk>
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -2346,7 +2357,7 @@
 	</perk>
 	<perk name="perkShotgunMessiahComplete" parent="skillShotguns" max_level="1" base_skill_point_cost="0" name_key="perkShotgunMessiahCompleteName" desc_key="perkShotgunMessiahCompleteDesc" long_desc_key="perkShotgunMessiahCompleteLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleShotgunShell,ammoBundleShotgunSlug,ammoBundleShotgunBreachingSlug,ammoBundleBlunderbuss"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleShotgunShell,ammoBundleShotgunSlug,ammoBundleShotgunBreachingSlug"/>
 			<passive_effect name="BlockDamage" operation="perc_add" level="1" value="3" tags="wood">
 				<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
 			</passive_effect>
@@ -2663,6 +2674,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling3KillerInstinct" operation="Equals" value="1"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBarBrawling3KillerInstinct"/>
 		</effect_group>
 	</perk>
@@ -2670,6 +2682,7 @@
 		<!-- Do 20% extra damage to knocked down and stunned opponents. -->
 		<effect_group>
 			<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".2" tags="perkBrawler"/>
 		</effect_group>
 	</perk>
@@ -2680,6 +2693,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling5AdrenalineHealing" operation="Equals" value="1"/>
 			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
 			<requirement name="IsAlive" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="add" value="1"/>
 		</effect_group>
 	</perk>
@@ -2688,6 +2702,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling6RageMode" operation="Equals" value="1"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" buff="buffBarBrawling6RageMode"/>
 		</effect_group>
 	</perk>
@@ -2704,6 +2719,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling8Complete" operation="Equals" value="1"/>
 			<requirement name="NotHasBuff" buff="buffPerkBarBrawling8CompleteBonus"/>
 			<requirement name="IsAlive" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".BarBrawling8CompleteCombo" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkBarBrawling8Complete"/>
 		</effect_group>
