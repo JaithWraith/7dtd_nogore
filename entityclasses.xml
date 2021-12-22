@@ -646,7 +646,7 @@
 <entity_class name="zombiePartyGirl" extends="zombieArlene">
 	<property name="SizeScale" value="0.99"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitress.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArlene.prefab"/>
 
 	<!-- Gameplay zombiePartyGirl -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
@@ -658,7 +658,7 @@
 
 <entity_class name="zombiePartyGirlFeral" extends="zombiePartyGirl">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressFeral.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArleneFeral.prefab"/>
 
 	<!-- Gameplay zombiePartyGirlFeral -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -677,7 +677,7 @@
 
 <entity_class name="zombiePartyGirlRadiated" extends="zombiePartyGirlFeral">
 	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressRadiated.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArleneRadiated.prefab"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<!-- Gameplay zombiePartyGirlRadiated -->
