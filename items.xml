@@ -17124,6 +17124,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="resourceForgedIron">
+	<property name="CustomIconTint" value="c2d6d6"/>
 	<property name="HoldType" value="45"/>
 	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -22354,6 +22355,16 @@ perkNightStalkerSilentNight
 		<property name="Random_count" value="2"/>
 		<property name="Unique_random_only" value="true"/>
 	</property>
+</item>
+
+<!-- This is a useless item. It only exists to temporarily block an inventory slot while equipping, then vanishes into the electronic ether -->
+<!-- DO NOT REMOVE OR RENAME -->
+<item name="UselessThing">
+	<property name="CreativeMode" value="None"/>
+	<property name="HoldType" value="40"/>
+	<property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+	<property name="Material" value="MresourceRockSmall"/>
+	<property name="Stacknumber" value="1"/>
 </item>
 
 </items> <!-- Item limit: There can be 32k items in the game. IDs are generated internally on loading the game/items. -->

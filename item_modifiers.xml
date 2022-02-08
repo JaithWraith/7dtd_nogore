@@ -313,7 +313,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,0"/>
 		</item_property_overrides>
-		<item_property_overrides name="gunBowT3CompoundCrossbow">
+		<item_property_overrides name="gunHandgunT3DesertVulture ">
 			<property name="SideOffset" value="0,0,.32"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
@@ -743,7 +743,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<item_property_overrides name="gunShotgunT0PipeShotgun">
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
-			<property name="ScopeCameraOffset" value="0,-0.02,-.075"/>
+			<property name="ScopeCameraOffset" value=".0002,-0.0185,-.075"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT0PipeMachineGun">
@@ -765,7 +765,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT2TacticalAR">
-			<property name="ScopeOffset" value="0,0.097,-0.098"/>
+			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
 			<property name="ScopeCameraOffset" value="0,-.018,0.0016"/>
 		</item_property_overrides>
@@ -812,7 +812,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT3AutoShotgun">
-			<property name="ScopeCameraOffset" value="0,-.019,.10"/>
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT3SniperRifle">
@@ -1027,7 +1027,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<effect_group tiered="false">
 			<passive_effect name="EntityDamage" operation="base_set" value="0"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="-5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="90"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 		</effect_group>
 	</item_modifier>
 

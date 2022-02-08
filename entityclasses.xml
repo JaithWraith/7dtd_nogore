@@ -646,7 +646,7 @@
 <entity_class name="zombiePartyGirl" extends="zombieArlene">
 	<property name="SizeScale" value="0.99"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArlene.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitress.prefab"/>
 
 	<!-- Gameplay zombiePartyGirl -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
@@ -658,7 +658,7 @@
 
 <entity_class name="zombiePartyGirlFeral" extends="zombiePartyGirl">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArleneFeral.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressFeral.prefab"/>
 
 	<!-- Gameplay zombiePartyGirlFeral -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -677,7 +677,7 @@
 
 <entity_class name="zombiePartyGirlRadiated" extends="zombiePartyGirlFeral">
 	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZArleneRadiated.prefab"/>
+	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressRadiated.prefab"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<!-- Gameplay zombiePartyGirlRadiated -->
@@ -883,7 +883,7 @@
 </entity_class>
 
 
-<entity_class name="zombieTomClark" extends="zombieSteve">
+<entity_class name="zombieTomClark" extends="zombieTemplateMale">
 	<property name="SizeScale" value="0.95"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZTomClark.prefab"/>
@@ -900,7 +900,7 @@
   <!-- It is a fallback and uses no data but can take a scale -->
   <!-- <property name="DismemberTag_L_HeadGore" value="Prefabs/HeadGore;Prefabs/RedSphereTest;Prefabs/BlueSphereTest" data =";scale=1,1,1+type=blunt;scale=1,1,1+rot=1,1,1+type=blade"/> -->
 
-<!--
+  <!--
   <property name="DismemberTag_L_HeadGore"
 			value="
   				  Prefabs/Dismemberment/TomClark/Blunt/Head;
@@ -973,11 +973,11 @@
 
   <property name="DismemberTag_L_RightUpperArmGore"
   			value="
-			      Prefabs/Dismemberment/TomClark/Blunt/RightUpperArm;
+			    Prefabs/Dismemberment/TomClark/Blunt/RightUpperArm;
 				  Prefabs/Dismemberment/TomClark/Blade/RightUpperArm"
   
 			data ="
-			      target=RightArmRoll+scale=.2,1,1+type=blunt+detach=true;
+			    target=RightArmRoll+scale=.2,1,1+type=blunt+detach=true;
 				  target=RightArmRoll+scale=.2,1,1+type=blade+detach=true"/>
 
   <property name="DismemberTag_L_RightLowerArmGore"
@@ -990,7 +990,6 @@
 				  target=RightForeArm+scale=0,0,0+atp=true+type=blade+detach=true+atb=true
 				  "/>
           -->
-
   
   <!-- Gameplay zombieTomClark -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
