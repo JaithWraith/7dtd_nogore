@@ -8013,9 +8013,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
-
-			<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSillyHidden"/>
 
 		</effect_group>
 
@@ -8042,12 +8040,30 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSillyHidden"/>
+		</effect_group>
+
+	</buff>
+	
+	<buff name="buffSillyHidden" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="0"/><update_rate value="1"/>
+		
+		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
 
 			<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
 
 		</effect_group>
 
+		<effect_group> <!-- terminate only if all silly buffs are gone -->
+			<requirements>
+				<requirement name="!HasBuff" buff="twitch_voteSillySounds"/>
+				<requirement name="!HasBuff" buff="twitch_buffSillySounds"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSillyHidden"/>
+		</effect_group>
+		
 	</buff>
 
 	<buff name="twitch_buffDeafen" name_key="TwitchBuff_Deafen" description_key="TwitchBuff_DeafenDesc" icon="ui_game_symbol_twitch_deafen" icon_color="255,175,175">

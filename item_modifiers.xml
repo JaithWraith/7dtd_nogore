@@ -1807,7 +1807,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 			When done, one dye is picked from the list. -->
 
-	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
+	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1815,7 +1815,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Weight" value="20"/>
 	</item_modifier>
 
-	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1866,7 +1866,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1911,7 +1911,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
+	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1983,7 +1983,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -2042,7 +2042,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".16">
+	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".16">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="132,105,84"/>
@@ -2080,7 +2080,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".08">
+	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".08">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
@@ -2131,7 +2131,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="113,97,129"/>
@@ -2177,7 +2177,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
