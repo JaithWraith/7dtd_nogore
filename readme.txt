@@ -12,6 +12,6 @@ Since this mod relies on customized buffs.xml, entityclasses.xml, item_modifiers
 INSTRUCTIONS:
 Always begin by making a backup of your buffs.xml, entityclasses.xml, item_modifiers.xml, items.xml, and progression.xml files! 
 
-Once the mod is extracted, copy the modified entityclasses.xml, items.xml, and progression.xml into the steamapps > common > 7 Days to Die > Data > Config folder and replace the existing files.
+Once the mod is extracted, copy the modified buffs.xml, entityclasses.xml, item_modifiers.xml, items.xml, and progression.xml into the steamapps > common > 7 Days to Die > Data > Config folder and replace the existing files.
 
 v1.8.2 is compatible with the Alpha 20.4 release.
