@@ -5744,6 +5744,8 @@ needed?
 	<property name="UnlockedBy" value="gunBotT3JunkDroneSchematic"/>
 	<property name="ShowQuality" value="true"/>
 	<property name="RepairTools" value="resourceRepairKit"/>
+  <property name="TintColor" value="255,167,0"/>
+  
 	<!--
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
@@ -8209,7 +8211,7 @@ needed?
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
-			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
+			<passive_effect name="BlockDamage"  operation="perc_add" value="0"/>
 	</effect_group>
 -->
 </item>
@@ -11737,7 +11739,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="medicalBandage">
-	<property name="Tags" value="medical"/>
+	<property name="Tags" value="medical,stopsBleeding"/>
 	<property name="DisplayType" value="medical"/>
 	<property name="HoldType" value="64"/>
 	<property name="Meshfile" value="#Other/Items?Health/bandage.fbx"/>

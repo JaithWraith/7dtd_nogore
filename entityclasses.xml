@@ -646,7 +646,7 @@
 <entity_class name="zombiePartyGirl" extends="zombieArlene">
 	<property name="SizeScale" value="0.99"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitress.prefab"/>
+	<!--<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitress.prefab"/> Commented out to remove party girl mesh -->
 
 	<!-- Gameplay zombiePartyGirl -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
@@ -658,7 +658,7 @@
 
 <entity_class name="zombiePartyGirlFeral" extends="zombiePartyGirl">
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressFeral.prefab"/>
+	<!--<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressFeral.prefab"/> Commented out to remove party girl mesh -->
 
 	<!-- Gameplay zombiePartyGirlFeral -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Feral -->
@@ -677,7 +677,7 @@
 
 <entity_class name="zombiePartyGirlRadiated" extends="zombiePartyGirlFeral">
 	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
-	<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressRadiated.prefab"/>
+	<!--<property name="Mesh" value="#Entities/Zombies?Prefabs/ZCocktailWaitressRadiated.prefab"/> Commented out to remove party girl mesh -->
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<!-- Gameplay zombiePartyGirlRadiated -->
@@ -4209,7 +4209,9 @@ Kinda sorta works but is buggy and we don't have time for that.
 		<passive_effect name="HealthMax" operation="base_set" value="100"/>
 		<passive_effect name="StaminaMax" operation="base_set" value="100"/>
 		<passive_effect name="WaterMax" operation="base_set" value="100"/>
+    <passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffBurningWeapon,buffShocked"/>
 	</effect_group>
+  
 </entity_class>
 
 <entity_class name="npcTraderTemplate">	<property name="HideInSpawnMenu" value="true"/>
