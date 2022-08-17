@@ -1108,7 +1108,7 @@ Mesh files no longer used:
 
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
@@ -1116,7 +1116,7 @@ Mesh files no longer used:
 			<!-- cars explode when destroyed by a tool without harvest settings -->
 		<property name="ToolCategory.Butcher" value="0" param1="4.5"/>
 			<!-- value = old harvest multiplier; param1= corpse damage multiplier; zombie (non-harvest) corpses have very high hit points to not instagib from auto-fire guns -->
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".35"/>
 		<property name="SwingDegrees" value="90"/>
@@ -1130,14 +1130,14 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="4.5"/>
 		<property name="UsePowerAttackAnimation" value="true"/>
 
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".2"/>
 		<property name="GrazeEnd" value=".3"/>
 		<property name="SwingDegrees" value="80"/>
@@ -1209,13 +1209,13 @@ Mesh files no longer used:
 
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="5"/>
 
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".35"/>
 		<property name="SwingDegrees" value="90"/>
@@ -1229,14 +1229,14 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="5"/>
 		<property name="UsePowerAttackAnimation" value="true"/>
 
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".2"/>
 		<property name="GrazeEnd" value=".3"/>
 		<property name="SwingDegrees" value="80"/>
@@ -1309,13 +1309,13 @@ Mesh files no longer used:
 
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="5"/>
 
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".35"/>
 		<property name="SwingDegrees" value="90"/>
@@ -1329,14 +1329,14 @@ Mesh files no longer used:
 	</property>
 	<property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
-		<property name="Damage_type" value="Slashing"/>
+		<property name="Damage_type" value="Piercing"/>
 		<property name="Sphere" value=".1"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
 		<property name="ToolCategory.Butcher" value="0" param1="5"/>
 		<property name="UsePowerAttackAnimation" value="true"/>
 
-		<property name="UseGrazingHits" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
 		<property name="GrazeStart" value=".2"/>
 		<property name="GrazeEnd" value=".3"/>
 		<property name="SwingDegrees" value="80"/>
@@ -8182,36 +8182,36 @@ needed?
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
-			<passive_effect name="BlockDamage"  operation="perc_add" value="0"/>
+			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 	</effect_group>
 -->
 </item>
@@ -8316,31 +8316,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8369,31 +8369,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8463,31 +8463,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8544,31 +8544,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
+			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -10105,8 +10105,8 @@ add knockdown resist to armor
 		<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/><display_value name="dNoiseMultiplier" value=".2"/>
 	</effect_group>
 	<effect_group name="unique effect:">
-		<passive_effect name="HealthLoss" operation="perc_add" value="-.05">
-			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacEquipment" operation="Equals" value="1"/>
+    <passive_effect name="GeneralDamageResist" operation="base_add" value="0.05">
+      <requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacEquipment" operation="Equals" value="1"/>
 		</passive_effect>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="15"/>
 	</effect_group>
@@ -10637,8 +10637,8 @@ perkNightStalkerSilentNight
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="1.8,4.2"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="7.5,10.5"/>
-		<passive_effect name="HealthLoss" operation="perc_add" value="-.025">
-			<requirement name="ProgressionLevel" progression_name="perkBatterUpGear" operation="Equals" value="1"/>
+    <passive_effect name="GeneralDamageResist" operation="base_add" value="0.025">
+	    <requirement name="ProgressionLevel" progression_name="perkBatterUpGear" operation="Equals" value="1"/>
 		</passive_effect>
 	</effect_group>
 </item>
@@ -11565,7 +11565,7 @@ perkNightStalkerSilentNight
 		<passive_effect name="HypothermalResist" operation="base_add" value="11.7,15.5"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
 		<passive_effect name="RunSpeed" operation="perc_add" value=".1"/><display_value name="dRunSpeed" value=".1"/>
-		<passive_effect name="HealthLoss" operation="perc_add" value="-.025">
+    <passive_effect name="GeneralDamageResist" operation="base_add" value="0.025">
 			<requirement name="ProgressionLevel" progression_name="perkBatterUpGear" operation="Equals" value="1"/>
 		</passive_effect>
 	</effect_group>
@@ -11600,8 +11600,8 @@ perkNightStalkerSilentNight
 		<passive_effect name="ModPowerBonus" operation="base_add" value="100" tags="EconomicValue"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="4.8,7.2"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="3.5,4.5"/>
-		<passive_effect name="HealthLoss" operation="perc_add" value="-.025">
-			<requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
+    <passive_effect name="GeneralDamageResist" operation="base_add" value="0.025">
+	    <requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
 		</passive_effect>
 	</effect_group>
 </item>
@@ -11625,8 +11625,8 @@ perkNightStalkerSilentNight
 		<passive_effect name="ModPowerBonus" operation="base_add" value="100" tags="EconomicValue"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="11.7,15.5"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
-		<passive_effect name="HealthLoss" operation="perc_add" value="-.025">
-			<requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
+    <passive_effect name="GeneralDamageResist" operation="base_add" value="0.025">
+	    <requirement name="ProgressionLevel" progression_name="perkEnforcerApparel" operation="Equals" value="1"/>
 		</passive_effect>
 	</effect_group>
 </item>
