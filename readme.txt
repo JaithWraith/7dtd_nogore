@@ -1,4 +1,4 @@
-JaithWraith's 7DTD No Gore Mod - V1.8.2 (Alpha 20.4 Release)
+JaithWraith's 7DTD No Gore Mod - V1.8.3 (Alpha 20.6 Release)
 Author: JaithWraith
 
 For additional information, you can find this project at www.github.com/JaithWraith/7dtd_nogore.
