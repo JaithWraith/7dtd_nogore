@@ -1589,8 +1589,9 @@
 			<passive_effect name="CraftingTier" operation="base_set" level="0,3" value="0,3" tags="perkMasterChef"/>
 			<!-- Speed up cooking time of campfire recipes with each rank -->
 			<passive_effect name="CraftingTime" operation="perc_add" level="0,1,2,3" value="4,2,1,0" tags="perkMasterChef"/>
-			<!-- Adds a chance to find meat in dumpsters -->
-			<passive_effect name="LootProb" operation="perc_add" level="2" value=".5" tags="dumpsterFood"/>
+			
+			<!-- masterChef2 is a hard coded tag used in loot.xml that adds a chance to find food in dumpsters -->
+			
 			<!-- Increase the chance to find food items with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="foodSkill"/>
 			<!-- Increase the chance to find food crafting skill magazines with each perk rank up to crafting skill 100 -->

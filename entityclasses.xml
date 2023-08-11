@@ -521,7 +521,7 @@
 		<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffEntitySpawnHeal"/>
 
 		<passive_effect name="StaminaMax" operation="base_set" value="100"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffRadiationPool"/>
 
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="noTeethNoInfection" operation="set" value="0">
 			<requirement name="NotHasBuff" buff="buffBrawlerNoTeeth"/></triggered_effect>
@@ -741,7 +741,6 @@
 	<property name="WalkType" value="5"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="41,25,25"/>
 	<property name="DanceType" value="2" />
 	
 	<property name="DismemberTag_L_HeadGore"
@@ -1187,7 +1186,6 @@
 	<property name="WalkType" value="5"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="79,40,26"/>
 	
 	<property name="DismemberTag_L_HeadGore"
 			value="
@@ -1337,7 +1335,6 @@
 	<property name="WalkType" value="6"/>
 	<property name="Mass" value="160"/>
 	<property name="RootMotion" value="true"/>
-	<property name="TintMaterial2" value="36,38,45"/>
 
 	<!-- Must match gore dismemberment tags -->
 	<!-- Override parts in the derrived class -->
@@ -1415,7 +1412,6 @@
 	<property name="WalkType" value="6"/>
 	<property name="Mass" value="160"/>
 	<property name="RootMotion" value="true"/>
-	<property name="TintMaterial2" value="36,38,45"/>
 
   <!-- Must match gore dismemberment tags -->
   <!-- Override parts in the derrived class -->
@@ -1569,7 +1565,6 @@
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="160"/>
 	<property name="RootMotion" value="true"/>
-	<property name="TintMaterial1" value="36,38,45"/>
 	
 	<property name="DismemberTag_L_HeadGore"
 			value="
@@ -1699,6 +1694,7 @@
 	<!-- Gameplay zombieBusinessManRadiated -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
+	<property name="ExperienceGain" value="1200"/>
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="1000"/>
@@ -1980,7 +1976,6 @@
 	<property name="WalkType" value="2"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/Z_eye1.mat"/>
 
 	<property name="DismemberTag_L_HeadGore"
 			value="
@@ -2083,7 +2078,6 @@
 <entity_class name="zombieBoeFeral" extends="zombieBoe">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker,feral"/>
-	<!--<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/feral_eye.mat"/>-->
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoeFeral.prefab"/>
 
 	<!-- Gameplay zombieBoeFeral -->
@@ -2300,7 +2294,6 @@
 	<property name="WalkType" value="5"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="79,40,26"/>
 	
 	<property name="DismemberTag_L_HeadGore"
 			value="
@@ -2459,7 +2452,7 @@
 	<property name="PushFactor" value="20"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="41,38,34"/>
+	
 	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
 	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
 	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
@@ -2773,7 +2766,6 @@
 	<property name="WalkType" value="3"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="32,24,20"/>
 	<property name="DanceType" value="2" />
 	
 	<property name="DismemberTag_L_HeadGore"
@@ -2922,7 +2914,6 @@
 	<property name="WalkType" value="5"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial3" value="23,17,13"/>
 	
 		<property name="DismemberTag_L_HeadGore"
 			value="
@@ -3074,7 +3065,6 @@
 	<property name="WalkType" value="6"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="41,41,41"/>
 	<property name="AINoiseSeekDist" value="4"/>
 	<property name="AIPathCostScale" value=".9, 1"/>
 	
@@ -3374,7 +3364,6 @@
 	<property name="PhysicsBody" value="zombieFemaleFat"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="TintMaterial2" value="64,63,62"/>
 	<property name="DanceType" value="2" />
 
 	<!-- Stealth -->
@@ -3452,7 +3441,6 @@
 	<property name="PhysicsBody" value="zombieFat"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/Z_eye1.mat"/>
 
 	<!-- Gameplay zombieFatHawaiian -->
 	<property name="MoveSpeedAggro" value="0.2, 1.2"/>
@@ -3524,6 +3512,7 @@
 
 	<property name="AITask" value="
 	BreakBlock|
+	ApproachDistraction|
 	RangedAttackTarget itemType=1;cooldown=4;duration=5|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 	ApproachSpot|
@@ -3981,7 +3970,6 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightRadiated.prefab"/>
-	<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/rad_eye.mat"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<property name="LegCrawlerThreshold" value="0"/>
@@ -4101,6 +4089,7 @@
 
 	<property name="AITask" value="
 	BreakBlock|
+	ApproachDistraction|
 	RangedAttackTarget itemType=1;cooldown=4;duration=3;minRange=1;maxRange=6;unreachableRange=18|
 	DestroyArea|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
@@ -4176,6 +4165,7 @@
 	<property name="AITask" value="
 	BreakBlock|
 	DestroyArea|
+	ApproachDistraction|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 	ApproachSpot|
 	Look|
@@ -4228,7 +4218,6 @@
 	<property name="WalkType" value="21"/>
 	<property name="RotateToGround" value="true"/>
 	<property name="RootMotion" value="true"/>
-	<property name="TintMaterial2" value="36,38,45"/>
 	<property name="SoundRandomTime" value="16.0"/> <!-- It will play the roam every 30/15 seconds -->
 	<property name="SoundRandom" value="crawler_roam"/>
 	<property name="SoundAlertTime" value="12.0"/> <!-- It will play the alert every 20/10 seconds-->
@@ -4814,7 +4803,7 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="EntityFlags" value="animal,zombie"/>
 	<property name="Tags" value="entity,animal,zombie,hostile,bear"/>
-	<property name="ReplaceMaterial0" value="Entities/Animals/Bear/Materials/zBear"/>
+	<property name="Prefab" value="/Entities/Animals/Bear/animalZBear"/>
 	<property name="ReplaceMaterial1" value="Materials/UMAFur_ZombieBear"/>
 
 	<property name="AIFeralSense" value="1.2"/>
@@ -4850,6 +4839,7 @@
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffRadiationPool"/>
 	</effect_group>
 </entity_class>
 
@@ -4917,9 +4907,8 @@
 <entity_class name="animalDireWolf" extends="animalWolf">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Mass" value="180"/>
-	<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/>
+	<property name="Prefab" value="/Entities/Animals/Wolf/animalDireWolf"/>
 	<property name="SizeScale" value="1.4"/>
-	<property name="ReplaceMaterial1" value="entities/animals/wolf/materials/wolfEyeFeral"/>
 
 	<property name="AITask-1" value="BreakBlock"/>
 	<property name="AITask-2" value="Territorial"/>
@@ -5169,6 +5158,7 @@
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="30"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffRadiationPool"/>
 	</effect_group>
 </entity_class>
 
@@ -5199,6 +5189,7 @@
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="120"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffRadiationPool"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value=".4"/> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
@@ -5266,6 +5257,7 @@
 	<!-- <drop event="Destroy" name="resourceAnimalFat" tag="butcherHarvest" count="2"/> -->
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="200"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffRadiationPool"/>
 	</effect_group>
 </entity_class>
 
@@ -5398,11 +5390,9 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,animal,hostile,boar,perkAT03,boss"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
-	<property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+	<property name="Prefab" value="/Entities/Animals/Boar/AnimalBossGrace"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<property name="Mass" value="1200"/>
-	<property name="Prefab" value="/Entities/Animals/Boar/AnimalBossGrace"/>
 	<property name="SoundRandom" value="Animals/Boar/boarroam"/>
 	<property name="SoundAlert" value="Animals/Boar/boaralert"/>
 	<property name="SoundHurt" value="Animals/Boar/boarpain"/>
@@ -5701,7 +5691,22 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Faction" value="none"/>
 </entity_class>
 
-		<!-- *** REGULAR_LOOT_BAG__YELLOW -->
+	<!-- *** DROPPED_VEHICLE_CONTAINER_BACKPACK -->
+	<!-- used after a vehicle is destroyed -->
+<entity_class name="DroppedVehicleContainer">
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="UserSpawnType" value="None"/>
+	<property name="Mesh" value="@:Entities/LootContainers/backpack_vehicleDroppedPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="TimeStayAfterDeath" value="3600"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="LootListOnDeath" value="cntDropBag"/> <!-- used to determine container X/Y size -->
+	<property name="Faction" value="none"/>
+</entity_class>
+
+	<!-- *** REGULAR_LOOT_BAG__YELLOW -->
 <entity_class name="EntityLootContainerRegular">
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="UserSpawnType" value="Console"/>
@@ -5734,7 +5739,6 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Class" value="EntityLootContainer"/>
 	<property name="UserSpawnType" value="Console"/>
 	<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
-	<property name="TintColor" value="FF0000"/>
 	<property name="ModelType" value="Custom"/>
 	<property name="Prefab" value="Backpack"/>
 	<property name="Parent" value="Backpack"/>
@@ -5788,7 +5792,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="earth"/>
+	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>
@@ -5882,7 +5886,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="DeadBodyHitPoints" value="251"/>
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="150"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked,buffRadiationPool"/>
 	</effect_group>
 </entity_class>
 
@@ -6026,7 +6030,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 		<passive_effect name="HealthMax" operation="base_set" value="100"/>
 		<passive_effect name="StaminaMax" operation="base_set" value="100"/>
 		<passive_effect name="WaterMax" operation="base_set" value="100"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked,buffPerkCharismaticNature"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked,buffPerkCharismaticNature,buffRadiationPool"/>
 	</effect_group>
   
 </entity_class>
@@ -6093,7 +6097,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="100000"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked,buffRadiationPool"/>
 	</effect_group>
 </entity_class>
 

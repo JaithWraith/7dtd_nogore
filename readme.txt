@@ -1,4 +1,4 @@
-JaithWraith's 7DTD No Gore Mod - V1.9.0 (Alpha 21 Release)
+JaithWraith's 7DTD No Gore Mod - V1.9.1 (Alpha 21.1 Release)
 Author: JaithWraith
 
 For additional information, you can find this project at www.github.com/JaithWraith/7dtd_nogore.
@@ -14,4 +14,4 @@ Always begin by making a backup of your entityclasses.xml, item_modifiers.xml, i
 
 Once the mod is extracted, copy the modified entityclasses.xml, item_modifiers.xml, items.xml, and progression.xml into the steamapps > common > 7 Days to Die > Data > Config folder and replace the existing files.
 
-v1.9.0 is compatible with the Alpha 21 release.
+v1.9.1 is compatible with the Alpha 21.1 release.
