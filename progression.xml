@@ -851,7 +851,7 @@
 			</passive_effect>
 
 			<!-- Once rifle crafting skill reaches 100, set the probability bonus of finding rifle crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="riflesCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="riflesCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingRifles" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -861,7 +861,7 @@
 			</passive_effect>
 
 			<!-- When all Sniper books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="sniperProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="sniperProb">
 				<requirement name="ProgressionLevel" progression_name="perkSniperComplete" operation="Equals" value="1"/>
 			</passive_effect>
 			
@@ -906,7 +906,7 @@
 			</passive_effect>
 
 			<!-- Once explosive crafting skill reaches 100, set the probability bonus of finding explosive crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="explosivesCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="explosivesCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingExplosives" operation="Equals" value="100"/>
 			</passive_effect>
 		</effect_group>
@@ -947,7 +947,7 @@
 			</passive_effect>
 
 			<!-- Once spear crafting skill reaches 75, set the probability bonus of finding spear crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="spearsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="spearsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingSpears" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -957,7 +957,7 @@
 			</passive_effect>
 
 			<!-- When all Spear Hunter books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="spearHunterProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="spearHunterProb">
 				<requirement name="ProgressionLevel" progression_name="perkSpearHunter8Complete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -1069,7 +1069,7 @@
 			</passive_effect>
 
 			<!-- When all Hunter's Journal books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="0,0" tags="huntingProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="1,1" tags="huntingProb">
 				<requirement name="ProgressionLevel" progression_name="perkHuntingJournalComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1124,7 +1124,7 @@
 			</passive_effect>
 
 			<!-- When all Lucky Looter books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="luckyProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="luckyProb">
 				<requirement name="ProgressionLevel" progression_name="perkLuckyLooterComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1174,7 +1174,7 @@
 			</passive_effect>
 
 			<!-- Once salvage tools crafting skill reaches 75, set the probability bonus of finding salvage tools crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="salvageToolsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="salvageToolsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingSalvageTools" operation="Equals" value="75"/>
 			</passive_effect>
 			
@@ -1184,7 +1184,7 @@
 			</passive_effect>
 
 			<!-- When all Wasteland Treasures books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="wastelandProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="wastelandProb">
 				<requirement name="ProgressionLevel" progression_name="perkWasteTreasuresComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1233,7 +1233,7 @@
 			</passive_effect>
 
 			<!-- Once shotgun crafting skill reaches 100, set the probability bonus of finding shotgun crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="shotgunsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="shotgunsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingShotguns" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -1243,7 +1243,7 @@
 			</passive_effect>
 
 			<!-- When all Shotgun Messiah books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="shotgunMessiahProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="shotgunMessiahProb">
 				<requirement name="ProgressionLevel" progression_name="perkShotgunMessiahComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1301,7 +1301,7 @@
 			</passive_effect>
 
 			<!-- Once club crafting skill reaches 75, set the probability bonus of finding club crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="clubsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="clubsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingClubs" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -1311,7 +1311,7 @@
 			</passive_effect>
 
 			<!-- When all Batter Up books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="batterUpProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="batterUpProb">
 				<requirement name="ProgressionLevel" progression_name="perkBatterUpComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1403,7 +1403,7 @@
 			</passive_effect>
 
 			<!-- Once sledgehammer crafting skill reaches 75, set the probability bonus of finding sledgehammer crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="sledgehammersCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="sledgehammersCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingSledgehammers" operation="Equals" value="75"/>
 			</passive_effect>
 		</effect_group>
@@ -1538,7 +1538,7 @@
 			</passive_effect>
 
 			<!-- Once armor crafting skill reaches 75, set the probability bonus of finding armor crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,4" value="0,0" tags="armorCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -1548,7 +1548,7 @@
 			</passive_effect>
 
 			<!-- When all Needle & Thread books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="0,0" tags="needleProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="1,1" tags="needleProb">
 				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -1599,7 +1599,7 @@
 				<requirement name="ProgressionLevel" progression_name="craftingFood" operation="LT" value="100"/>
 			</passive_effect>
 			<!-- Once food crafting skill reaches 100, set the probability bonus of finding food crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,3" value="0,0" tags="foodCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,3" value="1,1" tags="foodCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingFood" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -1631,7 +1631,7 @@
 			</passive_effect>
 
 			<!-- Once harvesting tools crafting skill reaches 100, set the probability bonus of finding harvesting tool crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="harvestingToolsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="harvestingToolsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingHarvestingTools" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -1641,7 +1641,7 @@
 			</passive_effect>
 
 			<!-- When all Art of Mining books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="artOfMiningProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="artOfMiningProb">
 				<requirement name="ProgressionLevel" progression_name="perkArtOfMiningComplete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -1706,7 +1706,7 @@
 			</passive_effect>
 
 			<!-- Once knuckle crafting skill reaches 75, set the probability bonus of finding knuckle crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="knucklesCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="knucklesCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingKnuckles" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -1716,7 +1716,7 @@
 			</passive_effect>
 
 			<!-- When all Bar Brawling books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="barBrawlingProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="barBrawlingProb">
 				<requirement name="ProgressionLevel" progression_name="perkBarBrawling8Complete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -1806,7 +1806,7 @@
 			</passive_effect>
 
 			<!-- Once machine gun crafting skill reaches 100, set the probability bonus of finding machine gun crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="machineGunsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="machineGunsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingMachineGuns" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -1816,7 +1816,7 @@
 			</passive_effect>
 
 			<!-- When all Automatic Weapons Handbook books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="autoWeaponsProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="autoWeaponsProb">
 				<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1904,7 +1904,7 @@
 			</passive_effect>
 
 			<!-- When all Fireman's Almanac books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="0,0" tags="firemansProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="1,1" tags="firemansProb">
 				<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -1933,7 +1933,7 @@
 			</passive_effect>
 
 			<!-- Once seed crafting skill reaches 20, set the probability bonus of finding seed crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="seedCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="seedCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingSeeds" operation="Equals" value="20"/>
 			</passive_effect>
 
@@ -2058,7 +2058,7 @@
 			</passive_effect>
 
 			<!-- Once bow crafting skill reaches 100, set the probability bonus of finding bow crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="bowsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="bowsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingBows" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -2068,7 +2068,7 @@
 			</passive_effect>
 
 			<!-- When all Ranger's Guide to Archery books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="rangersProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="rangersProb">
 				<requirement name="ProgressionLevel" progression_name="perkRangersComplete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -2107,7 +2107,7 @@
 			</passive_effect>
 
 			<!-- Once handgun crafting skill reaches 100, set the probability bonus of finding handgun crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="handgunsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="handgunsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingHandguns" operation="Equals" value="100"/>
 			</passive_effect>
 			
@@ -2117,7 +2117,7 @@
 			</passive_effect>
 
 			<!-- When all Pistol Pete books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="pistolPeteProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="pistolPeteProb">
 				<requirement name="ProgressionLevel" progression_name="perkPistolPeteComplete" operation="Equals" value="1"/>
 			</passive_effect>
 			
@@ -2127,7 +2127,7 @@
 			</passive_effect>
 
 			<!-- When all Magnum Enforcer books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="enforcerProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="enforcerProb">
 				<requirement name="ProgressionLevel" progression_name="perkEnforcerComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -2175,7 +2175,7 @@
 			</passive_effect>
 
 			<!-- Once blade crafting skill reaches 75, set the probability bonus of finding salvage tools crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="bladesCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="bladesCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingBlades" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -2413,7 +2413,7 @@
 			</passive_effect>
 
 			<!-- Once armor crafting skill reaches 75, set the probability bonus of finding armor crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,4" value="0,0" tags="armorCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -2423,7 +2423,7 @@
 			</passive_effect>
 
 			<!-- When all Needle & Thread books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="0,0" tags="needleProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="1,1" tags="needleProb">
 				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -2486,7 +2486,7 @@
 			</passive_effect>
 
 			<!-- When all Urban Combat books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="urbanProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="urbanProb">
 				<requirement name="ProgressionLevel" progression_name="perkUrbanCombatComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -2523,7 +2523,7 @@
 			</passive_effect>
 
 			<!-- When all Night Stalker books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="nightStalkerProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="nightStalkerProb">
 				<requirement name="ProgressionLevel" progression_name="perkNightStalkerComplete" operation="Equals" value="1"/>
 			</passive_effect>
 		</effect_group>
@@ -2553,7 +2553,7 @@
 			</passive_effect>
 
 			<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="roboticsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="roboticsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -2563,7 +2563,7 @@
 			</passive_effect>
 
 			<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="techJunkieProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="techJunkieProb">
 				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -2631,7 +2631,7 @@
 			</passive_effect>
 
 			<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="roboticsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="roboticsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -2641,7 +2641,7 @@
 			</passive_effect>
 
 			<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="0,0" tags="techJunkieProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="1,1" tags="techJunkieProb">
 				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
 			</passive_effect>
 
@@ -2793,7 +2793,7 @@
 			</passive_effect>
 
 			<!-- Once medical crafting skill reaches 75, set the probability bonus of finding medical crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="medicalCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="medicalCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingMedical" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -2810,7 +2810,7 @@
 			<requirement name="HoldingItemHasTags" tags="stunBaton"/>
 			<requirement name="IsAlive" target="other"/>
 			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
-				<passive_effect name="EntityDamage" operation="base_add" level="5" value="1500"/>
+				<passive_effect name="EntityDamage" operation="base_add" level="5" value="1500" tags="stunBaton"/>
 		</effect_group>
 		
 	</perk>
@@ -2858,19 +2858,19 @@
 			</passive_effect>
 
 			<!-- Once electrical crafting skill reaches 100, set the probability bonus of finding electrical crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="electricianCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="electricianCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingElectrician" operation="Equals" value="100"/>
 			</passive_effect>
 			<!-- Once trap crafting skill reaches 75, set the probability bonus of finding trap crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="trapsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="trapsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingTraps" operation="Equals" value="75"/>
 			</passive_effect>
 			<!-- Once workstation crafting skill reaches 75, set the probability bonus of finding workstation crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="workstationCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="workstationCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="Equals" value="75"/>
 			</passive_effect>
 			<!-- Once repair tool skill reaches 50, set the probability bonus of finding repair tool crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="repairToolsCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="repairToolsCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingRepairTools" operation="Equals" value="50"/>
 			</passive_effect>
 
@@ -2903,7 +2903,7 @@
 			</passive_effect>
 
 			<!-- Once vehicle crafting skill reaches 100, set the probability bonus of finding vehicle crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,5" value="0,0" tags="vehiclesCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="vehiclesCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingVehicles" operation="Equals" value="100"/>
 			</passive_effect>
 
@@ -2935,7 +2935,7 @@
 			</passive_effect>
 
 			<!-- Once workstation crafting skill reaches 75, set the probability bonus of finding workstation crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,3" value="0,0" tags="workstationCSM">
+			<passive_effect name="LootProb" operation="base_set" level="1,3" value="1,1" tags="workstationCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="Equals" value="75"/>
 			</passive_effect>
 
@@ -2945,7 +2945,7 @@
 			</passive_effect>
 
 			<!-- When all The Great Heist books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="0,0" tags="greatHeistProb">
+			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="1,1" tags="greatHeistProb">
 				<requirement name="ProgressionLevel" progression_name="perkGreatHeistComplete" operation="Equals" value="1"/>
 			</passive_effect>
 

@@ -15,20 +15,23 @@
 <!-- <property name="UserSpawnType" value="Menu"/> -->
 		<!-- Can be spawned in F6 Menu and Console (Default setting if no property set except when extended) -->
 
+<!-- <property name="SwapMats" value="@:Entities/Zombies/Zombies/Materials/HD_Arlene_Radiated2.mat,@:Entities/Zombies/Zombies/Materials/HD_Arlene_Radiated3.mat"/> -->
+		<!-- Swaps materials for index 0 to x based on commas. Empty commas like ,, skip over that index -->
+
 <entity_classes>
 
 <!-- *** PLAYER -->
 
 		<!-- *** PLAYER_NEW_MALE -->
 <entity_class name="playerNewMale">
-    <property name="Class" value="EntityNewStyleAvatar"/>
+	<property name="Class" value="EntityNewStyleAvatar"/>
 	<property name="UserSpawnType" value="None"/>
-    <!--<property name="EntityType" value="NewStyleAvatar"/>-->
-    <property name="Tags" value="entity,player,human"/>
-    <property name="Prefab" value="/Entities/Player/Male/malePrefab"/>
-    <!--<property name="ModelType" value="UMA"/>-->
-    <property name="Parent" value="Players"/>
-    <property name="IsMale" value="true"/>
+	<!--<property name="EntityType" value="NewStyleAvatar"/>-->
+	<property name="Tags" value="entity,player,human"/>
+	<property name="Prefab" value="/Entities/Player/Male/malePrefab"/>
+	<!--<property name="ModelType" value="UMA"/>-->
+	<property name="Parent" value="Players"/>
+	<property name="IsMale" value="true"/>
 </entity_class>
 
 		<!-- *** PLAYER_MALE -->
@@ -128,7 +131,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkUrbanCombatJumping" operation="Equals" value="0"/>
 		</passive_effect>
 
-		<passive_effect name="StaminaChangeOT" operation="base_set" value="10"/>
+		<passive_effect name="StaminaChangeOT" operation="base_set" value="10"/> <!-- PLAYER_MALE_BASE_SET -->
 		<!-- <passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.5" tags="running"/>the Ext Char Stats ignore the tag and display this as current -->
 	</effect_group>
 
@@ -148,10 +151,10 @@
 
 	<effect_group>
 		<requirement name="!EntityHasMovementTag" tags="idle"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.45" tags="running"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.1" tags="floating"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.15" tags="swimming"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.9" tags="swimmingRun"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.45" tags="running"/> <!-- IF_NOT_IDLE -->
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.1" tags="floating"/> <!-- IF_NOT_IDLE -->
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.15" tags="swimming"/> <!-- IF_NOT_IDLE -->
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.9" tags="swimmingRun"/> <!-- IF_NOT_IDLE -->
 		<!--
 		EntityHasMovementTag (climbing,floating,idle,jumping,running,swimming,walking)
 			possibly (crouching, standing, idle, walking, running, swimming, floating, jumping, falling, climbing)
@@ -159,13 +162,13 @@
 	</effect_group>
 
 	<effect_group>
-		<!--
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.4">
-			<requirement name="CVarCompare" cvar="_underwater" operation="Equals" value="1"/>
-		</passive_effect>
-		-->
+		
+		<!-- <passive_effect name="StaminaChangeOT" operation="perc_add" value="-.4"> --> <!-- NOT_USED -->
+			<!-- <requirement name="CVarCompare" cvar="_underwater" operation="Equals" value="1"/> -->
+		<!-- </passive_effect> -->
+		
 
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="1.35" tags="running">
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="1.35" tags="running">  <!-- GREAT_HEIST_CROUCH_RUN -->
 			<!-- Stealthy Sprinting:  Use no stamina while sneak sprinting. -->
 			<requirement name="ProgressionLevel" progression_name="perkGreatHeistSprintSneak" operation="Equals" value="1"/>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
@@ -179,25 +182,25 @@
 		<passive_effect name="BuffResistance" operation="base_add" value="-.1" tags="buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 
 <!--
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" tags="swimming"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" tags="swimming"/> NOT_USED
 
 		<requirement name="CVarCompare" cvar="_underwater" operation="Equals" value="1"/>
 
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/>
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/> NOT_USED
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/> NOT_USED
 
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75"/> NOT_USED
 			<requirement name="CVarCompare" cvar="_underwater" operation="Equals" value="1"/>
 		</passive_effect>
 
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/>
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/> NOT_USED
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/> NOT_USED
 
 
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/>
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.75" match_all_tags="true" tags="swimming,walking"/> NOT_USED
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-1.35" match_all_tags="true" tags="swimming,running"/> NOT_USED
 -->
-		<!-- <passive_effect name="StaminaChangeOT" operation="base_set" value="-10" match_all_tags="true" tags="crouching,running"/>
+		<!-- <passive_effect name="StaminaChangeOT" operation="base_set" value="-10" match_all_tags="true" tags="crouching,running"/> NOT_USED
 		this is redundant because running is covered.
 		With a different value the base_set would override the previous one -->
 
@@ -1732,7 +1735,7 @@
 		<!-- *** ZOMBIE_BURNT_FERAL -->
 <entity_class name="zombieBurntFeral" extends="zombieBurnt">
 	<property name="UserSpawnType" value="Menu"/>
-	<property name="Tags" value="entity,zombie,feral"/>
+	<property name="Tags" value="entity,zombie,walker,feral"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurntFeral.prefab"/>
 	<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
 
@@ -2734,7 +2737,7 @@
 		<!-- *** ZOMBIE_LAB_RADIATED -->
 <entity_class name="zombieLabRadiated" extends="zombieLabFeral">
 	<property name="UserSpawnType" value="Menu"/>
-    <property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLabRadiated.prefab"/>
 
 	<!-- Gameplay zombieLabRadiated -->
@@ -3481,7 +3484,7 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiianRadiated.prefab"/>
 
 	<!-- Gameplay zombieFatHawaiianRadiated -->
-	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
+	<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
 	<property name="ExperienceGain" value="1500"/><!-- XP strong radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
@@ -3811,7 +3814,7 @@
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- fit, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
-	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
+	<property name="ExperienceGain" value="1200"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
@@ -3831,7 +3834,7 @@
 	<!-- Gameplay zombieSoldierRadiated -->
 	<property name="DismemberMultiplierHead" value="0"/><property name="DismemberMultiplierArms" value="0"/><property name="DismemberMultiplierLegs" value="0"/><!-- Radiated -->
 	<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
-	<property name="ExperienceGain" value="1200"/><!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="1500"/><!-- XP grunt radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
@@ -4966,13 +4969,11 @@
 	<property name="HasDeathAnim" value="false"/>
 	<property name="CanBigHead" value="false" />
 	<property name="AIFeralSense" value="1.6"/>
+	<property name="AIGroupCircle" value="0"/>
 	<property name="AITask-1" value="BreakBlock"/>
-	<property name="AITask-2" value="Territorial"/>
-	<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20"/>
-	<property name="AITask-4" value="ApproachSpot"/>
-	<property name="AITask-5" value="Look"/>
-	<property name="AITask-6" value="Wander"/>
-	<property name="AITask-7" value=""/>
+	<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityPlayer,100"/>
+	<property name="AITask-3" value="ApproachSpot"/>
+	<property name="AITask-4" value=""/>
 	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer"/>
 	<property name="AITarget-2" value="BlockingTargetTask"/>
 	<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=player"/>
@@ -4981,6 +4982,10 @@
 
 	<property name="MoveSpeed" value=".4"/>
 	<property name="MoveSpeedAggro" value="1.65, 1.82"/>
+	
+	<property name="MaxViewAngle" value="360"/>
+	<property name="SightRange" value="100"/>
+	<property name="SightLightThreshold" value="-2,-2"/>
 	
 	<!-- Gameplay  -->
 	<property name="HandItem" value="meleeHandAnimalCoyote"/>
@@ -5792,7 +5797,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandomTime" value="200.0"/>

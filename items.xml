@@ -2002,6 +2002,9 @@
 			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
 			
 		<!-- set shock duration -->
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="0"/>
+			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4.8">
 			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/>
 			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
@@ -2016,6 +2019,9 @@
 			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="8">
 			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/>
+			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="0"/>
 			<requirement name="CompareItemMetaFloat" operation="GTE" value="4" key="charge"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4.8">
 			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/>
@@ -2104,27 +2110,37 @@
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="4" key="charge"/></triggered_effect>
 		
 		<!-- trigger ragdoll events for fully charged baton -->
-		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
-			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
 			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
 		</triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="2.5" force="350">
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
-			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
 			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
 		</triggered_effect>
+		
 		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
 		</triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="2.5" force="350" target_tags="zombie,animal">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
 		</triggered_effect>
 		
 		<!-- trigger shock events for fully charged baton -->
@@ -4684,10 +4700,10 @@
 		<property name="Particles_muzzle_fire" value="gunfire_AK47"/>
 		<property name="Particles_muzzle_fire_fpv" value="gunfire_AK47_fpv"/>
 		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
-                <property name="triggerEffectTriggerPullDualsense" value="RifleTrigger"/>
-                <property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
-                <property name="triggerEffectTriggerShootDualsense" value="MGShoot"/>
-                <property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
+		<property name="triggerEffectTriggerPullDualsense" value="RifleTrigger"/>
+		<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+		<property name="triggerEffectTriggerShootDualsense" value="MGShoot"/>
+		<property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
 	</property>
 	<property class="Action1">
 		<property name="Class" value="Zoom"/>
@@ -7199,7 +7215,6 @@
 	<effect_group name="ammoShotgunSlug" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="102" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkBoomstick"/>
-		<passive_effect name="BlockDamage" operation="base_add" value="200" tags="wood"/>
 		<passive_effect name="RoundRayCount" operation="base_set" value="1" tags="perkBoomstick"/>
 		<passive_effect name="MaxRange" operation="base_set" value="18" tags="perkBoomstick"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="9" tags="perkBoomstick"/>
@@ -8214,6 +8229,7 @@
 	<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
 	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="5"/>
+	<property name="EconomicValue" value="6000"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property class="Action0">
@@ -8228,6 +8244,7 @@
 <item name="resourceWoodBundle">
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="resourceWood"/>
+	<property name="EconomicValue" value="3000"/>
 	<property class="Action0">
 		<property name="Create_item" value="resourceWood"/>
 		<property name="Create_item_count" value="6000"/>
@@ -8283,6 +8300,7 @@
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="ammoGasCan"/>
 	<property name="UnlockedBy" value="craftingVehicles"/> <!-- perkGreaseMonkey -->
+	<property name="EconomicValue" value="1500"/>
 	<property class="Action0">
 		<property name="Create_item" value="ammoGasCan"/>
 		<property name="Create_item_count" value="5000"/>
@@ -8294,6 +8312,7 @@
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="resourceGunPowder"/>
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert -->
+	<property name="EconomicValue" value="1000"/>
 	<property class="Action0">
 		<property name="Create_item" value="resourceGunPowder"/>
 		<property name="Create_item_count" value="1000"/>
@@ -8342,7 +8361,7 @@
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Activate"/>
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 		<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
@@ -8360,31 +8379,31 @@
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8397,6 +8416,8 @@
 <item name="thrownGrenadeContact">
 	<property name="Tags" value="ammo,weapon,attPerception,perkDemolitionsExpert,explosivesSkill"/>
 	<property name="ItemTypeIcon" value="explosion"/>
+	<property name="CustomIconTint" value="191,37,13"/>
+    <property name="TintColor" value="191,37,13"/>
 	<property name="DisplayType" value="ammoGrenadeContact"/>
 	<property name="Class" value="ItemClassTimeBomb"/>
 	<property name="HoldType" value="57"/>
@@ -8438,7 +8459,7 @@
 		<property name="Class" value="Activate"/>
 		<property name="Delay" value="1"/>
 		<property name="Sound_start" value="grenade_pullpin"/>
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
@@ -8499,31 +8520,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8535,6 +8556,8 @@ add knockdown resist to armor
 
 <item name="thrownGrenade">
 	<property name="Extends" value="thrownGrenadeContact" param1="ExplodeOnHit"/>
+	<property name="CustomIconTint" value="59,62,55"/>
+    <property name="TintColor" value="59,62,55"/>
 	<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Grenade/GrenadePrefab.prefab"/>
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert,thrownGrenadeSchematic, -->
 	<property name="DisplayType" value="ammoGrenade"/>
@@ -8550,7 +8573,7 @@ add knockdown resist to armor
 		<property name="Class" value="Activate"/>
 		<property name="Delay" value="1"/>
 		<property name="Sound_start" value="grenade_pullpin"/>
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 	</property>
 
 <!--
@@ -8558,31 +8581,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8641,7 +8664,7 @@ add knockdown resist to armor
     <property name="Class" value="Activate"/>
     <property name="Delay" value="1"/>
     <!-- obsolete if rounds per minute exists -->
-	<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+	<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
   </property>
   <property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
@@ -8657,31 +8680,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8727,7 +8750,7 @@ add knockdown resist to armor
 	</property>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Activate"/>
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 		<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
@@ -8744,31 +8767,31 @@ add knockdown resist to armor
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
 		<requirement name="HasBuff" buff="buffDrugAtomJunkies"/>
@@ -8834,7 +8857,7 @@ add knockdown resist to armor
 		<property name="Class" value="Activate"/>
 		<property name="Delay" value="1"/>
 		<!-- obsolete if rounds per minute exists -->
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 		<property name="triggerEffectTriggerPullDualsense" value="RifleTrigger"/>
 		<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
 		<property name="triggerEffectTriggerShootDualsense" value="RifleShoot"/>
@@ -8903,7 +8926,7 @@ add knockdown resist to armor
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="Activate"/>
 		<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
-		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 	</property>
 	<effect_group tiered="false">
 		<passive_effect name="BlockDamage" operation="base_set" value="1"/><display_value name="dExDamageBlock" value="1"/>
@@ -12105,7 +12128,7 @@ perkNightStalkerSilentNight
     
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryAbrasionTreated">
 			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
-    </triggered_effect>
+		</triggered_effect>
 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="add" value="30"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
@@ -12118,18 +12141,16 @@ perkNightStalkerSilentNight
 		<!-- used on other -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="3"/>
     
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
-      <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
-    </triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
+		  <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+		</triggered_effect>
 
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="30"/>
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="30"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
 
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
 
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
-
-    
 		<!-- used on other, regular health per tick based on perkPhysician -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="0"/></triggered_effect>
@@ -12206,7 +12227,7 @@ perkNightStalkerSilentNight
     
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryAbrasionTreated">
 			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
-    </triggered_effect>
+		</triggered_effect>
 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="add" value="180"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
@@ -12217,20 +12238,18 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLaceration"/><display_value name="dStopsLaceration" value="1"/>
 
 		<!-- used on other -->
-
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="4"/>
-    
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
-      <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
-    </triggered_effect>
-    
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="4"/>
+		
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
+		  <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+		</triggered_effect>
+		
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="180"/>
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
-    
-    
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
-    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffLaceration"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
+		
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffLaceration"/>
 
 		<!-- used on other, regular health per tick based on perkPhysician -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2">
@@ -12243,8 +12262,7 @@ perkNightStalkerSilentNight
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
-
-		</effect_group>
+	</effect_group>
   
 	<effect_group tiered="false">
 		<!-- medical XP gains -->
@@ -12554,7 +12572,7 @@ perkNightStalkerSilentNight
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryConcussion"/><display_value name="dStopsConcussion" value="1"/>
 		<display_value name="dInstantHealth" value="40"/>
-		<display_value name="dHealthLoss" value=".1"/>
+		<!-- <display_value name="dHealthLoss" value=".1"/> -->
 		<display_value name="$waterAmountAdd" value="-40"/>
 		<display_value name="dStunResist" value="1"/>
 		<display_value name="dDuration" value="180"/>
@@ -12662,8 +12680,8 @@ perkNightStalkerSilentNight
 	<property name="Extends" value="drugRecog"/>
 	<property name="DisplayType" value="drugFortBites"/>
 	<effect_group tiered="false" name="Drug Tier 4">
-		<display_value name="dHealthLoss" value=".5"/>
-		<display_value name="$waterAmountAdd" value="-30"/>
+		<display_value name="dHealthLoss" value=".4"/>
+		<display_value name="$waterAmountAdd" value="-20"/>
 		<display_value name="dDuration" value="360"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="add" value="363"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugFortBitesDuration" operation="set" value="1083">
@@ -14430,7 +14448,7 @@ perkNightStalkerSilentNight
 		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
 			<display_value name="dEntityDamage" value="4"/>
 			<display_value name="dStunResist" value="1"/>
-			<display_value name="dHealthLoss" value=".5"/>
+			<!-- <display_value name="dHealthLoss" value=".5"/> -->
 			<display_value name="dHealthAmount" value="20"/>
 			<display_value name="dStaminaRegen" value=".6"/>
 			<display_value name="dDuration" value="60"/>
@@ -21370,6 +21388,7 @@ perkNightStalkerSilentNight
 	<property name="CreativeMode" value="Dev"/>
 	<property name="CustomIcon" value="thrownGrenadeContact"/>
 	<property name="CustomIconTint" value="200,0,255"/>
+    <property name="TintColor" value="200,0,255"/>
 	<property name="Stacknumber" value="500"/>
 	<property name="Explosion.RadiusBlocks" value="15"/>
 	<property name="Explosion.RadiusEntities" value="15"/>
@@ -22697,6 +22716,144 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="3006628"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDeathFoodDrinkAdjust"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGiveFourPoints"/>
+	</effect_group>
+</item>
+
+<!-- *** ADMIN_BUFF_ITEMS -->
+
+	<!-- *** ADMIN_GIVE_BUFF_INFECTION -->
+<item name="adminGiveBuffInfection">
+	<property name="CreativeMode" value="Dev"/>
+	<property name="DescriptionKey" value="adminGiveBuffDesc"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="255,0,0"/>
+	<property name="TintColor" value="255,0,0"/>
+	<property name="HoldType" value="3"/>
+	<property name="ItemTypeIcon" value="computer"/>
+	<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="Special Items"/>
+	<property name="ShowQuality" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Consume" value="false"/>
+		<property name="Delay" value="1"/>
+		<property name="Sound_start" value="player_drinking"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerInfection"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_ABRASION -->
+<item name="adminGiveBuffAbrasion">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="255,153,0"/>
+	<property name="TintColor" value="255,153,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerAbrasion"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_FATIGUED -->
+<item name="adminGiveBuffFatigued">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="255,255,0"/>
+	<property name="TintColor" value="255,255,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerFatigued"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_LACERATION -->
+<item name="adminGiveBuffLaceration">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="0,255,0"/>
+	<property name="TintColor" value="0,255,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerLaceration"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_CONCUSSION -->
+<item name="adminGiveBuffConcussion">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="0,0,255"/>
+	<property name="TintColor" value="0,0,255"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerConcussion"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_DYSENTERY -->
+<item name="adminGiveBuffDysentery">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="drinkJarGrandpasForgettingElixir"/>
+	<property name="CustomIconTint" value="102,0,255"/>
+	<property name="TintColor" value="102,0,255"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_SPRAINED_LEG -->
+<item name="adminGiveBuffSprainedLeg">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="apparelSuitDressShoes"/>
+	<property name="CustomIconTint" value="255,153,0"/>
+	<property name="TintColor" value="255,153,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerSprainedLeg"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_BROKEN_LEG -->
+<item name="adminGiveBuffBrokenLeg">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="apparelSuitDressShoes"/>
+	<property name="CustomIconTint" value="255,0,0"/>
+	<property name="TintColor" value="255,0,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerBrokenLeg"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_SPRAINED_ARM -->
+<item name="adminGiveBuffSprainedArm">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="armorMilitaryGloves"/>
+	<property name="CustomIconTint" value="255,153,0"/>
+	<property name="TintColor" value="255,153,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerSprainedArm"/>
+	</effect_group>
+</item>
+
+	<!-- *** ADMIN_GIVE_BUFF_Broken_Arm -->
+<item name="adminGiveBuffBrokenArm">
+	<property name="Extends" value="adminGiveBuffInfection"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="armorMilitaryGloves"/>
+	<property name="CustomIconTint" value="255,0,0"/>
+	<property name="TintColor" value="255,0,0"/>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="triggerBrokenArm"/>
 	</effect_group>
 </item>
 
