@@ -1,4 +1,4 @@
-JaithWraith's 7DTD No Gore Mod - V2.0.0 (v1.2 Stable)
+JaithWraith's 7DTD No Gore Mod - V2.0.0 (v1.2 b27 Stable)
 Author: JaithWraith
 
 For additional information, you can find this project at www.github.com/JaithWraith/7dtd_nogore.
@@ -14,4 +14,4 @@ Always begin by making a backup of your entityclasses.xml, item_modifiers.xml, i
 
 Once the mod is extracted, copy the modified entityclasses.xml, item_modifiers.xml, items.xml, and progression.xml into the steamapps > common > 7 Days to Die > Data > Config folder and replace the existing files.
 
-v2.0.0 is compatible with the v1.2 Stable release.
+v2.0.0 is compatible with the v1.2 b27 Stable release.
