@@ -30,7 +30,9 @@
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
+		</effect_group>
 
+		<effect_group>
 			<effect_description level="1"  desc_key="attPerceptionRank01Desc" long_desc_key="attPerceptionRank01LongDesc"/>
 			<effect_description level="2"  desc_key="attPerceptionRank02Desc" long_desc_key="attPerceptionRank02LongDesc"/>
 			<effect_description level="3"  desc_key="attPerceptionRank03Desc" long_desc_key="attPerceptionRank03LongDesc"/>
@@ -41,6 +43,18 @@
 			<effect_description level="8"  desc_key="attPerceptionRank08Desc" long_desc_key="attPerceptionRank08LongDesc"/>
 			<effect_description level="9"  desc_key="attPerceptionRank09Desc" long_desc_key="attPerceptionRank09LongDesc"/>
 			<effect_description level="10" desc_key="attPerceptionRank10Desc" long_desc_key="attPerceptionRank10LongDesc"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+			</passive_effect>
 		</effect_group>
 	</attribute>
 
@@ -61,7 +75,9 @@
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
+		</effect_group>
 
+		<effect_group>
 			<effect_description level="1" desc_key="attStrengthRank01Desc" long_desc_key="attStrengthRank01LongDesc"/>
 			<effect_description level="2" desc_key="attStrengthRank02Desc" long_desc_key="attStrengthRank02LongDesc"/>
 			<effect_description level="3" desc_key="attStrengthRank03Desc" long_desc_key="attStrengthRank03LongDesc"/>
@@ -72,6 +88,18 @@
 			<effect_description level="8" desc_key="attStrengthRank08Desc" long_desc_key="attStrengthRank08LongDesc"/>
 			<effect_description level="9" desc_key="attStrengthRank09Desc" long_desc_key="attStrengthRank09LongDesc"/>
 			<effect_description level="10" desc_key="attStrengthRank10Desc" long_desc_key="attStrengthRank10LongDesc"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+			</passive_effect>
 		</effect_group>
 	</attribute>
 
@@ -107,6 +135,18 @@
 			<effect_description level="9" desc_key="attFortitudeRank09Desc" long_desc_key="attFortitudeRank09LongDesc"/>
 			<effect_description level="10" desc_key="attFortitudeRank10Desc" long_desc_key="attFortitudeRank10LongDesc"/>
 		</effect_group>
+
+		<effect_group>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+			</passive_effect>
+		</effect_group>
 	</attribute>
 
 	<attribute name="attAgility" name_key="attAgilityName" desc_key="attAgilityDesc" icon="ui_game_symbol_agility">
@@ -140,6 +180,18 @@
 			<effect_description level="9" desc_key="attAgilityRank09Desc" long_desc_key="attAgilityRank09LongDesc"/>
 			<effect_description level="10" desc_key="attAgilityRank10Desc" long_desc_key="attAgilityRank10LongDesc"/>
 		</effect_group>
+
+		<effect_group>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+			</passive_effect>
+		</effect_group>
 	</attribute>
 
 	<attribute name="attIntellect" name_key="attIntellectName" desc_key="attIntellectDesc" icon="ui_game_symbol_intellect">
@@ -159,7 +211,9 @@
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
+		</effect_group>
 
+		<effect_group>
 			<effect_description level="1" desc_key="attIntellectRank1Desc" long_desc_key="attIntellectRank1LongDesc"/>
 			<effect_description level="2" desc_key="attIntellectRank2Desc" long_desc_key="attIntellectRank2LongDesc"/>
 			<effect_description level="3" desc_key="attIntellectRank3Desc" long_desc_key="attIntellectRank3LongDesc"/>
@@ -170,6 +224,18 @@
 			<effect_description level="8" desc_key="attIntellectRank8Desc" long_desc_key="attIntellectRank8LongDesc"/>
 			<effect_description level="9" desc_key="attIntellectRank9Desc" long_desc_key="attIntellectRank9LongDesc"/>
 			<effect_description level="10" desc_key="attIntellectRank10Desc" long_desc_key="attIntellectRank10LongDesc"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1,10" value="1,10" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1,10" value="1,1" tags="armorCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/>
+			</passive_effect>
 		</effect_group>
 	</attribute>
 
@@ -211,7 +277,6 @@
 	<book_group name="skillHuntingJournal" parent="attBooks" name_key="perkHuntingJournal0Name" desc_key="perkHuntingJournal0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_armor_leather"><effect_group/></book_group>
 	<book_group name="skillLuckyLooter" parent="attBooks" name_key="perkLuckyLooter0Name" desc_key="perkLuckyLooter0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_shopping_cart"><effect_group/></book_group>
 	<book_group name="skillEnforcer" parent="attBooks" name_key="perkEnforcer0Name" desc_key="perkEnforcer0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_gunslinger"><effect_group/></book_group>
-	<book_group name="skillNeedleAndThread" parent="attBooks" name_key="perkNeedleAndThread0Name" desc_key="perkNeedleAndThread0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_light_armor"><effect_group/></book_group>
 	<book_group name="skillNightStalker" parent="attBooks" name_key="perkNightStalker0Name" desc_key="perkNightStalker0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_sneak_attack"><effect_group/></book_group>
 	<book_group name="skillPistolPete" parent="attBooks" name_key="perkPistolPete0Name" desc_key="perkPistolPete0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_pistol"><effect_group/></book_group>
 	<book_group name="skillArchery" parent="attBooks" name_key="perkRangers0Name" desc_key="perkRangers0Desc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_archery"><effect_group/></book_group>
@@ -230,263 +295,263 @@
 		<!-- *** HARVESTING_TOOL_SKILLS -->
 	<crafting_skill name="craftingHarvestingTools" max_level="100" parent="attCrafting" name_key="craftingHarvestingToolsName" desc_key="craftingHarvestingToolsDesc" long_desc_key="craftingHarvestingToolsLongDesc" icon="ui_game_symbol_tool">
 
-		<display_entry icon="meleeToolRepairT0StoneAxe" name_key="harvestToolsStone" has_quality="true" unlock_level="1,3,5,7,10" >
+		<display_entry icon="meleeToolRepairT0StoneAxe" name_key="harvestToolsStone" has_quality="true" unlock_level="1,2,4,6,8,10" >
 			<unlock_entry item="meleeToolRepairT0StoneAxe,meleeToolShovelT0StoneShovel" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="meleeToolPickT1IronPickaxe" name_key="harvestToolsIron" has_quality="true" unlock_level="11,14,18,22,26" >
+		<display_entry icon="meleeToolPickT1IronPickaxe" name_key="harvestToolsIron" has_quality="true" unlock_level="11,13,16,19,22,25" >
 			<unlock_entry item="meleeToolPickT1IronPickaxe,meleeToolShovelT1IronShovel,meleeToolAxeT1IronFireaxe" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="meleeToolPickT2SteelPickaxe" name_key="harvestToolsSteel" has_quality="true" unlock_level="27,35,43,51,59" >
+		<display_entry icon="meleeToolPickT2SteelPickaxe" name_key="harvestToolsSteel" has_quality="true" unlock_level="26,32,39,46,53,60" >
 			<unlock_entry item="meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,meleeToolAxeT2SteelAxe" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="meleeToolPickT3Auger" name_key="harvestToolsMechanical" has_quality="true" unlock_level="60,70,80,90,100" >
+		<display_entry icon="meleeToolPickT3Auger" name_key="harvestToolsMechanical" has_quality="true" unlock_level="61,68,76,84,92,100" >
 			<unlock_entry item="meleeToolPickT3Auger,meleeToolAxeT3Chainsaw" unlock_tier="1" />
 		</display_entry>
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeToolRepairT0StoneAxe,meleeToolShovelT0StoneShovel"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="meleeToolPickT1IronPickaxe,meleeToolShovelT1IronShovel,meleeToolAxeT1IronFireaxe"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="27,100" value="1" tags="meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,meleeToolAxeT2SteelAxe"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="meleeToolPickT3Auger,meleeToolAxeT3Chainsaw"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,meleeToolAxeT2SteelAxe"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="meleeToolPickT3Auger,meleeToolAxeT3Chainsaw"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="meleeToolRepairT0StoneAxe,meleeToolShovelT0StoneShovel"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="14,18,22,26,100" value="1,2,3,4,4" tags="meleeToolPickT1IronPickaxe,meleeToolShovelT1IronShovel,meleeToolAxeT1IronFireaxe"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="35,43,51,59,100" value="1,2,3,4,4" tags="meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,meleeToolAxeT2SteelAxe"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="70,80,90,100" value="1,2,3,4" tags="meleeToolPickT3Auger,meleeToolAxeT3Chainsaw"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="meleeToolRepairT0StoneAxe,meleeToolShovelT0StoneShovel"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="meleeToolPickT1IronPickaxe,meleeToolShovelT1IronShovel,meleeToolAxeT1IronFireaxe"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="32,39,46,53,60,100" value="1,2,3,4,5,5" tags="meleeToolPickT2SteelPickaxe,meleeToolShovelT2SteelShovel,meleeToolAxeT2SteelAxe"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="meleeToolPickT3Auger,meleeToolAxeT3Chainsaw"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** REPAIRING_TOOL_SKILLS -->
 	<crafting_skill name="craftingRepairTools" max_level="50" parent="attCrafting" name_key="craftingRepairToolsName" desc_key="craftingRepairToolsDesc" long_desc_key="craftingRepairToolsLongDesc" icon="ui_game_symbol_hammer">
 
-		<display_entry item="meleeToolRepairT1ClawHammer" unlock_level="5,10,15,20,25" />
-		<display_entry item="meleeToolRepairT3Nailgun" unlock_level="26,30,35,40,50" />
+		<display_entry item="meleeToolRepairT1ClawHammer" unlock_level="4,8,12,16,20,25" />
+		<display_entry item="meleeToolRepairT3Nailgun" unlock_level="26,30,35,40,45,50" />
 
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,50" value="1" tags="meleeToolRepairT1ClawHammer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,50" value="1" tags="meleeToolRepairT1ClawHammer"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,50" value="1" tags="meleeToolRepairT3Nailgun"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,50" value="1,2,3,4,4" tags="meleeToolRepairT1ClawHammer"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,50" value="1,2,3,4" tags="meleeToolRepairT3Nailgun"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="8,12,16,20,25,50" value="1,2,3,4,5,5" tags="meleeToolRepairT1ClawHammer"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50" value="1,2,3,4,5" tags="meleeToolRepairT3Nailgun"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** SALVAGING_TOOL_SKILLS -->
 	<crafting_skill name="craftingSalvageTools" max_level="75" parent="attCrafting" name_key="craftingSalvageToolsName" desc_key="craftingSalvageToolsDesc" long_desc_key="craftingSalvageToolsLongDesc" icon="ui_game_symbol_wrench">
 
-		<display_entry item="meleeToolSalvageT1Wrench" unlock_level="2,6,11,16,21" />
-		<display_entry item="meleeToolSalvageT2Ratchet" unlock_level="22,28,34,40,46" />
-		<display_entry item="meleeToolSalvageT3ImpactDriver" unlock_level="47,54,61,68,75" />
+		<display_entry item="meleeToolSalvageT1Wrench" unlock_level="4,8,12,16,20,25" />
+		<display_entry item="meleeToolSalvageT2Ratchet" unlock_level="26,30,35,40,45,50" />
+		<display_entry item="meleeToolSalvageT3ImpactDriver" unlock_level="51,55,60,65,70,75" />
 
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,75" value="1" tags="meleeToolSalvageT1Wrench"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="22,75" value="1" tags="meleeToolSalvageT2Ratchet"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="47,75" value="1" tags="meleeToolSalvageT3ImpactDriver"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,75" value="1" tags="meleeToolSalvageT1Wrench"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,75" value="1" tags="meleeToolSalvageT2Ratchet"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="51,75" value="1" tags="meleeToolSalvageT3ImpactDriver"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="6,11,16,21,75" value="1,2,3,4,4" tags="meleeToolSalvageT1Wrench"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="28,34,40,46,75" value="1,2,3,4,4" tags="meleeToolSalvageT2Ratchet"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="54,61,68,75" value="1,2,3,4" tags="meleeToolSalvageT3ImpactDriver"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="8,12,16,20,25,75" value="1,2,3,4,5,5" tags="meleeToolSalvageT1Wrench"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,75" value="1,2,3,4,5,5" tags="meleeToolSalvageT2Ratchet"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="55,60,65,70,75" value="1,2,3,4,5" tags="meleeToolSalvageT3ImpactDriver"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** KNUCKLE_SKILLS -->
 	<crafting_skill name="craftingKnuckles" max_level="75" parent="attCrafting" name_key="craftingKnucklesName" desc_key="craftingKnucklesDesc" long_desc_key="craftingKnucklesLongDesc" icon="ui_game_symbol_boxer">
 
-		<display_entry item="meleeWpnKnucklesT0LeatherKnuckles" unlock_level="1,3,5,7,10" />
-		<display_entry item="meleeWpnKnucklesT1IronKnuckles" unlock_level="11,17,24,31,38" />
-		<display_entry item="meleeWpnKnucklesT3SteelKnuckles" unlock_level="39,48,57,66,75" />
+		<display_entry item="meleeWpnKnucklesT0LeatherKnuckles" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="meleeWpnKnucklesT1IronKnuckles" unlock_level="11,15,20,25,30,35" />
+		<display_entry item="meleeWpnKnucklesT3SteelKnuckles" unlock_level="36,43,51,59,67,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,75" value="1" tags="meleeWpnKnucklesT0LeatherKnuckles"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,75" value="1" tags="meleeWpnKnucklesT1IronKnuckles"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,75" value="1" tags="meleeWpnKnucklesT3SteelKnuckles"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnKnucklesT3SteelKnuckles"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnKnucklesT0LeatherKnuckles"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnKnucklesT1IronKnuckles"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnKnucklesT3SteelKnuckles"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="meleeWpnKnucklesT0LeatherKnuckles"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="15,20,25,30,35,75" value="1,2,3,4,5,5" tags="meleeWpnKnucklesT1IronKnuckles"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnKnucklesT3SteelKnuckles"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** BLADE_SKILLS -->
 	<crafting_skill name="craftingBlades" max_level="75" parent="attCrafting" name_key="craftingBladesName" desc_key="craftingBladesDesc" long_desc_key="craftingBladesLongDesc" icon="ui_game_symbol_knife">
 
-		<display_entry item="meleeWpnBladeT0BoneKnife" unlock_level="1,3,5,7,10" />
-		<display_entry item="meleeWpnBladeT1HuntingKnife" unlock_level="11,17,24,31,38" />
-		<display_entry item="meleeWpnBladeT3Machete" unlock_level="39,48,57,66,75" />
+		<display_entry item="meleeWpnBladeT0BoneKnife" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="meleeWpnBladeT1HuntingKnife" unlock_level="11,15,20,25,30,35" />
+		<display_entry item="meleeWpnBladeT3Machete" unlock_level="36,43,51,59,67,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,75" value="1" tags="meleeWpnBladeT0BoneKnife"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,75" value="1" tags="meleeWpnBladeT1HuntingKnife"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,75" value="1" tags="meleeWpnBladeT3Machete"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnBladeT3Machete"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnBladeT0BoneKnife"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnBladeT1HuntingKnife"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnBladeT3Machete"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="meleeWpnBladeT0BoneKnife"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="15,20,25,30,35,75" value="1,2,3,4,5,5" tags="meleeWpnBladeT1HuntingKnife"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnBladeT3Machete"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** CLUB_SKILLS -->
 	<crafting_skill name="craftingClubs" max_level="75" parent="attCrafting" name_key="craftingClubsName" desc_key="craftingClubsDesc" long_desc_key="craftingClubsLongDesc" icon="ui_game_symbol_club">
 
-		<display_entry item="meleeWpnClubT0WoodenClub" unlock_level="1,3,5,7,10" />
-		<display_entry item="meleeWpnClubT1BaseballBat" unlock_level="11,17,24,31,38" />
-		<display_entry item="meleeWpnClubT3SteelClub" unlock_level="39,48,57,66,75" />
+		<display_entry item="meleeWpnClubT0WoodenClub" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="meleeWpnClubT1BaseballBat" unlock_level="11,15,20,25,30,35" />
+		<display_entry item="meleeWpnClubT3SteelClub" unlock_level="36,43,51,59,67,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,75" value="1" tags="meleeWpnClubT0WoodenClub"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,75" value="1" tags="meleeWpnClubT1BaseballBat"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,75" value="1" tags="meleeWpnClubT3SteelClub"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnClubT3SteelClub"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnClubT0WoodenClub"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnClubT1BaseballBat"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnClubT3SteelClub"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="meleeWpnClubT0WoodenClub"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="15,20,25,30,35,75" value="1,2,3,4,5,5" tags="meleeWpnClubT1BaseballBat"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnClubT3SteelClub"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** SLEDGEHAMMER_SKILLS -->
 	<crafting_skill name="craftingSledgehammers" max_level="75" parent="attCrafting" name_key="craftingSledgehammersName" desc_key="craftingSledgehammersDesc" long_desc_key="craftingSledgehammersLongDesc" icon="ui_game_symbol_sledge">
 
-		<display_entry item="meleeWpnSledgeT0StoneSledgehammer" unlock_level="1,3,5,7,10" />
-		<display_entry item="meleeWpnSledgeT1IronSledgehammer" unlock_level="11,17,24,31,38" />
-		<display_entry item="meleeWpnSledgeT3SteelSledgehammer" unlock_level="39,48,57,66,75" />
+		<display_entry item="meleeWpnSledgeT0StoneSledgehammer" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="meleeWpnSledgeT1IronSledgehammer" unlock_level="11,15,20,25,30,35" />
+		<display_entry item="meleeWpnSledgeT3SteelSledgehammer" unlock_level="36,43,51,59,67,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,75" value="1" tags="meleeWpnSledgeT0StoneSledgehammer"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,75" value="1" tags="meleeWpnSledgeT1IronSledgehammer"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,75" value="1" tags="meleeWpnSledgeT3SteelSledgehammer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnSledgeT3SteelSledgehammer"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnSledgeT0StoneSledgehammer"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnSledgeT1IronSledgehammer"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnSledgeT3SteelSledgehammer"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="meleeWpnSledgeT0StoneSledgehammer"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="15,20,25,30,35,75" value="1,2,3,4,5,5" tags="meleeWpnSledgeT1IronSledgehammer"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnSledgeT3SteelSledgehammer"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** BOW_SKILLS -->
-	<crafting_skill name="craftingBows" max_level="100" parent="attCrafting" name_key="craftingBowsName" desc_key="craftingBowsDesc" long_desc_key="craftingBowsLongDesc" icon="ui_game_symbol_archery">
+	<crafting_skill name="craftingBows" max_level="75" parent="attCrafting" name_key="craftingBowsName" desc_key="craftingBowsDesc" long_desc_key="craftingBowsLongDesc" icon="ui_game_symbol_archery">
 
-		<display_entry item="gunBowT0PrimitiveBow" unlock_level="1,3,5,7,9" />
-		<display_entry item="gunBowT1WoodenBow" unlock_level="10,12,15,18,21" />
-		<display_entry item="gunBowT1IronCrossbow" unlock_level="22,26,30,34,38" />
-		<display_entry item="gunBowT3CompoundBow" unlock_level="39,46,53,60,67" />
-		<display_entry item="gunBowT3CompoundCrossbow" unlock_level="68,76,84,92,100" />
+		<display_entry item="gunBowT0PrimitiveBow" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunBowT1WoodenBow" unlock_level="11,12,14,16,18,20" />
+		<display_entry item="gunBowT1IronCrossbow" unlock_level="21,23,26,29,32,35" />
+		<display_entry item="gunBowT3CompoundBow" unlock_level="36,39,43,47,51,55" />
+		<display_entry item="gunBowT3CompoundCrossbow" unlock_level="56,59,63,67,71,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="gunBowT0PrimitiveBow"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="gunBowT1WoodenBow"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="22,100" value="1" tags="gunBowT1IronCrossbow"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="gunBowT3CompoundBow"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="68,100" value="1" tags="gunBowT3CompoundCrossbow"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunBowT1WoodenBow"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="21,100" value="1" tags="gunBowT1IronCrossbow"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,100" value="1" tags="gunBowT3CompoundBow"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="56,100" value="1" tags="gunBowT3CompoundCrossbow"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,9,100" value="1,2,3,4,4" tags="gunBowT0PrimitiveBow"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="12,15,18,21,100" value="1,2,3,4,4" tags="gunBowT1WoodenBow"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="26,30,34,38,100" value="1,2,3,4,4" tags="gunBowT1IronCrossbow"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="46,53,60,67,100" value="1,2,3,4,4" tags="gunBowT3CompoundBow"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="76,84,92,100" value="1,2,3,4" tags="gunBowT3CompoundCrossbow"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="gunBowT0PrimitiveBow"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="12,14,16,18,20,75" value="1,2,3,4,5,5" tags="gunBowT1WoodenBow"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="23,26,29,32,35,75" value="1,2,3,4,5,5" tags="gunBowT1IronCrossbow"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="39,43,47,51,55,75" value="1,2,3,4,5,5" tags="gunBowT3CompoundBow"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="59,63,67,71,75" value="1,2,3,4,5" tags="gunBowT3CompoundCrossbow"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** SPEAR_SKILLS -->
 	<crafting_skill name="craftingSpears" max_level="75" parent="attCrafting" name_key="craftingSpearsName" desc_key="craftingSpearsDesc" long_desc_key="craftingSpearsLongDesc" icon="ui_game_symbol_spear">
 
-		<display_entry item="meleeWpnSpearT0StoneSpear" unlock_level="1,3,5,7,10" />
-		<display_entry item="meleeWpnSpearT1IronSpear" unlock_level="11,17,24,31,38" />
-		<display_entry item="meleeWpnSpearT3SteelSpear" unlock_level="39,48,57,66,75" />
+		<display_entry item="meleeWpnSpearT0StoneSpear" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="meleeWpnSpearT1IronSpear" unlock_level="11,15,20,25,30,35" />
+		<display_entry item="meleeWpnSpearT3SteelSpear" unlock_level="36,43,51,59,67,75" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,75" value="1" tags="meleeWpnSpearT0StoneSpear"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,75" value="1" tags="meleeWpnSpearT1IronSpear"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,75" value="1" tags="meleeWpnSpearT3SteelSpear"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnSpearT3SteelSpear"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="meleeWpnSpearT0StoneSpear"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="meleeWpnSpearT1IronSpear"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="meleeWpnSpearT3SteelSpear"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,75" value="1,2,3,4,5,5" tags="meleeWpnSpearT0StoneSpear"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="15,20,25,30,35,75" value="1,2,3,4,5,5" tags="meleeWpnSpearT1IronSpear"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnSpearT3SteelSpear"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** HANDGUN_SKILLS -->
 	<crafting_skill name="craftingHandguns" max_level="100" parent="attCrafting" name_key="craftingHandgunsName" desc_key="craftingHandgunsDesc" long_desc_key="craftingHandgunsLongDesc" icon="ui_game_symbol_pistol">
 
-		<display_entry item="gunHandgunT0PipePistol" unlock_level="1,3,5,7,10" />
-		<display_entry item="gunHandgunT1Pistol" unlock_level="11,13,16,19,22" />
-		<display_entry item="gunHandgunT2Magnum44" unlock_level="23,26,30,34,38" />
-		<display_entry item="gunHandgunT3SMG5" unlock_level="39,46,53,60,67" />
-		<display_entry item="gunHandgunT3DesertVulture" unlock_level="68,76,84,92,100" />
+		<display_entry item="gunHandgunT0PipePistol" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunHandgunT1Pistol" unlock_level="11,13,16,19,22,25" />
+		<display_entry item="gunHandgunT2Magnum44" unlock_level="26,29,33,37,41,45" />
+		<display_entry item="gunHandgunT3SMG5" unlock_level="46,50,55,60,65,70" />
+		<display_entry item="gunHandgunT3DesertVulture" unlock_level="71,76,82,88,94,100" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="gunHandgunT0PipePistol"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunHandgunT1Pistol"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="23,100" value="1" tags="gunHandgunT2Magnum44"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="gunHandgunT3SMG5"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="68,100" value="1" tags="gunHandgunT3DesertVulture"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="gunHandgunT2Magnum44"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="46,100" value="1" tags="gunHandgunT3SMG5"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="71,100" value="1" tags="gunHandgunT3DesertVulture"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="gunHandgunT0PipePistol"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,100" value="1,2,3,4,4" tags="gunHandgunT1Pistol"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="26,30,34,38,100" value="1,2,3,4,4" tags="gunHandgunT2Magnum44"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="46,53,60,67,100" value="1,2,3,4,4" tags="gunHandgunT3SMG5"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="76,84,92,100" value="1,2,3,4" tags="gunHandgunT3DesertVulture"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="gunHandgunT0PipePistol"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="gunHandgunT1Pistol"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="29,33,37,41,45,100" value="1,2,3,4,5,5" tags="gunHandgunT2Magnum44"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="50,55,60,65,70,100" value="1,2,3,4,5,5" tags="gunHandgunT3SMG5"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="76,82,88,94,100" value="1,2,3,4,5" tags="gunHandgunT3DesertVulture"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** SHOTGUN_SKILLS -->
 	<crafting_skill name="craftingShotguns" max_level="100" parent="attCrafting" name_key="craftingShotgunsName" desc_key="craftingShotgunsDesc" long_desc_key="craftingShotgunsLongDesc" icon="ui_game_symbol_shotgun">
 
-		<display_entry item="gunShotgunT0PipeShotgun" unlock_level="1,3,5,7,10" />
-		<display_entry item="gunShotgunT1DoubleBarrel" unlock_level="11,14,18,22,26" />
-		<display_entry item="gunShotgunT2PumpShotgun" unlock_level="27,35,43,51,59" />
-		<display_entry item="gunShotgunT3AutoShotgun" unlock_level="60,70,80,90,100" />
+		<display_entry item="gunShotgunT0PipeShotgun" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunShotgunT1DoubleBarrel" unlock_level="11,13,16,19,22,25" />
+		<display_entry item="gunShotgunT2PumpShotgun" unlock_level="26,32,39,46,53,60" />
+		<display_entry item="gunShotgunT3AutoShotgun" unlock_level="61,68,76,84,92,100" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="gunShotgunT0PipeShotgun"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunShotgunT1DoubleBarrel"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="27,100" value="1" tags="gunShotgunT2PumpShotgun"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="gunShotgunT3AutoShotgun"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="gunShotgunT2PumpShotgun"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="gunShotgunT3AutoShotgun"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="gunShotgunT0PipeShotgun"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="14,18,22,26,100" value="1,2,3,4,4" tags="gunShotgunT1DoubleBarrel"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="35,43,51,59,100" value="1,2,3,4,4" tags="gunShotgunT2PumpShotgun"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="70,80,90,100" value="1,2,3,4" tags="gunShotgunT3AutoShotgun"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="gunShotgunT0PipeShotgun"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="gunShotgunT1DoubleBarrel"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="32,39,46,53,60,100" value="1,2,3,4,5,5" tags="gunShotgunT2PumpShotgun"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="gunShotgunT3AutoShotgun"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** RIFLE_SKILLS -->
 	<crafting_skill name="craftingRifles" max_level="100" parent="attCrafting" name_key="craftingRiflesName" desc_key="craftingRiflesDesc" long_desc_key="craftingRiflesLongDesc" icon="ui_game_symbol_long_shot">
 
-		<display_entry item="gunRifleT0PipeRifle" unlock_level="1,3,5,7,10" />
-		<display_entry item="gunRifleT1HuntingRifle" unlock_level="11,14,18,22,26" />
-		<display_entry item="gunRifleT2LeverActionRifle" unlock_level="27,35,43,51,59" />
-		<display_entry item="gunRifleT3SniperRifle" unlock_level="60,70,80,90,100" />
+		<display_entry item="gunRifleT0PipeRifle" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunRifleT1HuntingRifle" unlock_level="11,13,16,19,22,25" />
+		<display_entry item="gunRifleT2LeverActionRifle" unlock_level="26,32,39,46,53,60" />
+		<display_entry item="gunRifleT3SniperRifle" unlock_level="61,68,76,84,92,100" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="gunRifleT0PipeRifle"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunRifleT1HuntingRifle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="27,100" value="1" tags="gunRifleT2LeverActionRifle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="gunRifleT3SniperRifle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="gunRifleT2LeverActionRifle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="gunRifleT3SniperRifle"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="gunRifleT0PipeRifle"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="14,18,22,26,100" value="1,2,3,4,4" tags="gunRifleT1HuntingRifle"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="35,43,51,59,100" value="1,2,3,4,4" tags="gunRifleT2LeverActionRifle"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="70,80,90,100" value="1,2,3,4" tags="gunRifleT3SniperRifle"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="gunRifleT0PipeRifle"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="gunRifleT1HuntingRifle"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="32,39,46,53,60,100" value="1,2,3,4,5,5" tags="gunRifleT2LeverActionRifle"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="gunRifleT3SniperRifle"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** MACHINE_GUN_SKILLS -->
 	<crafting_skill name="craftingMachineGuns" max_level="100" parent="attCrafting" name_key="craftingMachineGunsName" desc_key="craftingMachineGunsDesc" long_desc_key="craftingMachineGunsLongDesc" icon="ui_game_symbol_rifle">
 
-		<display_entry item="gunMGT0PipeMachineGun" unlock_level="1,3,5,7,10" />
-		<display_entry item="gunMGT1AK47" unlock_level="11,14,18,22,26" />
-		<display_entry item="gunMGT2TacticalAR" unlock_level="27,35,43,51,59" />
-		<display_entry item="gunMGT3M60" unlock_level="60,70,80,90,100" />
+		<display_entry item="gunMGT0PipeMachineGun" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunMGT1AK47" unlock_level="11,13,16,19,22,25" />
+		<display_entry item="gunMGT2TacticalAR" unlock_level="26,32,39,46,53,60" />
+		<display_entry item="gunMGT3M60" unlock_level="61,68,76,84,92,100" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="gunMGT0PipeMachineGun"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunMGT1AK47"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="27,100" value="1" tags="gunMGT2TacticalAR"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="gunMGT3M60"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="gunMGT2TacticalAR"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="gunMGT3M60"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="gunMGT0PipeMachineGun"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="14,18,22,26,100" value="1,2,3,4,4" tags="gunMGT1AK47"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="35,43,51,59,100" value="1,2,3,4,4" tags="gunMGT2TacticalAR"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="70,80,90,100" value="1,2,3,4" tags="gunMGT3M60"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="gunMGT0PipeMachineGun"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="gunMGT1AK47"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="32,39,46,53,60,100" value="1,2,3,4,5,5" tags="gunMGT2TacticalAR"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="gunMGT3M60"/>
 		</effect_group>
 	</crafting_skill>
 
@@ -511,7 +576,7 @@
 				<display_entry icon="ammoRocketFrag" name_key="explosivesT4" has_quality="false" unlock_level="45" >
 			<unlock_entry item="resourceRocketTip,resourceRocketCasing,ammoRocketFrag,ammoRocketHE" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="gunExplosivesT3RocketLauncher" name_key="explosivesT5" has_quality="true" unlock_level="55,65,75,85,100" >
+		<display_entry icon="gunExplosivesT3RocketLauncher" name_key="explosivesT5" has_quality="true" unlock_level="50,60,70,80,90,100" >
 			<unlock_entry item="gunExplosivesT3RocketLauncher" unlock_tier="1" />
 		</display_entry>
 
@@ -530,9 +595,9 @@
 
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="resourceRocketTip,resourceRocketCasing,ammoRocketFrag,ammoRocketHE"/>
 
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="gunExplosivesT3RocketLauncher"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="gunExplosivesT3RocketLauncher"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="65,75,85,100" value="1,2,3,4" tags="gunExplosivesT3RocketLauncher"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="gunExplosivesT3RocketLauncher"/>
 
 		</effect_group>
 	</crafting_skill>
@@ -540,48 +605,49 @@
 		<!-- *** ROBOTIC_SKILLS -->
 	<crafting_skill name="craftingRobotics" max_level="100" parent="attCrafting" name_key="craftingRoboticsName" desc_key="craftingRoboticsDesc" long_desc_key="craftingRoboticsLongDesc" icon="ui_game_symbol_junk_turret">
 
-		<display_entry item="meleeWpnBatonT0PipeBaton" unlock_level="1,3,5,7,10" />
-		<display_entry item="gunBotT1JunkSledge" unlock_level="11,13,16,19,22" />
-		<display_entry item="meleeWpnBatonT2StunBaton" unlock_level="23,26,30,34,38" />
-		<display_entry item="gunBotT2JunkTurret" unlock_level="39,46,53,60,67" />
-		<display_entry item="gunBotT3JunkDrone" unlock_level="68,76,84,92,100" />
+		<display_entry item="meleeWpnBatonT0PipeBaton" unlock_level="1,2,4,6,8,10" />
+		<display_entry item="gunBotT1JunkSledge" unlock_level="11,13,16,19,22,25" />
+		<display_entry item="meleeWpnBatonT2StunBaton" unlock_level="26,30,35,40,45,50" />
+		<display_entry item="gunBotT2JunkTurret" unlock_level="51,55,60,65,70,75" />
+		<display_entry item="gunBotT3JunkDrone" unlock_level="76,80,85,90,95,100" />
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnBatonT0PipeBaton"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="gunBotT1JunkSledge"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="23,100" value="1" tags="meleeWpnBatonT2StunBaton"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="gunBotT2JunkTurret"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="68,100" value="1" tags="gunBotT3JunkDrone"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="meleeWpnBatonT2StunBaton"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="51,100" value="1" tags="gunBotT2JunkTurret"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="76,100" value="1" tags="gunBotT3JunkDrone"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,100" value="1,2,3,4,4" tags="meleeWpnBatonT0PipeBaton"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,100" value="1,2,3,4,4" tags="gunBotT1JunkSledge"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="26,30,34,38,100" value="1,2,3,4,4" tags="meleeWpnBatonT2StunBaton"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="46,53,60,67,100" value="1,2,3,4,4" tags="gunBotT2JunkTurret"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="76,84,92,100" value="1,2,3,4" tags="gunBotT3JunkDrone"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="meleeWpnBatonT0PipeBaton"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="gunBotT1JunkSledge"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="30,35,40,45,50,100" value="1,2,3,4,5,5" tags="meleeWpnBatonT2StunBaton"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="55,60,65,70,75,100" value="1,2,3,4,5,5" tags="gunBotT2JunkTurret"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="80,85,90,95,100" value="1,2,3,4,5" tags="gunBotT3JunkDrone"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** ARMOR_SKILLS -->
-	<crafting_skill name="craftingArmor" max_level="75" parent="attCrafting" name_key="craftingArmorName" desc_key="craftingArmorDesc" long_desc_key="craftingArmorLongDesc" icon="ui_game_symbol_armor_iron">
+	<crafting_skill name="craftingArmor" max_level="100" parent="attCrafting" name_key="craftingArmorName" desc_key="craftingArmorDesc" long_desc_key="craftingArmorLongDesc" icon="ui_game_symbol_armor_iron">
 
-		<display_entry icon="resourceCloth" name_key="armorT1" has_quality="true" unlock_level="1,3,5,7,10">
-			<unlock_entry item="armorClothMaster,armorScrapMaster" unlock_tier="1" recipes="armorClothHat,armorClothJacket,armorClothGloves,armorClothPants,armorClothBoots,armorScrapMaster,armorScrapHelmet,armorScrapChest,armorScrapGloves,armorScrapLegs,armorScrapBoots" />
+		<display_entry icon="armorPrimitiveHelmet" name_key="armorT1" has_quality="true" unlock_level="1,2,4,6,8,10">
+			<unlock_entry item="armorPrimitiveOutfit" unlock_tier="1" recipes="armorPrimitiveMaster,armorPrimitiveHelmet,armorPrimitiveOutfit,armorPrimitiveGloves,armorPrimitiveBoots"/>
 		</display_entry>
-		<display_entry icon="resourceLeather" name_key="armorT2" has_quality="true" unlock_level="11,17,24,31,38" >
-			<unlock_entry item="armorLeatherMaster,armorIronMaster" unlock_tier="1" recipes="armorLeatherHood,armorLeatherChest,armorLeatherGloves,armorLeatherPants,armorLeatherBoots,armorIronMaster,armorIronHelmet,armorIronChest,armorIronGloves,armorIronLegs,armorIronBoots" />
+		<display_entry icon="armorLumberjackHelmet" name_key="armorT2" has_quality="true" unlock_level="11,20,40,60,80,100">
+			<unlock_entry item="armorLumberjackOutfit,armorPreacherOutfit,armorRogueOutfit,armorAthleticOutfit,armorEnforcerOutfit" unlock_tier="1" recipes="armorLightMaster,armorLumberjackHelmet,armorLumberjackOutfit,armorLumberjackGloves,armorLumberjackBoots,armorPreacherHelmet,armorPreacherOutfit,armorPreacherGloves,armorPreacherBoots,armorRogueHelmet,armorRogueOutfit,armorRogueGloves,armorRogueBoots,armorAthleticHelmet,armorAthleticOutfit,armorAthleticGloves,armorAthleticBoots,armorEnforcerHelmet,armorEnforcerOutfit,armorEnforcerGloves,armorEnforcerBoots" />
 		</display_entry>
-		<display_entry icon="resourceMilitaryFiber" name_key="armorT3" has_quality="true" unlock_level="39,48,57,66,75" >
-			<unlock_entry item="armorMilitaryMaster,armorSteelMaster,resourceMilitaryFiber" unlock_tier="1" recipes="armorMilitaryHelmet,armorMilitaryVest,armorMilitaryGloves,armorMilitaryLegs,armorMilitaryBoots,armorSteelMaster,armorSteelHelmet,armorSteelChest,armorSteelGloves,armorSteelLegs,armorSteelBoots,resourceMilitaryFiber" />
+		<display_entry icon="armorAssassinHelmet" name_key="armorT3" has_quality="true" unlock_level="11,20,40,60,80,100">
+			<unlock_entry item="armorFarmerOutfit,armorBikerOutfit,armorScavengerOutfit,armorRangerOutfit,armorCommandoOutfit,armorAssassinOutfit" unlock_tier="1" recipes="armorMediumMaster,armorFarmerHelmet,armorFarmerOutfit,armorFarmerGloves,armorFarmerBoots,armorBikerHelmet,armorBikerOutfit,armorBikerGloves,armorBikerBoots,armorScavengerHelmet,armorScavengerOutfit,armorScavengerGloves,armorScavengerBoots,armorRangerHelmet,armorRangerOutfit,armorRangerGloves,armorRangerBoots,armorCommandoHelmet,armorCommandoOutfit,armorCommandoGloves,armorCommandoBoots,armorAssassinHelmet,armorAssassinOutfit,armorAssassinGloves,armorAssassinBoots" />
+		</display_entry>
+		<display_entry icon="armorRaiderHelmet" name_key="armorT4" has_quality="true" unlock_level="11,20,40,60,80,100">
+			<unlock_entry item="armorMinerOutfit,armorNomadOutfit,armorNerdOutfit,armorRaiderOutfit" unlock_tier="1" recipes="armorHeavyMaster,armorMinerHelmet,armorMinerOutfit,armorMinerGloves,armorMinerBoots,armorNomadHelmet,armorNomadOutfit,armorNomadGloves,armorNomadBoots,armorNerdHelmet,armorNerdOutfit,armorNerdGloves,armorNerdBoots,armorRaiderHelmet,armorRaiderOutfit,armorRaiderGloves,armorRaiderBoots" />
 		</display_entry>
 
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="armorClothMaster,armorClothHat,armorClothJacket,armorClothGloves,armorClothPants,armorClothBoots,armorScrapMaster,armorScrapHelmet,armorScrapChest,armorScrapGloves,armorScrapLegs,armorScrapBoots"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="armorLeatherMaster,armorLeatherHood,armorLeatherChest,armorLeatherGloves,armorLeatherPants,armorLeatherBoots,armorIronMaster,armorIronHelmet,armorIronChest,armorIronGloves,armorIronLegs,armorIronBoots"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="39,100" value="1" tags="armorMilitaryMaster,armorMilitaryHelmet,armorMilitaryVest,armorMilitaryGloves,armorMilitaryLegs,armorMilitaryBoots,armorSteelMaster,armorSteelHelmet,armorSteelChest,armorSteelGloves,armorSteelLegs,armorSteelBoots,resourceMilitaryFiber"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="armorPrimitiveMaster,armorPrimitiveHelmet,armorPrimitiveOutfit,armorPrimitiveGloves,armorPrimitiveBoots"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="armorLightMaster,armorMediumMaster,armorHeavyMaster,armorLumberjackHelmet,armorLumberjackOutfit,armorLumberjackGloves,armorLumberjackBoots,armorPreacherHelmet,armorPreacherOutfit,armorPreacherGloves,armorPreacherBoots,armorRogueHelmet,armorRogueOutfit,armorRogueGloves,armorRogueBoots,armorAthleticHelmet,armorAthleticOutfit,armorAthleticGloves,armorAthleticBoots,armorEnforcerHelmet,armorEnforcerOutfit,armorEnforcerGloves,armorEnforcerBoots,armorFarmerHelmet,armorFarmerOutfit,armorFarmerGloves,armorFarmerBoots,armorBikerHelmet,armorBikerOutfit,armorBikerGloves,armorBikerBoots,armorScavengerHelmet,armorScavengerOutfit,armorScavengerGloves,armorScavengerBoots,armorRangerHelmet,armorRangerOutfit,armorRangerGloves,armorRangerBoots,armorCommandoHelmet,armorCommandoOutfit,armorCommandoGloves,armorCommandoBoots,armorAssassinHelmet,armorAssassinOutfit,armorAssassinGloves,armorAssassinBoots,armorMinerHelmet,armorMinerOutfit,armorMinerGloves,armorMinerBoots,armorNomadHelmet,armorNomadOutfit,armorNomadGloves,armorNomadBoots,armorNerdHelmet,armorNerdOutfit,armorNerdGloves,armorNerdBoots,armorRaiderHelmet,armorRaiderOutfit,armorRaiderGloves,armorRaiderBoots"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="3,5,7,10,75" value="1,2,3,4,4" tags="armorClothMaster,armorClothHat,armorClothJacket,armorClothGloves,armorClothPants,armorClothBoots,armorScrapMaster,armorScrapHelmet,armorScrapChest,armorScrapGloves,armorScrapLegs,armorScrapBoots,armorMiningHelmet,armorFirefightersHelmet"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="17,24,31,38,75" value="1,2,3,4,4" tags="armorLeatherMaster,armorLeatherHood,armorLeatherChest,armorLeatherGloves,armorLeatherPants,armorLeatherBoots,armorIronMaster,armorIronHelmet,armorIronChest,armorIronGloves,armorIronLegs,armorIronBoots"/>
-			<passive_effect name="CraftingTier" operation="base_add" level="48,57,66,75" value="1,2,3,4" tags="armorMilitaryMaster,armorMilitaryHelmet,armorMilitaryVest,armorMilitaryGloves,armorMilitaryLegs,armorMilitaryBoots,armorSteelMaster,armorSteelHelmet,armorSteelChest,armorSteelGloves,armorSteelLegs,armorSteelBoots,resourceMilitaryFiber,armorMilitaryStealthBoots"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="armorPrimitiveMaster,armorPrimitiveHelmet,armorPrimitiveOutfit,armorPrimitiveGloves,armorPrimitiveBoots"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="20,40,60,80,100" value="1,2,3,4,5" tags="armorLightMaster,armorMediumMaster,armorHeavyMaster,armorLumberjackHelmet,armorLumberjackOutfit,armorLumberjackGloves,armorLumberjackBoots,armorPreacherHelmet,armorPreacherOutfit,armorPreacherGloves,armorPreacherBoots,armorRogueHelmet,armorRogueOutfit,armorRogueGloves,armorRogueBoots,armorAthleticHelmet,armorAthleticOutfit,armorAthleticGloves,armorAthleticBoots,armorEnforcerHelmet,armorEnforcerOutfit,armorEnforcerGloves,armorEnforcerBoots,armorFarmerHelmet,armorFarmerOutfit,armorFarmerGloves,armorFarmerBoots,armorBikerHelmet,armorBikerOutfit,armorBikerGloves,armorBikerBoots,armorScavengerHelmet,armorScavengerOutfit,armorScavengerGloves,armorScavengerBoots,armorRangerHelmet,armorRangerOutfit,armorRangerGloves,armorRangerBoots,armorCommandoHelmet,armorCommandoOutfit,armorCommandoGloves,armorCommandoBoots,armorAssassinHelmet,armorAssassinOutfit,armorAssassinGloves,armorAssassinBoots,armorMinerHelmet,armorMinerOutfit,armorMinerGloves,armorMinerBoots,armorNomadHelmet,armorNomadOutfit,armorNomadGloves,armorNomadBoots,armorNerdHelmet,armorNerdOutfit,armorNerdGloves,armorNerdBoots,armorRaiderHelmet,armorRaiderOutfit,armorRaiderGloves,armorRaiderBoots"/>
 		</effect_group>
 	</crafting_skill>
 
@@ -715,23 +781,23 @@
 		<display_entry icon="generatorBankA" name_key="electricianT1" has_quality="false" unlock_level="25" >
 			<unlock_entry item="generatorbank,electricwirerelay,switch,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="motionsensor" name_key="electricianT2" has_quality="false" unlock_level="50" >
+		<display_entry icon="motionsensor" name_key="electricianT2" has_quality="false" unlock_level="45" >
 			<unlock_entry item="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="carBattery" name_key="electricianT3" has_quality="true" unlock_level="65,75,85,95,100" >
-			<unlock_entry item="carBattery" unlock_tier="1" />
-		</display_entry>
-		<display_entry icon="batterybank" name_key="electricianT4" has_quality="false" unlock_level="75" >
+		<display_entry icon="batterybank" name_key="electricianT3" has_quality="false" unlock_level="55" >
 			<unlock_entry item="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered" unlock_tier="1" />
+		</display_entry>
+		<display_entry icon="carBattery" name_key="electricianT4" has_quality="true" unlock_level="55,60,70,80,90,100" >
+			<unlock_entry item="carBattery" unlock_tier="1" />
 		</display_entry>
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="generatorbank,electricwirerelay,switch,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="65,100" value="1" tags="carBattery"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="carBattery"/>
 
-			<passive_effect name="CraftingTier" operation="base_add" level="75,85,95,100" value="1,2,3,4" tags="carBattery"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="carBattery"/>
 
 		</effect_group>
 	</crafting_skill>
@@ -804,8 +870,8 @@
 		<display_entry icon="vehicleMotorcyclePlaceable" name_key="vehiclesT3" has_quality="false" unlock_level="45" >
 			<unlock_entry item="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle" unlock_tier="1" />
 		</display_entry>
-		<display_entry icon="vehicle4x4TruckPlaceable" name_key="vehiclesT4" has_quality="false" unlock_level="70" >
-			<unlock_entry item="vehicle4x4TruckChassis,vehicle4x4TruckAccessories" unlock_tier="1" />
+		<display_entry icon="vehicleTruck4x4Placeable" name_key="vehiclesT4" has_quality="false" unlock_level="70" >
+			<unlock_entry item="vehicleTruck4x4Chassis,vehicleTruck4x4Accessories" unlock_tier="1" />
 		</display_entry>
 		<display_entry icon="vehicleGyrocopterPlaceable" name_key="vehiclesT5" has_quality="false" unlock_level="100" >
 			<unlock_entry item="vehicleGyroCopterChassis,vehicleGyroCopterAccessories" unlock_tier="1" />
@@ -813,9 +879,9 @@
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="vehicleBicycleChassis,vehicleBicycleHandlebars,vehicleWheels"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="vehicleMinibikeChassis,vehicleMinibikeHandlebars,carBattery,resourceOil,ammoGasCan"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="vehicleMinibikeChassis,vehicleMinibikeHandlebars,resourceOil,ammoGasCan"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="vehicleMotorcycleChassis,vehicleMotorcycleHandlebars,ammoGasCanBundle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="vehicle4x4TruckChassis,vehicle4x4TruckAccessories"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="vehicleTruck4x4Chassis,vehicleTruck4x4Accessories"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="vehicleGyroCopterChassis,vehicleGyroCopterAccessories"/>
 
 		</effect_group>
@@ -913,8 +979,8 @@
 
 		<effect_group>
 			<passive_effect name="DismemberChance" operation="base_add" level="1,2,3,4,5" value="0,0,0,0,0" tags="perkDemolitionsExpert"/>
-			<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
-			<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
+			<passive_effect name="ExplosionBlockDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
+			<passive_effect name="ExplosionEntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" level="1,5" value="0.1,0.5" tags="perkDemolitionsExpert"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.15,0.35" tags="perkDemolitionsExpert"/>
 
@@ -1050,11 +1116,24 @@
 		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="4" desc_key="reqPerceptionLevel04"/></level_requirements>
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="7" desc_key="reqPerceptionLevel07"/></level_requirements>
 		<effect_group>
+		
 			<passive_effect name="TrackDistance" operation="base_set" level="0,1,5" value="0,100,100"/>
+			
 			<triggered_effect trigger="onSelfCrouch" action="AddBuff" buff="buffAnimalTracker">
 				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
 				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
 			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfCrouchWalk" action="AddBuff" buff="buffAnimalTracker">
+				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
+				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfCrouchRun" action="AddBuff" buff="buffAnimalTracker">
+				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
+				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
+			</triggered_effect>
+
 
 			<effect_description level="1" desc_key="perkAnimalTrackerRank1Desc" long_desc_key="perkAnimalTrackerRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkAnimalTrackerRank2Desc" long_desc_key="perkAnimalTrackerRank2LongDesc"/>
@@ -1526,31 +1605,23 @@
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="7" desc_key="reqStrengthLevel07"/></level_requirements>
 
 		<effect_group>
+
 			<!-- Stamina/mobility are handled in buffStatusCheck02 -->
-			<passive_effect name="DegradationPerUse" operation="perc_add" level="0,4" value="0,-.66" tags="heavyArmorDeg"/>
+
+			<passive_effect name="DegradationPerUse" operation="perc_add" level="0,4" value="0,-.6" tags="heavyArmorDeg"/>
 
 			<!-- Increase the chance to find armor with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorHeavySkill"/>
 
-			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 75 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="75"/>
-			</passive_effect>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<!-- <passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM"> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/> -->
+			<!-- </passive_effect> -->
 
-			<!-- Once armor crafting skill reaches 75, set the probability bonus of finding armor crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="75"/>
-			</passive_effect>
-
-			<!-- Increase the chance to find Needle & Thread books until each book is read -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="needleProb">
-				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="LT" value="1"/>
-			</passive_effect>
-
-			<!-- When all Needle & Thread books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="1,1" tags="needleProb">
-				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="Equals" value="1"/>
-			</passive_effect>
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<!-- <passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM"> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/> -->
+			<!-- </passive_effect> -->
 
 			<effect_description level="1" desc_key="perkHeavyArmorRank1Desc" long_desc_key="perkHeavyArmorRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkHeavyArmorRank2Desc" long_desc_key="perkHeavyArmorRank2LongDesc"/>
@@ -1590,7 +1661,8 @@
 			<!-- Speed up cooking time of campfire recipes with each rank -->
 			<passive_effect name="CraftingTime" operation="perc_add" level="0,1,2,3" value="4,2,1,0" tags="perkMasterChef"/>
 			
-			<!-- masterChef2 is a hard coded tag used in loot.xml that adds a chance to find food in dumpsters -->
+			<!-- perkMasterChef2 tag used in loot.xml adds a chance to find food in dumpsters -->
+			<passive_effect name="LootProb" operation="base_set" level="2,3" value="2" tags="perkMasterChef2"/>
 			
 			<!-- Increase the chance to find food items with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="foodSkill"/>
@@ -2003,8 +2075,12 @@
 			<passive_effect name="WaterLossPerHealthPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
 			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
 			<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
-			<!-- see <buff name="buffPerkAbilityUpdate"> for cvar based ability changes -->
-			<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+
+			<!-- Increase MetabolismResist with each level of the perk -->
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismResist" operation="set" value="0,-1,-2,-3,-4,-5"/>
+
+			<!-- Increase MetabolismDuration with each level of the perk -->
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$MetabolismDuration" operation="set" value="1,.909,.833,.769,.714,.667"/>
 
 			<effect_description level="1" desc_key="perkSlowMetabolismRank1Desc" long_desc_key="perkSlowMetabolismRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkSlowMetabolismRank2Desc" long_desc_key="perkSlowMetabolismRank2LongDesc"/>
@@ -2021,7 +2097,7 @@
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="7" desc_key="reqFortitudeLevel07"/></level_requirements>
 
 		<effect_group>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" level="1,3" value="0.1,0.3" tags="running,swimmingRun"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" level="1,3" value="0.1,0.3" tags="running,swimmingRun"/> <!-- perkRuleOneCardio -->
 
 			<effect_description level="1" desc_key="perkRuleOneCardioNameRank1Desc" long_desc_key="perkRuleOneCardioNameRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkRuleOneCardioNameRank2Desc" long_desc_key="perkRuleOneCardioNameRank2LongDesc"/>
@@ -2052,14 +2128,14 @@
 			<!-- Increase the chance to find bows with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="bowSkill"/>
 
-			<!-- Increase the chance to find bow crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<!-- Increase the chance to find bow crafting skill magazines with each perk rank up to crafting skill 75 -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="bowsCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingBows" operation="LT" value="100"/>
+				<requirement name="ProgressionLevel" progression_name="craftingBows" operation="LT" value="75"/>
 			</passive_effect>
 
-			<!-- Once bow crafting skill reaches 100, set the probability bonus of finding bow crafting skill magazines to 0 -->
+			<!-- Once bow crafting skill reaches 75, set the probability bonus of finding bow crafting skill magazines to 0 -->
 			<passive_effect name="LootProb" operation="base_set" level="1,5" value="1,1" tags="bowsCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingBows" operation="Equals" value="100"/>
+				<requirement name="ProgressionLevel" progression_name="craftingBows" operation="Equals" value="75"/>
 			</passive_effect>
 
 			<!-- Increase the chance to find Ranger's Guide to Archery books until each book is read -->
@@ -2372,66 +2448,37 @@
 		</effect_group>
 	</perk>
 
-		<!-- *** FLURRY_OF_BLOWS -->
-	<!-- <perk name="perkFlurryOfBlows" max_level="3" parent="skillAgilityAthletics" name_key="perkFlurryOfBlowsName" desc_key="perkFlurryOfBlowsDesc" icon="ui_game_symbol_knunchuck"> -->
-		<!-- <level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="1" desc_key="reqAgilityLevel01"/></level_requirements> -->
-		<!-- <level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="4" desc_key="reqAgilityLevel04"/></level_requirements> -->
-		<!-- <level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="7" desc_key="reqAgilityLevel07"/></level_requirements> -->
-
-		<!-- <effect_group> -->
-				<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" level="1,2,3" value=".1,.17,.25" tags="perkFlurryOfBlows"/> -->
-		<!-- </effect_group> -->
-
-		<!-- <effect_group> -->
-			<!-- <requirement name="HoldingItemHasTags" tags="perkFlurryOfBlows"/> -->
-			<!-- <requirement name="ProgressionLevel" progression_name="perkFlurryOfBlows" operation="Equals" value="3"/> -->
-				<!-- <triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Stamina" operation="add" value="30" delay="1.0"/> -->
-
-			<!-- <effect_description level="1" desc_key="perkFlurryOfBlowsRank1Desc" long_desc_key="perkFlurryOfBlowsRank1LongDesc"/> -->
-			<!-- <effect_description level="2" desc_key="perkFlurryOfBlowsRank2Desc" long_desc_key="perkFlurryOfBlowsRank2LongDesc"/> -->
-			<!-- <effect_description level="3" desc_key="perkFlurryOfBlowsRank3Desc" long_desc_key="perkFlurryOfBlowsRank3LongDesc"/> -->
-		<!-- </effect_group> -->
-	<!-- </perk> -->
-
-		<!-- *** LIGHT_ARMOR -->
-	<perk name="perkLightArmor" max_level="4" parent="skillAgilityAthletics" name_key="perkLightArmorName" desc_key="perkLightArmorDesc" icon="ui_game_symbol_light_armor2">
+		<!-- *** MEDIUM_ARMOR -->
+	<perk name="perkMediumArmor" max_level="4" parent="skillAgilityAthletics" name_key="perkMediumArmorName" desc_key="perkMediumArmorDesc" icon="ui_game_symbol_light_armor2">
 		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="1" desc_key="reqAgilityLevel01"/></level_requirements>
 		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="3" desc_key="reqAgilityLevel03"/></level_requirements>
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="5" desc_key="reqAgilityLevel05"/></level_requirements>
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="7" desc_key="reqAgilityLevel07"/></level_requirements>
 
 		<effect_group>
+
 			<!-- Stamina/mobility are handled in buffStatusCheck02 -->
-			<passive_effect name="DegradationPerUse" operation="perc_add" level="0,4" value="0,-.66" tags="lightArmorDeg"/>
+
+			<passive_effect name="DegradationPerUse" operation="perc_add" level="0,4" value="0,-.6" tags="mediumArmorDeg"/>
 
 			<!-- Increase the chance to find armor with each perk rank -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorLightSkill"/>
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorMediumSkill"/>
 
-			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 75 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="75"/>
-			</passive_effect>
+			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<!-- <passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM"> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/> -->
+			<!-- </passive_effect> -->
 
-			<!-- Once armor crafting skill reaches 75, set the probability bonus of finding armor crafting skill magazines to 0 -->
-			<passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="75"/>
-			</passive_effect>
+			<!-- Once armor crafting skill reaches 100, set the probability bonus of finding armor crafting skill magazines to 0 -->
+			<!-- <passive_effect name="LootProb" operation="base_set" level="1,4" value="1,1" tags="armorCSM"> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="craftingArmor" operation="Equals" value="100"/> -->
+			<!-- </passive_effect> -->
 
-			<!-- Increase the chance to find Needle & Thread books until each book is read -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="needleProb">
-				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="LT" value="1"/>
-			</passive_effect>
-
-			<!-- When all Needle & Thread books have been read, set the probability bonus of finding them to 0 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="1,1" tags="needleProb">
-				<requirement name="ProgressionLevel" progression_name="perkNeedleAndThreadComplete" operation="Equals" value="1"/>
-			</passive_effect>
-
-			<effect_description level="1" desc_key="perkLightArmorRank1Desc" long_desc_key="perkLightArmorRank1LongDesc"/>
-			<effect_description level="2" desc_key="perkLightArmorRank2Desc" long_desc_key="perkLightArmorRank2LongDesc"/>
-			<effect_description level="3" desc_key="perkLightArmorRank3Desc" long_desc_key="perkLightArmorRank3LongDesc"/>
-			<effect_description level="4" desc_key="perkLightArmorRank4Desc" long_desc_key="perkLightArmorRank4LongDesc"/>
-			<!-- <effect_description level="5" desc_key="perkLightArmorRank5Desc" long_desc_key="perkLightArmorRank5LongDesc"/> -->
+			<effect_description level="1" desc_key="perkMediumArmorRank1Desc" long_desc_key="perkMediumArmorRank1LongDesc"/>
+			<effect_description level="2" desc_key="perkMediumArmorRank2Desc" long_desc_key="perkMediumArmorRank2LongDesc"/>
+			<effect_description level="3" desc_key="perkMediumArmorRank3Desc" long_desc_key="perkMediumArmorRank3LongDesc"/>
+			<effect_description level="4" desc_key="perkMediumArmorRank4Desc" long_desc_key="perkMediumArmorRank4LongDesc"/>
+			<!-- <effect_description level="5" desc_key="perkMediumArmorRank5Desc" long_desc_key="perkMediumArmorRank5LongDesc"/> -->
 		</effect_group>
 	</perk>
 
@@ -2444,8 +2491,10 @@
 
 		<effect_group>
 			<passive_effect name="JumpStrength" operation="perc_add" level="2,3,4" value=".39,.39,.75"/>
-			<!-- .125  is min jump with a broken leg, .16 = 1.5m easy, .175 = 2m barely, .186 = 2m plus a bit, .22 = 2.3m (1.6 + 39%), .276 = juuust 3.3m  (1.6 + 75%) -->
-			<!--passive_effect name="SafeFallDist" operation="base_add" level="3,5" value="5,25"/-->
+			<!-- .125 is min jump with a broken leg, .16 = 1.5m easy, .175 = 2m barely, .186 = 2m plus a bit, .22 = 2.3m (1.6 + 39%), .276 = 3.3m  (1.6 + 75%) -->
+
+			<!-- Increase parkourBonus with each level of the perk -->
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$parkourBonus" operation="set" value="0,.0162,.0304,.0587,.0728"/>
 
 			<passive_effect name="StaminaLoss" operation="perc_add" level="1,4" value="-.1,-.4" tags="jumping"/>
 
@@ -2507,7 +2556,7 @@
 				</passive_effect>
 				<passive_effect name="NoiseMultiplier" operation="perc_add" level="0,5" value="0,-.5"/>
 				<passive_effect name="CrouchSpeed" operation="perc_add" level="0,5" value="0,0.5"/>
-				<passive_effect name="EnemySearchDuration" operation="perc_add" level="0,1,2,3,4,5" value="0,-.17,-.33,-.5,-.58,-.67"/>
+				<passive_effect name="EnemySearchDuration" operation="perc_add" level="0,1,2,3,4,5" value="0,.2,.5,1,1.4,2"/>
 
 			<effect_description level="1" desc_key="perkFromTheShadowsRank1Desc" long_desc_key="perkFromTheShadowsRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkFromTheShadowsRank2Desc" long_desc_key="perkFromTheShadowsRank2LongDesc"/>
@@ -2769,20 +2818,20 @@
 		<effect_group>
 			<!-- Craft items in the chemical station faster -->
 			<passive_effect name="CraftingTime" operation="perc_add" level="2,3,4,5" value="-.2,-.2,-.4,-.4" tags="chemStationCrafting"/>
-			
-			<!-- Heal sprains with splint or cast with level 1 -->
-			
+
+			<!-- Heal sprains with splint or cast with level 1. Logic on items -->
+			<!-- Heal breaks with cast with level 3. Logic on cast -->
+
 			<!-- Intellect weapons have an added 20% chance to dismember -->
 			<passive_effect name="DismemberChance" operation="base_add" level="4,5" value="0" tags="attIntellect"/>
-			
-			<!-- crit hit effects heal rate is assigned in buffStatusCheck02 -->
-			
+
+			<!-- Increase the XP gains with each level of the perk -->
 			<passive_effect name="PlayerExpGain" operation="perc_add" level="1,2,3,4,5" value="1,2,5,5,5" tags="medical">
 				<requirement name="HoldingItemHasTags" tags="medical"/>
 			</passive_effect>
-			
-			<!-- see <buff name="buffPerkAbilityUpdate"> for cvar based ability changes -->
-			<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+
+			<!-- Increase medicRegHealthIncreaseSpeed with each level of the perk -->
+			<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$medicRegHealthIncreaseSpeed" operation="set" value="2,2.5,3,4,4,4"/>
 
 			<!-- Increase the chance to find medical items with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="medicalSkill"/>
@@ -2803,7 +2852,7 @@
 			<effect_description level="4" desc_key="perkPhysicianRank4Desc" long_desc_key="perkPhysicianRank4LongDesc"/>
 			<effect_description level="5" desc_key="perkPhysicianRank5Desc" long_desc_key="perkPhysicianRank5LongDesc"/>
 		</effect_group>
-		
+
 		<effect_group>
 			<!-- Each blow landed with a stun baton has a 10% higher chance for instant death -->
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
@@ -2812,7 +2861,7 @@
 			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
 				<passive_effect name="EntityDamage" operation="base_add" level="5" value="1500" tags="stunBaton"/>
 		</effect_group>
-		
+
 	</perk>
 
 		<!-- *** ADVANCED_ENGINEERING -->
@@ -2927,16 +2976,16 @@
 			<passive_effect name="LockPickBreakChance" operation="perc_subtract" level="1,3" value=".1,.3"/>
 
 			<!-- Increase the chance to find lockpicks with each perk rank -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="workstationSkill"/>
+			<passive_effect name="LootQuantity" operation="base_add" level="2,3" value="1,2" tags="lockPickSkill"/>
 
-			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 15 -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="workstationCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="75"/>
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="15"/>
 			</passive_effect>
 
-			<!-- Once workstation crafting skill reaches 75, set the probability bonus of finding workstation crafting skill magazines to 0 -->
+			<!-- Once workstation crafting skill reaches 15, set the probability bonus of finding workstation crafting skill magazines to 0 -->
 			<passive_effect name="LootProb" operation="base_set" level="1,3" value="1,1" tags="workstationCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="Equals" value="75"/>
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="GTE" value="15"/>
 			</passive_effect>
 
 			<!-- Increase the chance to find The Great Heist books until each book is read -->
@@ -2996,78 +3045,27 @@
 	<!-- *** THE_FIREMAN'S_ALMANAC_VOLUME_07_EQUIPMENT -->
 	<book name="perkFiremansAlmanacEquipment" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" name_key="bookFiremansAlmanacEquipment" desc_key="perkFiremansAlmanacEquipmentDesc" long_desc_key="perkFiremansAlmanacEquipmentLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="armorFirefightersHelmet"/>
+			<passive_effect name="VehicleSelfDamage" operation="perc_add" level="1" value="-.25" tags="vehicle"/>
 		</effect_group>
 	</book>
 	<!-- *** 7/7 THE_FIREMAN'S_ALMANAC_COMPLETE -->
 	<book name="perkFiremansAlmanacComplete" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" desc_key="perkFiremansAlmanacCompleteDesc" long_desc_key="perkFiremansAlmanacCompleteLongDesc">
 		<effect_group>
 			<requirement name="InBiome" biome="8"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
-				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/> <!-- perkFiremansAlmanacComplete -->
 				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
 		</effect_group>
 
 		<effect_group>
 			<requirement name="InBiome" biome="9"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
-				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/> <!-- perkFiremansAlmanacComplete -->
 				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
 		</effect_group>
-	</book>
 
-					<!-- *** -->
-
-	<!-- *** Needle_And_Thread_Volume_01_Winter_Gear -->
-	<book name="perkNeedleAndThreadWinterWear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadWinterWear" desc_key="perkNeedleAndThreadWinterWearDesc" long_desc_key="perkNeedleAndThreadWinterWearLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelFlannelShirt,apparelSweatshirt,apparelSkullCap"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.5" tags="chainsaw"/>
 		</effect_group>
 	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_02_LEG_GEAR -->
-	<book name="perkNeedleAndThreadLegwear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadLegwear" desc_key="perkNeedleAndThreadLegwearDesc" long_desc_key="perkNeedleAndThreadLegwearLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelDenimPants,apparelOveralls,apparelSkirt"/>
-		</effect_group>
-	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_03_FOOT_GEAR -->
-	<book name="perkNeedleAndThreadFootwear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadFootwear" desc_key="perkNeedleAndThreadFootwearDesc" long_desc_key="perkNeedleAndThreadFootwearLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelWornBoots,apparelRunningShoesRegular,apparelCowboyBoots,apparelSuitDressShoes"/>
-		</effect_group>
-	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_04_DESERT_GEAR -->
-	<book name="perkNeedleAndThreadDesertWear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadDesertWear" desc_key="perkNeedleAndThreadDesertWearDesc" long_desc_key="perkNeedleAndThreadDesertWearLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelTankTop,apparelTShirtPlain,apparelCowboyHat,apparelDenimShortsPants"/>
-		</effect_group>
-	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_05_DUSTERS -->
-	<book name="perkNeedleAndThreadDusters" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadDusters" desc_key="perkNeedleAndThreadDustersDesc" long_desc_key="perkNeedleAndThreadDustersLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelCoatLeatherDuster"/>
-		</effect_group>
-	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_06_PUFFER_COATS -->
-	<book name="perkNeedleAndThreadPufferCoats" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadPufferCoats" desc_key="perkNeedleAndThreadPufferCoatsDesc" long_desc_key="perkNeedleAndThreadPufferCoatsLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelCoatPufferCoat"/>
-		</effect_group>
-	</book>
-	<!-- *** NEEDLE_AND_THREAD_VOLUME_07_POCKETS -->
-	<book name="perkNeedleAndThreadPockets" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadPockets" desc_key="perkNeedleAndThreadPocketsDesc" long_desc_key="perkNeedleAndThreadPocketsLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modClothingCargoStoragePocket"/>
-		</effect_group>
-	</book>
-	<!-- *** 7/7 NEEDLE_AND_THREAD_COMPLETE -->
-	<book name="perkNeedleAndThreadComplete" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="perkNeedleAndThreadCompleteName" desc_key="perkNeedleAndThreadCompleteDesc" long_desc_key="perkNeedleAndThreadCompleteLongDesc">
-		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelArmyPants,apparelArmyShirt"/>
-		</effect_group>
-	</book>
-
-					<!-- *** -->
 
 	<!-- *** NIGHT_STALKER_VOLUME_01_STEALTH -->
 	<book name="perkNightStalkerStealthDamage" parent="skillNightStalker" max_level="1" base_skill_point_cost="0" desc_key="perkNightStalkerStealthDamageDesc" long_desc_key="perkNightStalkerStealthDamageLongDesc">
@@ -3194,25 +3192,25 @@
 	<!-- *** MAGNUM_ENFORCER_VOLUME_01_DAMAGE -->
 	<book name="perkEnforcerDamage" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerDamageDesc" long_desc_key="perkEnforcerDamageLongDesc">
 		<effect_group>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.1" tags="revolver"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.1" tags="44enforcer"/>
 		</effect_group>
 	</book>
 	<!-- *** MAGNUM_ENFORCER_VOLUME_02_APPAREL -->
 	<book name="perkEnforcerApparel" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerApparelDesc" long_desc_key="perkEnforcerApparelLongDesc">
-		<!-- effect is on suitPants/suitJacket -->
+		<!-- effect is on armorEnforcerOutfit -->
 		<effect_group></effect_group>
 	</book>
 	<!-- *** MAGNUM_ENFORCER_VOLUME_03_PUNKS -->
 	<book name="perkEnforcerPunks" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerPunksDesc" long_desc_key="perkEnforcerPunksLongDesc">
 		<effect_group>
 			<requirement name="RoundsInMagazine" operation="LTE" value="0"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="1" tags="revolver"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="1" tags="44enforcer"/>
 		</effect_group>
 	</book>
 	<!-- *** MAGNUM_ENFORCER_VOLUME_04_INTIMIDATION -->
 	<book name="perkEnforcerIntimidation" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerIntimidationDesc" long_desc_key="perkEnforcerIntimidationLongDesc">
 		<effect_group>
-			<requirement name="ItemHasTags" tags="revolver"/>
+			<requirement name="HoldingItemHasTags" tags="44enforcer"/>
 				<passive_effect name="BarteringBuying" operation="base_add" level="1" value="0.05"/>
 				<passive_effect name="BarteringSelling" operation="base_add" level="1" value="0.05"/>
 		</effect_group>
@@ -3232,7 +3230,7 @@
 	<!-- *** MAGNUM_ENFORCER_VOLUME_07_CRIMINAL_PURSUIT -->
 	<book name="perkEnforcerCriminalPursuit" parent="skillEnforcer" max_level="1" base_skill_point_cost="0" desc_key="perkEnforcerCriminalPursuitDesc" long_desc_key="perkEnforcerCriminalPursuitLongDesc">
 		<effect_group>
-			<requirement name="ItemHasTags" tags="revolver"/>
+			<requirement name="ItemHasTags" tags="44enforcer"/>
 			<requirement name="ProgressionLevel" progression_name="perkEnforcerCriminalPursuit" operation="Equals" value="1"/>
 				<triggered_effect trigger="onCombatEntered" action="AddBuff" buff="buffEnforcerCriminalPursuit"/>
 		</effect_group>
@@ -3414,7 +3412,7 @@
 	<!-- *** 7/7 WASTELAND_TREASURES_COMPLETE -->
 	<book name="perkWasteTreasuresComplete" parent="skillWasteTreasures" max_level="1" base_skill_point_cost="0" desc_key="perkWasteTreasuresCompleteDesc" long_desc_key="perkWasteTreasuresCompleteLongDesc">
 		<effect_group>
-			<passive_effect name="HarvestCount" operation="base_set" level="1" value="1" tags="WasteTreasuresCompleteHarvest"/>
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="WasteTreasuresCompleteHarvest"/>
 		</effect_group>
 	</book>
 
@@ -3816,7 +3814,6 @@
 	<book name="perkSniperComplete" parent="skillSniper" max_level="1" base_skill_point_cost="0" name_key="perkSniperCompleteName" desc_key="perkSniperCompleteDesc" long_desc_key="perkSniperCompleteLongDesc">
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundle762mmBulletBall,ammoBundle762mmBulletHP,ammoBundle762mmBulletAP"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelGhillieSuitHood,apparelGhillieSuitJacket,apparelGhillieSuitPants"/>
 		</effect_group>
 	</book>
 
@@ -3938,13 +3935,13 @@
 	<!-- *** URBAN_COMBAT_VOLUME_01_STEALTH_BOOTS -->
 	<book name="perkUrbanCombatLanding" parent="skillUrbanCombat" max_level="1" base_skill_point_cost="0" name_key="bookUrbanCombatLanding" desc_key="perkUrbanCombatLandingDesc" long_desc_key="perkUrbanCombatLandingLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="armorMilitaryStealthBoots"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modArmorStealthBoots"/>
 		</effect_group>
 	</book>
 	<!-- *** URBAN_COMBAT_VOLUME_02_CIGAR -->
 	<book name="perkUrbanCombatCigar" parent="skillUrbanCombat" max_level="1" base_skill_point_cost="0" name_key="bookUrbanCombatCigar" desc_key="perkUrbanCombatCigarDesc" long_desc_key="perkUrbanCombatCigarLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelCigar"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modArmorCigar"/>
 		</effect_group>
 	</book>
 	<!-- *** URBAN_COMBAT_VOLUME_03_SNEAKING -->
@@ -4000,7 +3997,7 @@
 	<!-- *** TECH_JUNKIE_VOLUME_02_MAINTENANCE -->
 	<book name="perkTechJunkie2Maintenance" parent="skillTechJunkie" max_level="1" base_skill_point_cost="0" desc_key="perkTechJunkie2MaintenanceDesc" long_desc_key="perkTechJunkie2MaintenanceLongDesc">
 		<effect_group>
-			<passive_effect name="DegradationPerUse" operation="perc_add" level="1" value="-.2" tags="perkTurrets"/>
+			<passive_effect name="DegradationPerUse" operation="perc_add" level="1" value="-.2" tags="perkTurrets,batonJunkie"/>
 		</effect_group>
 	</book>
 	<!-- *** TECH_JUNKIE_VOLUME_03_APAMMO -->
@@ -4030,18 +4027,12 @@
 	<!-- *** TECH_JUNKIE_VOLUME_07_HYDRAULICS -->
 	<book name="perkTechJunkie7Hydraulics" parent="skillTechJunkie" max_level="1" base_skill_point_cost="0" desc_key="perkTechJunkie7HydraulicsDesc" long_desc_key="perkTechJunkie7HydraulicsLongDesc">
 		<effect_group>
-			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".033" tags="turretMelee"/>
-			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".033" tags="turretMelee,,deployed"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".05" tags="turretMelee"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".05" tags="turretMelee,deployed"/>
 
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".1" tags="turretRanged"/>
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value=".1" tags="turretRanged,deployed"/>
 		</effect_group>
-		<!--
-		also:
-				<effect_group name="deployed turret but not when held">
-					<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value="3.1" tags="perkTurrets"/>
-				</effect_group>
-		-->
 	</book>
 	<!-- *** 7/7 TECH_JUNKIE_COMPLETE -->
 	<book name="perkTechJunkie8Complete" parent="skillTechJunkie" max_level="1" base_skill_point_cost="0" name_key="bookTechJunkie8Complete" desc_key="perkTechJunkie8CompleteDesc" long_desc_key="perkTechJunkie8CompleteLongDesc">
@@ -4174,18 +4165,13 @@
 	<!-- *** SPEAR_HUNTER_VOLUME_05_RAPID_STRIKE -->
 	<book name="perkSpearHunter5RapidStrike" parent="skillSpearHunter" max_level="1" base_skill_point_cost="0" desc_key="perkSpearHunter5RapidStrikeDesc" long_desc_key="perkSpearHunter5RapidStrikeLongDesc">
 		<effect_group>
-				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".1" tags="perkJavelinMaster"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".1" tags="perkJavelinMaster"/>
 		</effect_group>
 	</book>
 	<!-- *** SPEAR_HUNTER_VOLUME_06_PENETRATING Shaft -->
 	<!-- perkSpearHunter6PenetratingShaft, Power attacks now penetrate and damage multiple enemies. -->
 	<book name="perkSpearHunter6PenetratingShaft" parent="skillSpearHunter" max_level="1" base_skill_point_cost="0" desc_key="perkSpearHunter6PenetratingShaftDesc" long_desc_key="perkSpearHunter6PenetratingShaftLongDesc">
-		<effect_group>
-		<passive_effect name="EntityPenetrationCount" operation="perc_add" level="1" value="3" tags="perkJavelinMaster"/>
-			<requirement name="ProgressionLevel" progression_name="perkSpearHunter6PenetratingShaft" operation="Equals" value="1"/>
-			<requirement name="ItemHasTags" tags="perkJavelinMaster"/>
-			<requirement name="IsSecondaryAttack"/>
-		</effect_group>
+		<!-- <effect is on the spears> -->
 	</book>
 	<!-- *** SPEAR_HUNTER_VOLUME_07_QUICK_STRIKE -->
 	<!-- Hits scored in quick succession do 10% more damage per hit up to 30%. -->
@@ -4193,7 +4179,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkJavelinMaster"/>
 			<requirement name="ProgressionLevel" progression_name="perkSpearHunter7QuickStrike" operation="Equals" value="1"/>
-			<requirement name="IsAlive" target="other"/>
+			<requirement name="WasAlive" target="other"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffSpearHunter7QuickStrike"/>
 		</effect_group>
 	</book>
