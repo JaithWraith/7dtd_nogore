@@ -11,16 +11,18 @@
 		<property name="HoldType" value="45"/>
 		<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 		<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="400"/>
 		<property name="Group" value="Mods,Tool/Weapon Mods"/>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+		<property name="SoundPickup" value="mod_grab"/>
+		<property name="SoundPlace" value="mod_place"/>
 	</item_modifier>
 
 	<!-- *** Weapon_Attachments -->
-	
+
 	<!-- <item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment"> -->
 	<!-- A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" can not be removed. -->
-	
-	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+
+	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,shotgun" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBarrelExtenderSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -68,7 +70,7 @@
 			<property name="Sound_end" value=""/>
 			<property name="Sound_loop" value="pistol_s_fire"/>
 		</item_property_overrides>
-		
+
 		<item_property_overrides name="gunHandgunT0PipePistol">
 			<property name="Sound_start" value="pistol_s_fire"/>
 			<property name="Sound_loop" value="pistol_s_fire"/>
@@ -93,7 +95,7 @@
 			<property name="BarrelOffset" value="0,.028,.165"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
-		
+
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="Sound_start" value="pump_shotgun_s_fire"/>
 			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
@@ -168,11 +170,6 @@
 		</item_property_overrides>
 
 		<!-- visible attachment: silencer -->
-		<effect_group tiered="false" name="external attachment prefab (old way)">
-			<requirement name="!HoldingItemHasTags" tags="dBarrel"/>
-			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Barrels/SilencerPrefab.prefab" parent_transform="Attachments/Barrel"/>
-		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer"/>
@@ -209,10 +206,6 @@
 		<item_property_overrides name="gunRifleT0PipeRifle">
 			<property name="SideOffset" value="0,.0148,.0479"/>
 			<property name="SideScale" value="1,1,1"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="gunShotgunT0Blunderbuss">
-			<property name="SideOffset" value="0,-.026,.27"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
@@ -284,9 +277,11 @@
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser"/>
 
-				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="gunlaser" transform_path="gunlaser"/>
-				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
-				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
@@ -306,10 +301,6 @@
 		<item_property_overrides name="gunHandgunT1Pistol">
 			<property name="SideOffset" value="0,.0198,.0475"/>
 			<property name="SideScale" value=".75,.75,.75"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="gunShotgunT0Blunderbuss">
-			<property name="SideOffset" value="0,-.026,.27"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
@@ -369,6 +360,7 @@
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,0"/>
 		</item_property_overrides>
+
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
 			<property name="SideOffset" value="0,0,.32"/>
 			<property name="SideScale" value="1,1,1"/>
@@ -386,9 +378,11 @@
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight"/>
 
-				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
-				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
-				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
 		</effect_group>
 	</item_modifier>
 
@@ -409,14 +403,14 @@
 			<property name="ScopeOffset" value="0,.074,.078"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
 			<property name="ScopeOffset" value="0,.056,.013"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -425,7 +419,7 @@
 			<property name="ScopeOffset" value="0,12,15"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.04,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -434,7 +428,7 @@
 			<property name="ScopeOffset" value="0,.088,-.2"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.04,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -443,7 +437,7 @@
 			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.05,.01"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -452,7 +446,7 @@
 			<property name="ScopeOffset" value="0,.1037,.0689"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -461,7 +455,7 @@
 			<property name="ScopeOffset" value="0,.0999,-.2534"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -470,7 +464,7 @@
 			<property name="ScopeOffset" value="-.0006,.081,.005"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.01,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -479,7 +473,7 @@
 			<property name="ScopeOffset" value="0,.0736,-.1497"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -489,7 +483,7 @@
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeRotation" value="0,0,80"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -498,21 +492,21 @@
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
 			<property name="ScopeOffset" value="0,.092,-.06"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -630,7 +624,7 @@
 			<property name="ScopeOffset" value="0,-.0523,.1686"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -651,7 +645,7 @@
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -660,7 +654,7 @@
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -668,7 +662,7 @@
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -725,12 +719,6 @@
 			<property name="ScopeCameraOffset" value="0,-.015,0"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunShotgunT0Blunderbuss">
-			<property name="ScopeOffset" value="0,.056,.05"/>
-			<property name="ScopeScale" value=".7,.7,.7"/>
-			<property name="ScopeCameraOffset" value="0,-.0297,0"/>
-		</item_property_overrides>
-
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
 			<property name="ScopeOffset" value="0,.0816,.2104"/>
 			<property name="ScopeScale" value=".25,.3,.3"/>
@@ -752,7 +740,7 @@
 		<item_property_overrides name="gunShotgunT0PipeShotgun">
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
-			<property name="ScopeCameraOffset" value=".0002,-0.0185,-.075"/>
+			<property name="ScopeCameraOffset" value=".0002,-.0025,-0.15"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT0PipeMachineGun">
@@ -770,38 +758,38 @@
 		<item_property_overrides name="gunMGT1AK47">
 			<property name="ScopeOffset" value="0,.08,-.2035"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
-			<property name="ScopeCameraOffset" value="0.0005,-.019,.22"/>
+			<property name="ScopeCameraOffset" value="0.0005,-.01925,.175"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT2TacticalAR">
 			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
-			<property name="ScopeCameraOffset" value="0,.000,0.0016"/>
+			<property name="ScopeCameraOffset" value="0,.0025,0.0016"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT0PipeRifle">
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,0,.1"/>
+			<property name="ScopeCameraOffset" value="0,0.0105,-0.1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
 			<property name="ScopeOffset" value="-.0006,.06,.08"/>
 			<property name="ScopeScale" value=".7,.7,.7"/>
-			<property name="ScopeCameraOffset" value="0,-.012,-.07"/>
+			<property name="ScopeCameraOffset" value="0,0.0085,.15"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT2LeverActionRifle">
 			<property name="ScopeOffset" value="0,.073,-.13"/>
 			<property name="ScopeScale" value=".7,.7,.7"/>
-			<property name="ScopeCameraOffset" value="-0.0011,-0.014,-.025"/>
+			<property name="ScopeCameraOffset" value="-0.0007,.00265,-.02"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
 			<property name="ScopeOffset" value="-.08,.011,.186"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeRotation" value="0,0,80"/>
-			<property name="ScopeCameraOffset" value=".0495,.0715,0"/>
+			<property name="ScopeCameraOffset" value=".0302,.0928,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
@@ -818,7 +806,7 @@
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="ScopeCameraOffset" value="0,-.01,0"/>
-			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectPullDualsense" value="PistolTrigger"/>
 			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
 			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
@@ -828,7 +816,7 @@
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT3SniperRifle">
-			<property name="ScopeCameraOffset" value="0,-.0055,0"/>
+			<property name="ScopeCameraOffset" value="0,-0.0137,0"/>
 		</item_property_overrides>
 
 		<!-- visible attachment: holosight -->
@@ -887,7 +875,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBipodSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.08"/>
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.09">
@@ -905,7 +893,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunForegripSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.15"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.15"/>
@@ -988,7 +976,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMagazineExtenderSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
@@ -998,7 +986,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkAutoWeaponsDrumMag"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
@@ -1009,7 +997,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkShotgunMessiahMagazine"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".375"/>
 		</effect_group>
@@ -1019,7 +1007,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunCrippleEmSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<!--Each shot has a chance to cripple-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="walker"/>
@@ -1040,7 +1028,7 @@
 		<property name="UnlockedBy" value="modGunBowPolymerStringSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Mplastics"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
 		</effect_group>
@@ -1050,7 +1038,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBowArrowRestSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.1"/>
@@ -1061,7 +1049,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeTheHunterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<!--Do double damage to living enemies-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="animal"/>
@@ -1073,7 +1061,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		
+
 		<!-- Increases damage against irradiated enemies, all melee only -->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
@@ -1081,60 +1069,12 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunMeleeNiCdBattery" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="CreativeMode" value="None"/>
-		<!-- <property name="UnlockedBy" value="modGunMeleeNiCdBatterySchematic"/> -->
-		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
-
-		<!-- Changes damage type to electric -->
-		<item_property_overrides name="*">
-			<property name="DamageType" value="Electrical"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modGunMeleeFlammableOil" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="CreativeMode" value="None"/>
-		<!-- <property name="UnlockedBy" value="modGunMeleeFlammableOilSchematic"/> -->
-		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
-
-		<!-- Changes damage type to heat -->
-		<item_property_overrides name="*">
-			<property name="DamageType" value="Heat"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modGunMeleeLiquidNitrogen" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="CreativeMode" value="None"/>
-		<!-- <property name="UnlockedBy" value="modGunMeleeLiquidNitrogenSchematic"/> -->
-		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
-
-		<!-- Changes damage type to cold -->
-		<item_property_overrides name="*">
-			<property name="DamageType" value="Cold"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
-		</effect_group>
-	</item_modifier>
-
 	<!-- *** Melee_Mods -->
-	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
+	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage,durability" blocked_tags="noMods,noBlades" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeTemperedBladeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		
+
 		<!-- reduce DR of armor by x, blade weapons -->
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
@@ -1146,7 +1086,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeSerratedBladeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
@@ -1162,7 +1102,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWeightedHeadSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<!-- Increases stun chance; increases stamina use, axe, hammer, club -->
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
@@ -1177,7 +1117,7 @@
 
 		<!-- Increases durability, increases block efficiency, all melee -->
 		<effect_group tiered="false">
-			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.25" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.25" tags="perkArchery,perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1339,60 +1279,60 @@
 			<property name="LightSource" value="lightSource"/>
 			<property name="ActivateObject" value="lightSource"/>
 			<property name="AlwaysActive" value="true"/>
-			<property name="FlameEffect" value="ItemModEffects/mod_flame_defaultPrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_flame_defaultPrefab.prefab"/>
 			<property name="MatEmission" value="1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT1BaseballBat">
-			<property name="FlameEffect" value="ItemModEffects/mod_bat_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeToolRepairT1ClawHammer">
-			<property name="FlameEffect" value="ItemModEffects/mod_hammer_firePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_hammer_firePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammer">
-			<property name="FlameEffect" value="ItemModEffects/mod_sledge_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammer">
-			<property name="FlameEffect" value="ItemModEffects/mod_stone_sledge_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_sledge_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="FlameEffect" value="ItemModEffects/mod_club_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_club_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeToolRepairT0StoneAxe">
-			<property name="FlameEffect" value="ItemModEffects/mod_stone_axe_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeToolAxeT1IronFireaxe">
-			<property name="FlameEffect" value="ItemModEffects/mod_fireaxe_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_fireaxe_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeToolAxeT2SteelAxe">
-			<property name="FlameEffect" value="ItemModEffects/mod_steel_axe_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSpearT0StoneSpear">
-			<property name="FlameEffect" value="ItemModEffects/mod_spear_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSpearT1IronSpear">
-			<property name="FlameEffect" value="ItemModEffects/mod_spear_iron_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_iron_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSpearT3SteelSpear">
-			<property name="FlameEffect" value="ItemModEffects/mod_spear_steel_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_steel_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBotT1JunkSledge">
-			<property name="FlameEffect" value="ItemModEffects/mod_junk_sledge_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_junk_sledge_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnBladeT3Machete">
-			<property name="FlameEffect" value="ItemModEffects/mod_machete_flamePrefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false" name="SpecialEffects">
@@ -1442,12 +1382,12 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkFiremansAlmanacAxes"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="EntityDamage" operation="perc_add" value="-.25"/>
 			<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
+			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
+			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
 		</effect_group>
 	</item_modifier>
 
@@ -1455,11 +1395,11 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeGraveDiggerSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="earth"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
+			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
+			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
 		</effect_group>
 	</item_modifier>
 
@@ -1467,11 +1407,11 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeBunkerBusterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="stone"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
+			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
+			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
 		</effect_group>
 	</item_modifier>
 
@@ -1479,11 +1419,11 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeIronBreakerSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="metal"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
+			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
+			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
 		</effect_group>
 	</item_modifier>
 
@@ -1491,11 +1431,11 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWoodSplitterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="wood"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
+			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
+			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
 		</effect_group>
 	</item_modifier>
 
@@ -1503,9 +1443,9 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkArtOfMiningDiamondTools"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		
+
 		<effect_group tiered="false">
-				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.4" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.3" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1513,7 +1453,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkTechJunkie5Repulsor"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
@@ -1524,7 +1464,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankSmallSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
@@ -1534,7 +1474,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankLargeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 		</effect_group>
@@ -1548,7 +1488,7 @@
 		<property name="UnlockedBy" value="modArmorBandolierSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Mcloth"/>
-		
+
 		<!-- Reload Guns X% faster;  would like to add it to "legs" but buffs dont stack like that -->
 		<effect_group tiered="false">
 			<requirement name="ItemHasTags" tags="armorChest"/>
@@ -1561,7 +1501,7 @@
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierLegs"/>
 		</effect_group>
 	</item_modifier>
-	
+
 	<item_modifier name="modRadiationReady" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CreativeMode" value="None"/>
@@ -1600,7 +1540,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,lightArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorImprovedFittingsSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -1615,7 +1555,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,lightArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorCustomizedFittingsSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1630,7 +1570,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorPlatingBasic" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorPlatingBasic" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods,heavyArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorPlatingBasicSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -1642,19 +1582,19 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorPlatingReinforced" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorPlatingReinforced" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods,heavyArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="DisplayType" value="modArmor"/>
 		<property name="DescriptionKey" value="modArmorPlatingBasicDesc"/>
-		
+
 		<effect_group tiered="false">
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="2"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorStoragePocket" installable_tags="armor" modifier_tags="carryweight1" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorStoragePocketSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -1667,7 +1607,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorDoubleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorDoubleStoragePocket" installable_tags="armor" modifier_tags="carryweight2" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorDoubleStoragePocketSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1680,7 +1620,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorTripleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorTripleStoragePocket" installable_tags="armor" modifier_tags="carryweight3" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorTripleStoragePocketSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
@@ -1693,7 +1633,20 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
+	<item_modifier name="modArmorQuadStoragePocket" installable_tags="armor" modifier_tags="carryweight4" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modArmorQuadStoragePocketSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="DisplayType" value="modCarryCapacity"/>
+		<property name="Material" value="Mleather"/>
+
+		<effect_group tiered="false">
+			<passive_effect name="CarryCapacity" operation="base_add" value="4"/>
+			<display_value name="dCarryCapacity" value="4"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,lightArmor,assassin" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorMuffledConnectorsSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1701,11 +1654,11 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/><display_value name="dNoiseMultiplier" value="-.04"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/><display_value name="dNoiseMultiplier" value="-.05"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
+	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,lightArmor,assassin" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorAdvancedMuffledConnectorsSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
@@ -1713,7 +1666,7 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/><display_value name="dNoiseMultiplier" value="-.08"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/><display_value name="dNoiseMultiplier" value="-.1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1726,6 +1679,24 @@
 		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffImpactBracing"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffImpactBracing"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorStealthBoots" installable_tags="armorFeet" modifier_tags="stealth" blocked_tags="noMods,lightArmor,assassin" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="perkUrbanCombatLanding"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="mediumArmor"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffMediumStealthBoots"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffMediumStealthBoots"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="heavyArmor"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHeavyStealthBoots"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHeavyStealthBoots"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1749,53 +1720,134 @@
 		<property name="Material" value="Msteel"/>
 		<property name="LightValue" value=".4"/>
 		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
-			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightCam" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0,0" localRot="-90,0,0"/>
+			<triggered_effect trigger="onSelfEquipChanged" action="AddPartFPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0.1,0" localRot="-90,180,0"/>
+			<triggered_effect trigger="onSelfEquipChanged" action="AddPartTPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight"/>
-			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightCam"/>
-			<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="@!.IsFPV"/>
-			<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLightCam" active="@.IsFPV"/>
+			<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="true"/>
 			<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false"/>
-			<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightCam" active="false"/>
+			<triggered_effect trigger="onSelfItemActivate" silent_on_equip="true" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/>
+			<triggered_effect trigger="onSelfItemDeactivate" silent_on_equip="true" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/>
 		</effect_group>
 	</item_modifier>
 
-	<!-- *** Clothing_Pocket_Mods -->
-
-	<item_modifier name="modClothingStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorCigar" installable_tags="armorHead" modifier_tags="cigar" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="DisplayType" value="modCarryCapacity"/>
-		<property name="Material" value="Mleather"/>
-		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
+		<property name="CustomIcon" value="apparelCigar"/>
+		<property name="DisplayType" value="clothingCigar"/>
+		<property name="UnlockedBy" value="perkUrbanCombatCigar"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Mplants"/>
+		<property name="EconomicValue" value="1000"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
-			<display_value name="dCarryCapacity" value="1"/>
+		<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+		<passive_effect name="BarteringBuying" operation="base_add" value=".1"/>
+		<passive_effect name="BarteringSelling" operation="base_add" value=".1"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modClothingCargoStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+<!-- *** HELMET_MODS -->
+	<item_modifier name="modArmorPerception" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="UnlockedBy" value="perkNeedleAndThreadPockets"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="DisplayType" value="modCarryCapacity"/>
-		<property name="Material" value="Mleather"/>
-		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
+		<property name="CustomIcon" value="modArmorPerception"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="CarryCapacity" operation="base_add" value="2"/>
-			<display_value name="dCarryCapacity" value="2"/>
-		</effect_group>
+	<effect_group tiered="false">
+		<passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorStrength" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorStrength"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorFortitude" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorFortitude"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorAgility" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorAgility"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorIntellect" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorIntellect"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorTreasureHunter" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorTreasureHunter"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="LootStage" operation="base_add" value="5"/>
+		<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+		<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
+		<display_value name="dTreasureBlocksPerReduction" value="-1"/>
+		<display_value name="dPlayerExpGain" value=".1"/>
+	</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorNightVision" installable_tags="armorHead" modifier_tags="nightVision" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorNightVision"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1000"/>
+
+	<effect_group tiered="false">
+		<requirement name="IsLocalPlayer"/>
+		<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+		<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+		<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+	</effect_group>
 	</item_modifier>
 
 	<!-- *** Dye_Mods -->
-	
-	<!-- How pre-installed dyes are picked for looted items:
-			All dyes are checked and roll for their cosmetic_install_chance.
-			If that's a hit, the item goes in the list.
 
-			When done, one dye is picked from the list. -->
+	<!-- How pre-installed dyes are picked for looted items: -->
+	<!-- All dyes are checked and roll for their cosmetic_install_chance. -->
+	<!-- If that's a hit, the item goes in the list. -->
+
+	<!-- When done, one dye is picked from the list. -->
 
 	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
@@ -1803,6 +1855,26 @@
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+	</item_modifier>
+
+	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".16">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="132,105,84"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="132,105,84"/>
+			<property name="CustomIconTint" value="132,105,84"/>
+		</item_property_overrides>
 	</item_modifier>
 
 	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeRed" type="attachment" cosmetic_install_chance=".13">
@@ -1812,47 +1884,46 @@
 		<property name="CustomIconTint" value="149,52,54"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
-
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="212,84,84"/>
 			<property name="CustomIconTint" value="149,52,54"/>
-			<property name="UMA.Overlay0Tint" value="180,52,54"/>
 		</item_property_overrides>
+	</item_modifier>
 
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="149,52,54"/>
+	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeOrange" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="255,166,77"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+
+		<item_property_overrides name="*">
+			<property name="TintColor" value="255,166,77"/>
+			<property name="CustomIconTint" value="255,166,77"/>
 		</item_property_overrides>
+	</item_modifier>
 
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="149,52,54"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="149,52,54"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="149,52,54,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="149,52,54"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelFlannelShirt">
-			<property name="UMA.Overlay0Tint" value="149,52,54"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="UMA.Overlay0Tint" value="60,19,19"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="UMA.Overlay0Tint" value="60,19,19"/>
+	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeYellow" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="218,200,135"/>
+			<property name="CustomIconTint" value="218,200,135"/>
 		</item_property_overrides>
 	</item_modifier>
 
@@ -1863,113 +1934,13 @@
 		<property name="CustomIconTint" value="128,152,120"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
-
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="74,130,74"/>
 			<property name="CustomIconTint" value="128,152,120"/>
-			<property name="UMA.Overlay0Tint" value="128,152,120"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="CustomIconTint" value="184,241,164"/>
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="184,241,164"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="128,152,120"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="128,152,120"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="128,152,120,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="128,152,120"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatPufferCoat">
-			<property name="CustomIconTint" value="200,255,200"/>
-			<property name="UMA.Overlay0Tint" value="200,255,200"/>
-		</item_property_overrides>
-	</item_modifier>
-
-	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlack" type="attachment" cosmetic_install_chance=".05">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/>
-		<property name="CustomIconTint" value="47,47,47"/>
-		<property name="Material" value="Mpaint"/>
-		<property name="Weight" value="20"/>
-
-		<item_property_overrides name="*">
-			<property name="TintColor" value="70,70,70"/>
-			<property name="CustomIconTint" value="47,47,47"/>
-			<property name="UMA.Overlay0Tint" value="47,47,47"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="57,57,57"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="47,47,47"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelFlannelShirt">
-			<property name="UMA.Overlay0Tint" value="87,87,87"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="47,47,47"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="47,47,47,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="47,47,47"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketGeneric">
-			<property name="CustomIconTint" value="31,31,34"/>
-			<property name="UMA.Overlay0Tint" value="47,47,47"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCowboyBoots">
-			<property name="UMA.Overlay0Tint" value="147,147,147"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatLeatherDuster">
-			<property name="UMA.Overlay0Tint" value="210,210,210"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="CustomIconTint" value="37,37,37"/>
-			<property name="UMA.Overlay0Tint" value="37,37,37"/>
-			<property name="UMA.Overlay1Tint" value="85,74,96"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="CustomIconTint" value="37,37,37"/>
-			<property name="UMA.Overlay0Tint" value="37,37,37"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitDressShoes">
-			<property name="CustomIconTint" value="57,57,57"/>
-			<property name="UMA.Overlay0Tint" value="27,27,27"/>
 		</item_property_overrides>
 	</item_modifier>
 
@@ -1980,144 +1951,13 @@
 		<property name="CustomIconTint" value="74,93,134"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
-
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
-			<property name="TintColor" value="70,89,127"/><!-- this if for guns and handheld items -->
+			<property name="TintColor" value="70,89,127"/>
 			<property name="CustomIconTint" value="74,93,134"/>
-			<property name="UMA.Overlay0Tint" value="74,93,134"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="74,93,134"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="74,93,134"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelFlannelShirt">
-			<property name="UMA.Overlay0Tint" value="84,119,178"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="UMA.Overlay0Tint" value="58,64,77"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="UMA.Overlay0Tint" value="58,64,77"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="74,93,134"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="110,173,255,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatLeatherDuster">
-			<property name="UMA.Overlay0Tint" value="112,132,160"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatPufferCoat">
-			<property name="UMA.Overlay0Tint" value="115,135,172"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="110,173,255"/>
-		</item_property_overrides>
-	</item_modifier>
-
-	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".16">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="132,105,84"/>
-		<property name="Material" value="Mpaint"/>
-		<property name="Weight" value="20"/>
-
-		<item_property_overrides name="*">
-			<property name="TintColor" value="132,105,84"/>
-			<property name="CustomIconTint" value="132,105,84"/>
-			<property name="UMA.Overlay0Tint" value="132,105,84"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="132,105,84"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="132,105,84"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="132,105,84"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="132,105,84,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="132,105,84"/>
-		</item_property_overrides>
-	</item_modifier>
-
-	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePink" type="attachment" cosmetic_install_chance=".08">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
-		<property name="Material" value="Mpaint"/>
-		<property name="Weight" value="20"/>
-
-		<item_property_overrides name="*">
-			<property name="TintColor" value="188,148,188"/>
-			<property name="CustomIconTint" value="188,148,188"/>
-			<property name="UMA.Overlay0Tint" value="188,148,188"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="240,162,251"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="240,162,251"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelLongShirt">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="182,170,126"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="240,162,251"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="240,162,251,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="240,162,251"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="UMA.Overlay0Tint" value="159,101,168"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="UMA.Overlay0Tint" value="159,101,168"/>
 		</item_property_overrides>
 	</item_modifier>
 
@@ -2127,177 +1967,47 @@
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="113,97,129"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
-
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="113,97,129"/>
 			<property name="CustomIconTint" value="113,97,129"/>
-			<property name="UMA.Overlay0Tint" value="113,97,129"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="113,97,129"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="113,97,129"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="113,97,129"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="113,97,129,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="113,97,129"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="UMA.Overlay0Tint" value="93,77,99"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="UMA.Overlay0Tint" value="93,77,99"/>
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeYellow" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlack" type="attachment" cosmetic_install_chance=".05">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="47,47,47"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
-
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
-			<property name="TintColor" value="218,200,135"/>
-			<property name="CustomIconTint" value="218,200,135"/>
-			<property name="UMA.Overlay0Tint" value="218,200,135"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTankTop">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="218,200,135"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtPlain">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="218,200,135"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelTShirtZU">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="218,200,135"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelCoatJacketLetterZU">
-			<property name="UMA.Overlay0Tint" value="218,200,135,255"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelDenimShortsPants">
-			<property name="UMA.Overlay0Tint" value="skin"/>
-			<property name="UMA.Overlay1Tint" value="218,200,135"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitPants">
-			<property name="UMA.Overlay0Tint" value="152,149,93"/>
-		</item_property_overrides>
-
-		<item_property_overrides name="apparelSuitJacket">
-			<property name="UMA.Overlay0Tint" value="152,149,93"/>
+			<property name="TintColor" value="70,70,70"/>
+			<property name="CustomIconTint" value="47,47,47"/>
 		</item_property_overrides>
 	</item_modifier>
 
-	<!--
-	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
+	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePink" type="attachment" cosmetic_install_chance=".08">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-
+		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
 		<item_property_overrides name="*">
-			<property name="TintColor" value="255,128,0"/>
-			<property name="CustomIconTint" value="255,128,0"/>
-			<property name="UMA.Overlay0Tint" value="255,128,0"/>
+			<property name="TintColor" value="188,148,188"/>
+			<property name="CustomIconTint" value="188,148,188"/>
 		</item_property_overrides>
-	</item_modifier>
-	-->
-	
-	<!-- *** Helmet_Mods -->
-	
-	<item_modifier name="modArmorCowboyHat" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="CustomIcon" value="apparelCowboyHat"/>
-		<property name="EconomicValue" value="440"/>
-		<property name="DisplayType" value="clothing"/>
-		<item_property_overrides name="*">
-			<property name="UMA.Mesh" value="gear_cowboyhat"/>
-			<property name="UMA.Overlay0" value="gear_cowboyhat"/>
-			<property name="UMA.ShowAltHair" value="true"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-			<passive_effect name="HypothermalResist" operation="base_add" value="2.8,5.2"/>
-			<passive_effect name="HyperthermalResist" operation="base_add" value="10.5,14.3"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modArmorSkullCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="CustomIcon" value="apparelSkullCap"/>
-		<property name="EconomicValue" value="440"/>
-		<property name="DisplayType" value="clothing"/>
-		<item_property_overrides name="*">
-			<property name="UMA.Mesh" value="gear_skullcap"/>
-			<property name="UMA.Overlay0" value="gear_skullcap"/>
-			<property name="UMA.ShowAltHair" value="true"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-			<passive_effect name="HypothermalResist" operation="base_add" value="10.5,13.2"/>
-			<passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modArmorPressboyCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="CustomIcon" value="apparelPressboyCap"/>
-		<property name="EconomicValue" value="440"/>
-		<property name="DisplayType" value="clothing"/>
-		<item_property_overrides name="*">
-			<property name="UMA.Mesh" value="gear_pressboy_cap"/>
-			<property name="UMA.Overlay0" value="gear_ballcap"/>
-			<property name="UMA.ShowAltHair" value="true"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-		<passive_effect name="HypothermalResist" operation="base_add" value="1.8,4.2"/>
-		<passive_effect name="HyperthermalResist" operation="base_add" value="7.5,10.5"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modArmorBallCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="CustomIcon" value="apparelBallCap"/>
-		<property name="EconomicValue" value="440"/>
-		<property name="DisplayType" value="clothing"/>
-		<item_property_overrides name="*">
-			<property name="UMA.Mesh" value="gear_ballcap"/>
-			<property name="UMA.Overlay0" value="gear_ballcap"/>
-			<property name="UMA.ShowAltHair" value="true"/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-		<passive_effect name="HypothermalResist" operation="base_add" value="1.8,4.2"/>
-		<passive_effect name="HyperthermalResist" operation="base_add" value="7.5,10.5"/>
-		</effect_group>
 	</item_modifier>
 
 	<!-- *** Vehicle_Mods -->
@@ -2311,8 +2021,10 @@
 		<effect_group tiered="false">
 			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value="0"/>
 			<passive_effect name="LightIntensity" operation="perc_set" value="3"/>
-			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="2"/>
-			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="2"/>
+			<passive_effect name="VehicleEntityDamage" operation="perc_add" value="1"/>
+			<passive_effect name="VehicleBlockDamage" operation="perc_add" value="1"/>
+			<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value="1"/>
+			<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value="1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -2342,8 +2054,8 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="CustomIcon" value="modVehicleSuperCharger"/>
 		<effect_group tiered="false">
-			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.25"/>
-			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.15"/>
+			<passive_effect name="VehicleMotorTorquePer" operation="perc_add" value=".12"/>
+			<passive_effect name="VehicleVelocityMaxPer" operation="perc_add" value=".18"/>
 		</effect_group>
 	</item_modifier>
 
@@ -2363,7 +2075,31 @@
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modVehicleReserveFuelTank"/>
 		<effect_group tiered="false">
-			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.5"/>
+			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.8"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehiclePlow" installable_tags="vplow" modifier_tags="plow" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehiclePlowSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="CustomIcon" value="modVehiclePlow"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleEntityDamage" operation="perc_add" value=".6"/>
+			<passive_effect name="VehicleBlockDamage" operation="perc_add" value=".56"/>
+			<passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".25"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleArmor" installable_tags="varmor" modifier_tags="armor" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleArmorSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="CustomIcon" value="modVehicleArmor"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleEntityDamage" operation="perc_add" value=".5"/>
+			<passive_effect name="VehicleBlockDamage" operation="perc_add" value=".38"/>
+			<passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".3"/>
 		</effect_group>
 	</item_modifier>
 
@@ -2401,7 +2137,7 @@
 
 	<item_modifier name="modRoboticDroneWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
-	    <property name="CreativeMode" value="None"/>
+		<property name="CreativeMode" value="None"/>
 		<property name="CustomIcon" value="missingIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
@@ -2517,7 +2253,37 @@
 		</effect_group>
 	</item_modifier>
 
+	<!-- *** Admin_Tough_Guy_Shirt -->
+<item_modifier name="modArmorAdminToughGuyShirt" installable_tags="armorChest" modifier_tags="misc" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Dev"/>
+		<property name="CustomIcon" value="armorParts"/>
+		<property name="CustomIconTint" value="FF00FF"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="100"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="100"/>
+		<passive_effect name="HealthMax" operation="base_add" value="19900"/>
+		<display_value name="dHealthMax" value="20000"/>
+		<passive_effect name="HealthMax" operation="base_subtract" value="@$PlayerLevelBonus"/>
+	</effect_group>
+
+	<effect_group>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffEntitySpawnHeal"/>
+	</effect_group>
+</item_modifier>
+
 </item_modifiers>
+
+
+
+
+
+
+
+
+
+
 
 <!-- *** Notes: -->
 
@@ -2638,7 +2404,7 @@ icon_color -->
 	//Visibility,
 	Smell,
 	Crawl,
-	DismemberChance, ; decapitation;  tags are "head,arm,leg"
+	DismemberChance, ; decapitation; tags are "head,arm,leg"
 	TreasureRadius,
 	BreathHoldDuration,
 	Bartering,
@@ -2684,24 +2450,6 @@ icon_color -->
 	ApplyBuff,
 	ResistBuff,
 
-	VehicleDamagePassedToPlayer,
-	VehicleSteering,
-	VehicleMaxSteeringAngle,
-	VehicleAcceleration,
-	VehicleBraking,
-	VehiclePlayerStaminaDrainRate,
-	VehicleMaxSpeed,
-	VehicleMetersPerLiter,
-	VehicleIdleSecondsPerLiter,
-	VehicleNoise,
-	VehicleTraction,
-	VehicleDrag,
-	VehicleStartDelayInSeconds,
-	VehicleStartChance,
-	VehicleTankSize,
-	VehicleStorageWidth,
-	VehicleStorageHeight,
-
 	BatteryMaxLoadInVolts,
 	BatteryDischargeTimeInMinutes,
 
@@ -2709,7 +2457,7 @@ icon_color -->
 
 <!--
 	TRIGGER LIST
-	
+
 	onSelfBuffStart,
 	onSelfBuffUpdate,
 	onSelfBuffFinish,
