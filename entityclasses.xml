@@ -182,7 +182,7 @@
 
 		<passive_effect name="DamageModifier" operation="perc_set" value="1"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="head"/>
-		<passive_effect name="DismemberChance" operation="base_set" value="0"/>
+		<passive_effect name="DismemberChance" operation="base_set" value=".05"/>
 
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allHarvest,oreWoodHarvest,cropHarvest,wildCropsHarvest"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="allToolsHarvest"/> <!-- all tools but not player hands, they come later in the OOO and set this back to 0. -->
@@ -863,8 +863,8 @@
 	<property name="SizeScale" value="0.99"/>
 	<property name="SoundStepType" value="heelstep"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
-	<property name="AltMats" value="@:Entities/Zombies/Marlene/Materials/HD_Marlene2.mat,@:Entities/Zombies/Marlene/Materials/HD_Marlene3.mat"/>
+	<property name="Mesh" value="@:Entities/Zombies/Marlene/ZMarlene.prefab"/>
+	<property name="AltMats" value="@:Entities/Zombies/CocktailWaitress/Materials/HD_CocktailWaitress2.mat,@:Entities/Zombies/CocktailWaitress/Materials/HD_CocktailWaitress3.mat"/>
 
 	<!-- Dismemberment -->
 	<property name ="DismemberTag_L_HeadGore" value="Cocktailwaitress/Dismemberment/Blade/Head;Cocktailwaitress/Dismemberment/Blunt/Head" data="type=blade+target=neck+atp=true+detach=true;type=blunt+target=neck+atp=true"/>
@@ -906,7 +906,7 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 	<property name="Mesh" value="@:Entities/Zombies/Marlene/ZMarleneRadiated.prefab"/>
-	<property name="AltMats" value="@:Entities/Zombies/Marlene/Materials/HD_Marlene_Radiated2.mat,@:Entities/Zombies/Marlene/Materials/HD_Marlene_Radiated3.mat"/>
+	<property name="AltMats" value="@:Entities/Zombies/CocktailWaitress/Materials/HD_Cocktail_Waitress_Radiated2.mat,@:Entities/Zombies/CocktailWaitress/Materials/HD_Cocktail_Waitress_Radiated3.mat"/>
 	<property name="MatColor" value="radiated"/>
 	<!--<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>-->
 
