@@ -91,14 +91,14 @@
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="Sound_start" value="44magnum_s_fire"/>
 			<property name="BarrelOffset" value="0,.028,.165"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
-			<property name="Sound_start" value="pump_shotgun_s_fire"/>
-			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			<property name="Sound_start" value="desertvulture_s_fire"/>
+			<property name="Sound_loop" value="desertvulture_s_fire"/>
 			<property name="BarrelOffset" value="0,0,0"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
@@ -716,7 +716,7 @@
 		<item_property_overrides name="gunHandgunT3SMG5">
 			<property name="ScopeOffset" value=".0001,.1,-.15"/>
 			<property name="ScopeScale" value=".55,.55,.55"/>
-			<property name="ScopeCameraOffset" value="0,-.015,0"/>
+			<property name="ScopeCameraOffset" value="0,-.0377,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
@@ -1062,9 +1062,9 @@
 		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
 
-		<!-- Increases damage against irradiated enemies, all melee only -->
+		<!-- Increases damage against radiated,charged,infernal enemies -->
 		<effect_group tiered="false">
-			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
+			<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 		</effect_group>
 	</item_modifier>
@@ -1098,7 +1098,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="damage" blocked_tags="noMods,perkDeepCuts" type="attachment">
+	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="stun" blocked_tags="noMods,perkDeepCuts" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWeightedHeadSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -1337,9 +1337,9 @@
 
 		<effect_group tiered="false" name="SpecialEffects">
 			<passive_effect name="LightMultiplier" operation="base_add" value=".28"/>
-			<passive_effect name="HypothermalResist" operation="base_add" value="4">
-				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
-			</passive_effect>
+			<!-- <passive_effect name="HypothermalResist" operation="base_add" value="4"> -->
+				<!-- <requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/> -->
+			<!-- </passive_effect> -->
 		</effect_group>
 
 		<effect_group name="light/douse torch always" tiered="false">
@@ -1445,7 +1445,7 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<effect_group tiered="false">
-				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.3" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.3" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1455,8 +1455,8 @@
 		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<effect_group tiered="false">
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor"/>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1514,31 +1514,31 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorInsulatedLiner" installable_tags="armor" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="UnlockedBy" value="modArmorInsulatedLinerSchematic"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="DisplayType" value="modTempResist"/>
-		<property name="Material" value="Mcloth"/>
+	<!-- <item_modifier name="modArmorInsulatedLiner" installable_tags="armor" modifier_tags="thermal" blocked_tags="noMods" type="attachment"> -->
+		<!-- <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/> -->
+		<!-- <property name="UnlockedBy" value="modArmorInsulatedLinerSchematic"/> -->
+		<!-- <property name="TraderStageTemplate" value="modsTier1"/> -->
+		<!-- <property name="DisplayType" value="modTempResist"/> -->
+		<!-- <property name="Material" value="Mcloth"/> -->
 
-		<effect_group tiered="false">
-			<passive_effect name="HypothermalResist" operation="base_add" value="5"/>
-			<passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="heat,electrical"/>
-		</effect_group>
-	</item_modifier>
+		<!-- <effect_group tiered="false"> -->
+			<!-- <passive_effect name="HypothermalResist" operation="base_add" value="5"/> -->
+			<!-- <passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="heat,electrical"/> -->
+		<!-- </effect_group> -->
+	<!-- </item_modifier> -->
 
-	<item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="temperature" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
-		<property name="UnlockedBy" value="modArmorCoolingMeshSchematic"/>
-		<property name="TraderStageTemplate" value="modsTier1"/>
-		<property name="DisplayType" value="modTempResist"/>
-		<property name="Material" value="Mplastics"/>
+	<!-- <item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="temperature" blocked_tags="noMods" type="attachment"> -->
+		<!-- <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/> -->
+		<!-- <property name="UnlockedBy" value="modArmorCoolingMeshSchematic"/> -->
+		<!-- <property name="TraderStageTemplate" value="modsTier1"/> -->
+		<!-- <property name="DisplayType" value="modTempResist"/> -->
+		<!-- <property name="Material" value="Mplastics"/> -->
 
-		<effect_group tiered="false">
-			<passive_effect name="HyperthermalResist" operation="base_add" value="5"/>
-			<passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="heat,electrical"/>
-		</effect_group>
-	</item_modifier>
+		<!-- <effect_group tiered="false"> -->
+			<!-- <passive_effect name="HyperthermalResist" operation="base_add" value="5"/> -->
+			<!-- <passive_effect name="ElementalDamageResist" operation="base_add" value="1" tags="heat,electrical"/> -->
+		<!-- </effect_group> -->
+	<!-- </item_modifier> -->
 
 	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,lightArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
@@ -1654,7 +1654,8 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/><display_value name="dNoiseMultiplier" value="-.05"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/>
+			<display_value name="dNoiseMultiplier" value="-.05"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1666,7 +1667,8 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/><display_value name="dNoiseMultiplier" value="-.1"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/>
+			<display_value name="dNoiseMultiplier" value="-.1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1677,6 +1679,7 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
+			<requirement name="IsEquipped"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffImpactBracing"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffImpactBracing"/>
 		</effect_group>
@@ -1686,17 +1689,18 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkUrbanCombatLanding"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="DisplayType" value="modNoiseStaminaReduction"/>
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<requirement name="ItemHasTags" tags="mediumArmor"/>
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffMediumStealthBoots"/>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffMediumStealthBoots"/>
+		<display_value name="dStaminaChangeOT" value=".1"/>
+		<display_value name="dNoiseMultiplier" value="-.1"/>
 		</effect_group>
+
 		<effect_group tiered="false">
-			<requirement name="ItemHasTags" tags="heavyArmor"/>
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHeavyStealthBoots"/>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHeavyStealthBoots"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".03" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value=".1" tags="running"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1707,6 +1711,7 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
+			<requirement name="IsEquipped"/>
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffDysenteryCatchDrink"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffWaterPurifier"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffWaterPurifier"/>
@@ -1720,8 +1725,9 @@
 		<property name="Material" value="Msteel"/>
 		<property name="LightValue" value=".4"/>
 		<effect_group tiered="false">
-			<triggered_effect trigger="onSelfEquipChanged" action="AddPartFPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0.1,0" localRot="-90,180,0"/>
-			<triggered_effect trigger="onSelfEquipChanged" action="AddPartTPV" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
+			<requirement name="IsEquipped"/>
+			<triggered_effect trigger="onSelfEquipChanged" action="AddPartFPV" part="HeadLight" prefab="@:Entities/Lighting/miningHelmetLightSource.prefab" parentTransform="CameraNode" localPos="0,0.1,0" localRot="-90,180,0"/>
+			<triggered_effect trigger="onSelfEquipChanged" action="AddPartTPV" part="HeadLight" prefab="@:Entities/Lighting/miningHelmetLightSource.prefab" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight"/>
 			<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="true"/>
 			<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false"/>
@@ -1740,9 +1746,9 @@
 		<property name="EconomicValue" value="1000"/>
 
 		<effect_group tiered="false">
-		<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
-		<passive_effect name="BarteringBuying" operation="base_add" value=".1"/>
-		<passive_effect name="BarteringSelling" operation="base_add" value=".1"/>
+			<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+			<passive_effect name="BarteringBuying" operation="base_add" value=".1"/>
+			<passive_effect name="BarteringSelling" operation="base_add" value=".1"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1832,7 +1838,7 @@
 		<property name="EconomicValue" value="1000"/>
 
 	<effect_group tiered="false">
-		<requirement name="IsLocalPlayer"/>
+		<requirement name="IsEquipped"/>
 		<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0"/>
 		<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
 		<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
@@ -2015,7 +2021,7 @@
 	<item_modifier name="modVehicleMega" installable_tags="vehicle" modifier_tags="test" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Dev"/>
-		<property name="UnlockedBy" value="modVehicleMegaSchematic"/>
+		<!-- <property name="UnlockedBy" value="modVehicleMegaSchematic"/> -->
 		<property name="CustomIcon" value="modVehicleSuperCharger"/>
 		<property name="CustomIconTint" value="255,0,255"/>
 		<effect_group tiered="false">
@@ -2139,7 +2145,7 @@
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="CustomIcon" value="missingIcon"/>
-		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
+		<!-- <property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/> -->
 		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
@@ -2147,7 +2153,7 @@
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="CustomIcon" value="missingIcon"/>
-		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
+		<!-- <property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/> -->
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<!-- Stun atk mod -->
 		<!-- <effect_group tiered="false">
@@ -2209,8 +2215,7 @@
 		<property name="CustomIcon" value="meleeWpnBladeT1CandyKnife"/>
 		<property name="CustomIconTint" value="255,0,255"/>
 		<effect_group tiered="false">
-			<passive_effect name="EntityDamage" operation="base_set" value="0"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value="-5"/>
+			<passive_effect name="EntityDamage" operation="base_set" value="1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value="0"/>
 		</effect_group>
 	</item_modifier>
@@ -2261,8 +2266,8 @@
 		<property name="CustomIconTint" value="FF00FF"/>
 	<effect_group tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
-		<passive_effect name="HypothermalResist" operation="base_add" value="100"/>
-		<passive_effect name="HyperthermalResist" operation="base_add" value="100"/>
+		<!-- <passive_effect name="HypothermalResist" operation="base_add" value="100"/> -->
+		<!-- <passive_effect name="HyperthermalResist" operation="base_add" value="100"/> -->
 		<passive_effect name="HealthMax" operation="base_add" value="19900"/>
 		<display_value name="dHealthMax" value="20000"/>
 		<passive_effect name="HealthMax" operation="base_subtract" value="@$PlayerLevelBonus"/>
