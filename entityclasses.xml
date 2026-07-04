@@ -204,7 +204,7 @@
 	<property name="IsMale" value="true"/>
 	<property name="TimeStayAfterDeath" value="10"/>
 
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="PushFactor" value="5"/>
 	<property name="Weight" value="70"/>
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
@@ -534,7 +534,7 @@
 	<property name="WalkType" value="7"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
+	<property name="SurfaceCategory" value="earth"/> <!-- determines the particle effect played on hit -->
 
 	<!-- <property name="MapIcon" value="ui_game_symbol_enemy_dot"/> -->
 	<property name="CompassIcon" value="ui_game_symbol_enemy_dot"/>
@@ -4744,7 +4744,7 @@
 	<property name="Weight" value="70"/>
 	<property name="LookAtAngle" value="50"/>
 
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundHurt" value="stagpain"/>
 	<property name="SoundDeath" value="stagdeath"/>
@@ -4816,7 +4816,7 @@
 	<property name="PhysicsBody" value="Doe"/>
 	<property name="Mass" value="180"/>
 	<property name="Weight" value="70"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="SoundRandom" value="stagroam"/>
 	<property name="SoundAlert" value="stagalert"/>
@@ -5029,7 +5029,7 @@
 	<property name="AITarget-3" value="BlockingTargetTask"/>
 	<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,20,15,EntityBandit,0,-8"/>
 
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 
 	<!-- Must match gore dismemberment tags -->
@@ -6687,7 +6687,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="NPCID" value="traderric"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="WalkType" value="7"/>
-	<property name="SurfaceCategory" value="organic"/>
+	<property name="SurfaceCategory" value="earth"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="SoundRandomTime" value="200"/>
