@@ -6,6 +6,7 @@
 <item_modifiers>
 	<item_modifier name="modGeneralMaster" type="attachment">
 		<property name="CreativeMode" value="None"/>
+		<property name="Tags" value="scrap100"/>
 		<property name="CustomIcon" value="missingIcon"/>
 		<property name="Stacknumber" value="1"/>
 		<property name="HoldType" value="45"/>
@@ -19,8 +20,8 @@
 
 	<!-- *** Weapon_Attachments -->
 
-	<!-- <item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment"> -->
-	<!-- A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" can not be removed. -->
+	<!-- <item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelTipAttachment" blocked_tags="noMods,noSilencer" type="attachment"> -->
+	<!-- A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" cannot be removed. -->
 
 	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,shotgun" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
@@ -39,12 +40,12 @@
 			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value=".05"/>
 			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value=".05"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value="-.08">
-				<requirement name="NotHasBuff" buff="buffHoldBreathAiming01"/>
+				<requirement name="!HasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunMuzzleBrake" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,shotgun" type="attachment">
+	<item_modifier name="modGunMuzzleBrake" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelTipAttachment" blocked_tags="noMods,shotgun" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMuzzleBrakeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -56,11 +57,10 @@
 			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value="-.15"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value=".08"/>
 		</effect_group>
-			<!-- <passive_effect name="DamageFalloffRange" operation="base_add" value="-5"/> -->
 	</item_modifier>
 
 	<!-- visible -->
-	<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment">
+	<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelTipAttachment" blocked_tags="noMods,noSilencer" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunSoundSuppressorSilencerSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -865,7 +865,7 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
+			<passive_effect name="BurstRoundCount" operation="base_set" value="0"/>
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".12"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".06"/>
 		</effect_group>
@@ -930,7 +930,7 @@
 		</effect_group>
 	</item_modifier>-->
 
-	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun" modifier_tags="barrelAttachment" blocked_tags="noMods,dBarrel" type="attachment" icon="resourceScrapIron">
+	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun" modifier_tags="barrelAttachment,barrelTipAttachment" blocked_tags="noMods,dBarrel" type="attachment" icon="resourceScrapIron">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modShotgunSawedOffBarrelSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -948,7 +948,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunDuckbill" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modGunDuckbill" installable_tags="shotgun,turretRanged" modifier_tags="barrelTipAttachment" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunDuckbillSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -960,7 +960,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunChoke" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modGunChoke" installable_tags="shotgun,turretRanged" modifier_tags="barrelTipAttachment" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunChokeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
@@ -976,9 +976,14 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMagazineExtenderSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunMagazineExtender"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
+			<passive_effect name="MagazineSize" operation="perc_add" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+			<display_value name="dMagazineSize" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -986,10 +991,15 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkAutoWeaponsDrumMag"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunDrumMagazineExtender"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
-			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
+		<effect_group>
+			<passive_effect name="MagazineSize" operation="perc_add" value=".5,.6,.7,.8,.9,1" tier="1,2,3,4,5,6"/>
+			<display_value name="dMagazineSize" value=".5,.6,.7,.8,.9,1" tier="1,2,3,4,5,6"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25,-.2,-.15,-.1,-.05,0" tier="1,2,3,4,5,6"/>
+			<display_value name="dReloadSpeedMul" value="-.25,-.2,-.149,-.1,-.05,0" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -997,9 +1007,14 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkShotgunMessiahMagazine"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunShotgunTubeExtenderMagazine"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="MagazineSize" operation="perc_add" value=".375"/>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
+			<passive_effect name="MagazineSize" operation="base_add" value="2,4,6,8,10,12" tier="1,2,3,4,5,6"/>
+			<display_value name="dMagazineSize" value="2,4,6,8,10,12" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1007,19 +1022,54 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunCrippleEmSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunCrippleEm"/>
+		<property name="QualityMin" value="1"/>
 
+		<!-- Setup the $crippleChance CVar based on the current quality tier -->
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="5">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="1"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="10">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="2"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="15">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="3"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="20">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="4"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="25">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="5"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$crippleChance" operation="set" value="30">
+				<requirement name="RequirementItemModTier" mod_name="modGunCrippleEm" operation="Equals" value="6"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$crippleChance"/>
+		</effect_group>
 		<!--Each shot has a chance to cripple-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="walker"/>
 			<requirement name="!HoldingItemHasTags" tags="shotgun"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$crippleChance"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryCrippled01"/>
 		</effect_group>
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="walker"/>
 			<requirement name="HoldingItemHasTags" tags="shotgun"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,800" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,800" operation="LTE" value="@$crippleChance"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryCrippled01"/>
+		</effect_group>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
+			<display_value name="dCrippleChance" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1028,9 +1078,14 @@
 		<property name="UnlockedBy" value="modGunBowPolymerStringSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Mplastics"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunBowPolymerString"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
+			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<display_value name="dProjectileVelocity" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1038,22 +1093,34 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBowArrowRestSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunBowArrowRest"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1"/>
-			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.1"/>
+		<effect_group>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.15" tier="1,2,3,4,5,6"/>
+			<display_value name="dSpreadMultiplierAiming" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.15" tier="1,2,3,4,5,6"/>
+			<display_value name="dSpreadMultiplierHip" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunMeleeTheHunter" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modGunMeleeTheHunter" installable_tags="weapon,tool" modifier_tags="specialDamageAnimal" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeTheHunterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunMeleeTheHunter"/>
+		<property name="QualityMin" value="1"/>
 
-		<!--Do double damage to living enemies-->
-		<effect_group tiered="false">
+		<!--Do extra damage to animals -->
+		<effect_group>
 			<requirement name="EntityTagCompare" target="other" tags="animal"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dAnimalDamage" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+		</effect_group>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1061,34 +1128,91 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modGunMeleeRadRemover"/>
+		<property name="QualityMin" value="1"/>
 
 		<!-- Increases damage against radiated,charged,infernal enemies -->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="radiated,charged,infernal"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock15">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="1"/></triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock30">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="2"/></triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock45">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="3"/></triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock60">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="4"/></triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock75">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="5"/></triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock90">
+					<requirement name="RequirementItemModTier" mod_name="modGunMeleeRadRemover" operation="Equals" value="6"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="modRanged"/>
+			<display_value name="dRegenerationBlocker" value="15,30,45,60,75,90" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
 	<!-- *** Melee_Mods -->
-	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage,durability" blocked_tags="noMods,noBlades" type="attachment">
+	<item_modifier name="modMeleeTemperedBlade" installable_tags="tool,perkBrawler,perkJavelinMaster,perkDeepCuts" modifier_tags="damage,durability" blocked_tags="noMods,noBlades" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeTemperedBladeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeTemperedBlade"/>
+		<property name="QualityMin" value="1"/>
 
-		<!-- reduce DR of armor by x, blade weapons -->
-		<effect_group tiered="false">
-			<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
-			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.15" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+		<!-- Increases Block Damage and Reduces Degradation Per Use -->
+		<effect_group>
+			<passive_effect name="BlockDamage" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<display_value name="dBlockDamage" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.04,-.06,-.08,-.1,-.12,-.15" tier="1,2,3,4,5,6" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+			<display_value name="dDegradationPerUse" value="-.04,-.06,-.08,-.1,-.12,-.15" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modMeleeSerratedBlade" installable_tags="knife,machete,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
+	<item_modifier name="modMeleeSerratedBlade" installable_tags="knife,machete,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damageBleed" blocked_tags="noMods,noBlades" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeSerratedBladeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeSerratedBlade"/>
+		<property name="QualityMin" value="1"/>
 
 		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="1"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="2"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="3"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="4"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="5"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeSerratedBlade" operation="Equals" value="6"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
@@ -1096,17 +1220,52 @@
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
+		<effect_group>
+			<display_value name="dBleedChance" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="stun" blocked_tags="noMods,perkDeepCuts" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWeightedHeadSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeWeightedHead"/>
+		<property name="QualityMin" value="1"/>
 
-		<!-- Increases stun chance; increases stamina use, axe, hammer, club -->
+		<!-- Increases stun chance -->
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
-			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="1"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="2"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="3"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="4"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="5"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="RequirementItemModTier" mod_name="modMeleeWeightedHead" operation="Equals" value="6"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group>
+		<effect_group>
+			<display_value name="dStunChance" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1114,10 +1273,14 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeStructuralBraceSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeStructuralBrace"/>
+		<property name="QualityMin" value="1"/>
 
-		<!-- Increases durability, increases block efficiency, all melee -->
-		<effect_group tiered="false">
-			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.25" tags="perkArchery,perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+		<!-- Increases durability -->
+		<effect_group>
+			<passive_effect name="DegradationPerUse" operation="perc_add" value="-0.05,-0.1,-0.15,-0.2,-0.25,-0.3" tier="1,2,3,4,5,6" tags="perkArchery,perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+			<display_value name="dDegradationPerUse" value="-.05,-.1,-.149,-.2,-.25,-.299" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1125,15 +1288,23 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeErgonomicGripSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeErgonomicGrip"/>
+		<property name="QualityMin" value="1"/>
 
-		<!-- Reduces Stamina usage on all attacks, all melee -->
-		<effect_group tiered="false">
+		<!-- Reduces Stamina usage on melee -->
+		<effect_group>
 			<requirement name="!HoldingItemHasTags" tags="perkArchery"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="-.1" tags="primary,secondary"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" value="-0.05,-0.1,-0.15,-0.2,-0.25,-0.3" tier="1,2,3,4,5,6" tags="primary,secondary"/>
 		</effect_group>
-		<effect_group tiered="false">
+		<!-- Increases Weapon Handling on bows -->
+		<effect_group>
 			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
-			<passive_effect name="WeaponHandling" operation="perc_add" value=".1"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
+		</effect_group>
+		<effect_group>
+			<display_value name="dStaminaLoss" value="-0.05,-0.1,-0.149,-0.2,-0.25,-0.299" tier="1,2,3,4,5,6"/>
+			<display_value name="dWeaponHandling" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1141,11 +1312,51 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeFortifyingGripSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeFortifyingGrip"/>
+		<property name="QualityMin" value="1"/>
 
 		<!-- Gain HP/sec when under 50% HP -->
-		<effect_group tiered="false">
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="1"/>
 			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
-			<passive_effect name="HealthChangeOT" operation="base_add" value=".2"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".1"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="2"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".13"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="3"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".15"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="4"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".17"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="5"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".2"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeFortifyingGrip" operation="Equals" value="6"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$fortifyingGrip" operation="set" value=".4"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="buffStatusHungry03,buffStatusThirsty03"/>
+			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="@$fortifyingGrip"/>
+		</effect_group>
+
+		<effect_group>
+			<display_value name="dHPRegenValue" value="1,1,1,1,1,2" tier="1,2,3,4,5,6"/>
+			<display_value name="dHPRegenTime" value="10,8,7,6,5,5" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1153,6 +1364,9 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubBarbedWireSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeClubBarbedWire"/>
+		<property name="QualityMin" value="1"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1174,13 +1388,44 @@
 			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronBarbPrefab.prefab"/>
 		</item_property_overrides>
 
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="10"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="20"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="15"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="30"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="20"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="40"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="25"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="50"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubBarbedWire" operation="Equals" value="6"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedPrimary" operation="set" value="30"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$barbBleedSecondary" operation="set" value="60"/>
+		</effect_group>
+
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$barbBleedPrimary"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$barbBleedSecondary"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
@@ -1190,27 +1435,19 @@
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 
-		<!-- <effect_group tiered="false"> -->
-			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/> -->
-				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="LogMessage" message="Barbed Wire Primary Hit"/> -->
-				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/> -->
-		<!-- </effect_group> -->
-		<!-- <effect_group tiered="false" name="Power Attack"> -->
-			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/> -->
-				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="LogMessage" message="Barbed Wire Secondary Hit"/> -->
-				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/> -->
-		<!-- </effect_group> -->
-		<!-- <effect_group tiered="false" name="Always extend bleeding"> -->
-			<!-- <requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/> -->
-				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/> -->
-				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/> -->
-		<!-- </effect_group> -->
+		<effect_group>
+			<display_value name="dbarbBleedPrimary" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<display_value name="dbarbBleedSecondary" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubMetalSpikes" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubMetalSpikesSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeClubMetalSpikes"/>
+		<property name="QualityMin" value="1"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1233,8 +1470,48 @@
 			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronSpikePrefab.prefab"/>
 		</item_property_overrides>
 
-		<effect_group tiered="false">
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".05"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".1"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".15"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".2"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".25"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalSpikes" operation="Equals" value="6"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".metalSpikesValue" operation="set" value=".3"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".05">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".05"/></triggered_effect>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".1">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".1"/></triggered_effect>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".15">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".15"/></triggered_effect>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".2">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".2"/></triggered_effect>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".25">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".25"/></triggered_effect>
+			<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar=".metalSpikesBuff" operation="set" value=".3">
+				<requirement name="CVarCompare" cvar=".metalSpikesValue" operation="EQ" value=".3"/></triggered_effect>
+			
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffArmorShredding"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar=".metalSpikesValue,.metalSpikesBuff"/>
+			<display_value name="dmeatlSpikes" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1242,6 +1519,9 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkBatterUpMetalChain"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeClubMetalChain"/>
+		<property name="QualityMin" value="1"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1263,9 +1543,26 @@
 			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronChainPrefab.prefab"/>
 		</item_property_overrides>
 
-		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="10"/>
-			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="5">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="10">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="15">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="20">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="25">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="5"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$metalChain" operation="set" value="30">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubMetalChain" operation="Equals" value="6"/></triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$metalChain"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+		</effect_group>
+		<effect_group>
+			<display_value name="dmetalChain" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1273,6 +1570,9 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubBurningShaftSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeClubBurningShaft"/>
+		<property name="QualityMin" value="1"/>
 
 		<item_property_overrides name="*">
 			<property name="LightValue" value=".25"/> <!-- has no effect on a mod -->
@@ -1288,7 +1588,7 @@
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeToolRepairT1ClawHammer">
-			<property name="FlameEffect" value="@:ItemModEffects/mod_hammer_firePrefab.prefab"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_hammer_flamePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammer">
@@ -1335,11 +1635,56 @@
 			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="meleeToolPickT1IronPickaxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_IronPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolPickT2SteelPickaxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_SteelPickaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnBladeT1CandyKnife">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_candyCaneKnife_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnClubT1CandyClub">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_candyCaneClub_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnClubT0WoodenClub">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_woodenClub_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolSalvageT1Wrench">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_wrench_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT2SteelShovel">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT1IronShovel">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_ironShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeToolShovelT0StoneShovel">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stoneShovel_flamePrefab.prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="meleeWpnSledgeT3SteelSledgehammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steelSledgehammer_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolRepairT0TazasStoneAxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_Tazas_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+
 		<effect_group tiered="false" name="SpecialEffects">
 			<passive_effect name="LightMultiplier" operation="base_add" value=".28"/>
-			<!-- <passive_effect name="HypothermalResist" operation="base_add" value="4"> -->
-				<!-- <requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/> -->
-			<!-- </passive_effect> -->
+			<passive_effect name="HypothermalResist" operation="base_add" value="20">
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
+			</passive_effect>
 		</effect_group>
 
 		<effect_group name="light/douse torch always" tiered="false">
@@ -1358,9 +1703,24 @@
 				<triggered_effect trigger="onSelfSwimStop" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
 		</effect_group>
 
+		<effect_group>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="10">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="20">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="2"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="30">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="3"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="40">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="4"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="50">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="5"/></triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$burningShaft" operation="set" value="60">
+				<requirement name="RequirementItemModTier" mod_name="modMeleeClubBurningShaft" operation="Equals" value="6"/></triggered_effect>
+		</effect_group>
+
 		<effect_group name="new Fire Proc" tiered="false">
 			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@$burningShaft"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10">
 					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
@@ -1376,18 +1736,26 @@
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
 					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 		</effect_group>
+
+		<effect_group>
+			<display_value name="dburningShaft" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeFiremansAxeMod" installable_tags="axe" modifier_tags="damageDirt,damageStone,damageIron" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkFiremansAlmanacAxes"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeFiremansAxeMod"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="EntityDamage" operation="perc_add" value="-.25"/>
-			<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
+		<effect_group>
+			<passive_effect name="BlockDamage" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-.05,-.1,-.15,-.2,-.25,-.3" tier="1,2,3,4,5,6"/>
+
+			<display_value name="dBlockDamage" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<display_value name="dEntityDamage" value="-.05,-.1,-.149,-.2,-.25,-.299" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1395,11 +1763,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeGraveDiggerSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeGraveDigger"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="earth"/>
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
+		<effect_group>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6" tags="earth"/>
+			<display_value name="dBlockDamageDirt" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1407,11 +1777,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeBunkerBusterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeBunkerBuster"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="stone"/>
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
+		<effect_group>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6" tags="stone"/>
+			<display_value name="dBlockDamageStone" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1419,11 +1791,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeIronBreakerSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeIronBreaker"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="metal"/>
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
+		<effect_group>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6" tags="metal"/>
+			<display_value name="dBlockDamageMetal" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1431,11 +1805,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWoodSplitterSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeWoodSplitter"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="wood"/>
-			<!-- <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/> -->
-			<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/> -->
+		<effect_group>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6" tags="wood"/>
+			<display_value name="dBlockDamageWood" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1443,9 +1819,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkArtOfMiningDiamondTools"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeDiamondTip"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.3" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+		<effect_group>
+			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.05,-.1,-.15,-.2,-.25,-.3" tier="1,2,3,4,5,6" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+			<display_value name="dDegradationPerUse" value="-.05,-.1,-.149,-.2,-.25,-.299" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1464,9 +1844,13 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankSmallSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeFuelTank"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
+		<effect_group>
+			<passive_effect name="MagazineSize" operation="perc_add" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+			<display_value name="dMagazineSize" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1474,31 +1858,103 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankLargeSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modMeleeFuelTank"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
-			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
+		<effect_group>
+			<passive_effect name="MagazineSize" operation="perc_add" value=".6,.7,.8,.9,1,2" tier="1,2,3,4,5,6"/>
+			<display_value name="dMagazineSize" value=".6,.7,.8,.9,1,2" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
 	<!-- *** Armor_Mods -->
 
-	<!--Clothing Attachments-->
-	<item_modifier name="modArmorBandolier" installable_tags="armorChest,armorLegs" modifier_tags="ammo" blocked_tags="noMods" type="attachment">
+<item_modifier name="modArmorInsulatedLinerT1" installable_tags="armorHead,armorChest,armorHands,armorFeet" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="Material" value="Mcloth"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modArmorLiners"/>
+		<property name="QualityMin" value="1"/>
+
+		<effect_group>
+			<passive_effect name="HypothermalResist" operation="base_add" value="1,1.3,1.6,1.9,2.2,2.5" tier="1,2,3,4,5,6"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1,1.3,1.6,1.9,2.2,2.5" tier="1,2,3,4,5,6"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorInsulatedLinerT2" installable_tags="armorHead,armorChest,armorHands,armorFeet" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Mcloth"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modArmorLiners"/>
+		<property name="QualityMin" value="1"/>
+
+		<effect_group>
+		<passive_effect name="HypothermalResist" operation="base_add" value="2.8,3.1,3.4,3.7,4,4.3" tier="1,2,3,4,5,6"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="2.8,3.1,3.4,3.7,4,4.3" tier="1,2,3,4,5,6"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorInsulatedLinerT3" installable_tags="armorHead,armorChest,armorHands,armorFeet" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="Material" value="Mcloth"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modArmorLiners"/>
+		<property name="QualityMin" value="1"/>
+
+		<effect_group>
+		<passive_effect name="HypothermalResist" operation="base_add" value="4.6,4.9,5.2,5.5,5.8,6" tier="1,2,3,4,5,6"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="4.6,4.9,5.2,5.5,5.8,6" tier="1,2,3,4,5,6"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorBandolier" installable_tags="armorChest" modifier_tags="ammo" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorBandolierSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Mcloth"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modArmorBandolier"/>
+		<property name="QualityMin" value="1"/>
 
-		<!-- Reload Guns X% faster;  would like to add it to "legs" but buffs dont stack like that -->
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".05"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".1"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".15"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".2"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".25"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="RequirementItemModTier" mod_name="modArmorBandolier" operation="Equals" value="6"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".bandolierValue" operation="set" value=".3"/>
+		</effect_group>
+
+		<effect_group>
+			<display_value name="dBandolier" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+		</effect_group>
+
+		<!-- Reload Guns X% faster -->
 		<effect_group tiered="false">
 			<requirement name="ItemHasTags" tags="armorChest"/>
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBandolierChest"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierChest"/>
-		</effect_group>
-		<effect_group tiered="false">
-			<requirement name="ItemHasTags" tags="armorLegs"/>
-				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBandolierLegs"/>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierLegs"/>
 		</effect_group>
 	</item_modifier>
 
@@ -1654,7 +2110,7 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.05"/>
 			<display_value name="dNoiseMultiplier" value="-.05"/>
 		</effect_group>
 	</item_modifier>
@@ -1667,7 +2123,7 @@
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.1"/>
 			<display_value name="dNoiseMultiplier" value="-.1"/>
 		</effect_group>
 	</item_modifier>
@@ -1685,7 +2141,7 @@
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorStealthBoots" installable_tags="armorFeet" modifier_tags="stealth" blocked_tags="noMods,lightArmor,assassin" type="attachment">
+	<item_modifier name="modArmorStealthBoots" installable_tags="armorFeet" modifier_tags="stealth" blocked_tags="noMods,lightArmor" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkUrbanCombatLanding"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1704,10 +2160,11 @@
 		</effect_group>
 	</item_modifier>
 
+<!-- *** HELMET_MODS -->
 	<item_modifier name="modArmorWaterPurifier" installable_tags="armorHead" modifier_tags="waterPurifier" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorWaterPurifierSchematic"/>
-		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
@@ -1744,16 +2201,21 @@
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="Material" value="Mplants"/>
 		<property name="EconomicValue" value="1000"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="QualityMin" value="1"/>
 
-		<effect_group tiered="false">
+		<effect_group>
 			<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
-			<passive_effect name="BarteringBuying" operation="base_add" value=".1"/>
-			<passive_effect name="BarteringSelling" operation="base_add" value=".1"/>
+			<passive_effect name="BarteringBuying" operation="base_add" value=".05,.06,.07,.08,.09,.1" tier="1,2,3,4,5,6"/>
+			<passive_effect name="BarteringSelling" operation="base_add" value=".05,.06,.07,.08,.09,.1" tier="1,2,3,4,5,6"/>
+		</effect_group>
+		<effect_group>
+			<display_value name="dAttributeLevel" value="1,1,1,1,1,1" tier="1,2,3,4,5,6"/>
+			<display_value name="dBarteringBuying" value=".05,.06,.07,.08,.09,.1" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
-<!-- *** HELMET_MODS -->
-	<item_modifier name="modArmorPerception" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorPerception" installable_tags="armorHead" modifier_tags="boostPerception" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorPerception"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1765,7 +2227,7 @@
 	</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorStrength" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorStrength" installable_tags="armorHead" modifier_tags="boostStrength" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorStrength"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1777,7 +2239,7 @@
 	</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorFortitude" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorFortitude" installable_tags="armorHead" modifier_tags="boostFortitude" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorFortitude"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1789,7 +2251,7 @@
 	</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorAgility" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorAgility" installable_tags="armorHead" modifier_tags="boostAgility" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorAgility"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1801,7 +2263,7 @@
 	</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorIntellect" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorIntellect" installable_tags="armorHead" modifier_tags="boostIntellect" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorIntellect"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
@@ -1813,21 +2275,25 @@
 	</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorTreasureHunter" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorTreasureHunter" installable_tags="armorHead" modifier_tags="boostTreasure" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorTreasureHunter"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="Material" value="Msteel"/>
 		<property name="EconomicValue" value="1000"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modArmorTreasureHunter"/>
+		<property name="QualityMin" value="1"/>
 
-	<effect_group tiered="false">
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
-		<passive_effect name="LootStage" operation="base_add" value="5"/>
-		<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
-		<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
-		<display_value name="dTreasureBlocksPerReduction" value="-1"/>
-		<display_value name="dPlayerExpGain" value=".1"/>
-	</effect_group>
+		<effect_group>
+			<passive_effect name="LootStage" operation="base_add" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			<passive_effect name="PlayerExpGain" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1,-1,-1,-1,-1,-2" tier="1,2,3,4,5,6"/>
+			
+			<display_value name="dLootStage" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+			<display_value name="dPlayerExpGain"  value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+			<display_value name="dTreasureBlocksPerReduction" value="-1,-1,-1,-1,-1,-2" tier="1,2,3,4,5,6"/>
+		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorNightVision" installable_tags="armorHead" modifier_tags="nightVision" blocked_tags="noMods" type="attachment">
@@ -1837,14 +2303,14 @@
 		<property name="Material" value="Msteel"/>
 		<property name="EconomicValue" value="1000"/>
 
-	<effect_group tiered="false">
-		<requirement name="IsEquipped"/>
-		<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0"/>
-		<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
-		<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
-		<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
-		<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
-	</effect_group>
+		<effect_group tiered="false">
+			<requirement name="IsEquipped"/>
+			<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+			<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+			<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+		</effect_group>
 	</item_modifier>
 
 	<!-- *** Dye_Mods -->
@@ -1855,7 +2321,7 @@
 
 	<!-- When done, one dye is picked from the list. -->
 
-	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
+	<item_modifier name="modDyeWhite" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -1866,7 +2332,7 @@
 		<property name="SoundPlace" value="dye_place"/>
 	</item_modifier>
 
-	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".16">
+	<item_modifier name="modDyeBrown" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1883,7 +2349,7 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeRed" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeRed" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeRed" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1900,7 +2366,7 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeOrange" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyeOrange" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeOrange" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1917,10 +2383,11 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeYellow" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyeYellow" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeYellow" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="218,200,135"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
@@ -1933,7 +2400,7 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeGreen" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeGreen" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeGreen" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1950,7 +2417,7 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlue" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeBlue" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlue" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1967,10 +2434,11 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePurple" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyePurple" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyePurple" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="113,97,129"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="113,97,129"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
@@ -1983,7 +2451,7 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlack" type="attachment" cosmetic_install_chance=".05">
+	<item_modifier name="modDyeBlack" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlack" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -2000,10 +2468,11 @@
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePink" type="attachment" cosmetic_install_chance=".08">
+	<item_modifier name="modDyePink" installable_tags="weapon,tool,vehicle,drone" modifier_tags="dye,modDyePink" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="240,162,251"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
@@ -2039,8 +2508,13 @@
 		<property name="UnlockedBy" value="modVehicleFuelSaverSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modVehicleFuelSaver"/>
-		<effect_group tiered="false">
-			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value=".5"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modVehicleFuelSaver"/>
+		<property name="QualityMin" value="1"/>
+		
+		<effect_group>
+			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value=".9,.8,.7,.6,.5,.4" tier="1,2,3,4,5,6"/>
+			<display_value name="dVehicleFuelUsePer" value="-.1,-.2,-.299,-.4,-.5,-.599" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -2080,8 +2554,13 @@
 		<property name="UnlockedBy" value="modVehicleReserveFuelTankSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modVehicleReserveFuelTank"/>
-		<effect_group tiered="false">
-			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.8"/>
+		<property name="ShowQuality" value="true"/>
+		<property name="DisplayType" value="modVehicleReserveFuelTank"/>
+		<property name="QualityMin" value="1"/>
+		
+		<effect_group>
+			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.5,1.6,1.7,1.8,1.9,2" tier="1,2,3,4,5,6"/>
+			<display_value name="dVehicleFuelMaxPer" value=".5,.6,.7,.8,.9,1" tier="1,2,3,4,5,6"/>
 		</effect_group>
 	</item_modifier>
 
@@ -2109,6 +2588,14 @@
 		</effect_group>
 	</item_modifier>
 
+	<item_modifier name="modVehicleStorage" installable_tags="vstorage" modifier_tags="storage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleStorageSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="CustomIcon" value="modVehicleStorage"/>
+		<property name="MaxModsAllowed" value="2"/>
+	</item_modifier>
+
 	<!-- *** Robotic_Drone_Mods -->
 
 	<item_modifier name="modRoboticDroneArmorPlatingMod" installable_tags="drone" modifier_tags="droneArmor" type="attachment">
@@ -2121,6 +2608,7 @@
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneCargoModSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="MaxModsAllowed" value="4"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneMoraleBoosterMod" installable_tags="drone" modifier_tags="droneMorale" type="attachment">
@@ -2135,10 +2623,21 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
-	<item_modifier name="modRoboticDroneMedicMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
+	<item_modifier name="modRoboticDroneMedicMod" installable_tags="drone" modifier_tags="droneMedic" type="attachment">
 		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneMedicModSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
+		
+		<property name="HealActionTime" value="2"/>
+		<property name="HealDamageThreshold" value="50"/>
+		<property name="SoundWeaponUseBark" value="drone_heal"/>
+		
+		<effect_group>
+			<passive_effect name="MaxRange" operation="base_set" value="4"/>
+			<passive_effect name="JunkDroneModCooldown" operation="base_set" value="15"/>
+		</effect_group>
+		
+		<property name="AITask" value="DroneItemModHealWeapon enterTime=1;actionTime=2|"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
@@ -2151,15 +2650,25 @@
 
 	<item_modifier name="modRoboticDroneStunWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="None"/>
-		<property name="CustomIcon" value="missingIcon"/>
-		<!-- <property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/> -->
+		<property name="DisplayType" value="droneStunMod"/>
+		<property name="CustomIcon" value="modRoboticDroneStunWeaponMod"/>
+		<property name="UnlockedBy" value="modRoboticDroneStunWeaponModSchematic"/>
 		<property name="TraderStageTemplate" value="modsTier3"/>
-		<!-- Stun atk mod -->
-		<!-- <effect_group tiered="false">
-		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
-		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
-		</effect_group> -->
+		<property name="ShowQuality" value="true"/>
+		
+		<property name="SoundWeaponCharged" value="drone_stun_charged"/>
+		<property name="SoundWeaponUseBark" value="drone_attack_stun"/>
+
+		<effect_group>
+			<passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" tag="stunWeapon"/>
+			<passive_effect name="MaxRange" operation="base_set" value="2"/>
+			<passive_effect name="JunkDroneModCooldown" operation="base_set" value="10,9,8,7,6,5" tier="1,2,3,4,5,6"/>
+			<display_value name="dEntityDamage" value="6,7,8,9,10,12" tier="1,2,3,4,5,6"/>
+			<display_value name="dStunCoolDown" value="10,9,8,7,6,5" tier="1,2,3,4,5,6"/>
+		</effect_group>
+		
+		<property name="AITask" value="DroneItemModStunWeapon enterTime=1;fleeDist=8|"/>
+		<property name="AITarget" value=""/>
 	</item_modifier>
 
 	<!-- *** Quest_Items -->
@@ -2265,9 +2774,8 @@
 		<property name="CustomIcon" value="armorParts"/>
 		<property name="CustomIconTint" value="FF00FF"/>
 	<effect_group tiered="false">
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
-		<!-- <passive_effect name="HypothermalResist" operation="base_add" value="100"/> -->
-		<!-- <passive_effect name="HyperthermalResist" operation="base_add" value="100"/> -->
+		<passive_effect name="HypothermalResist" operation="base_add" value="100"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="100"/>
 		<passive_effect name="HealthMax" operation="base_add" value="19900"/>
 		<display_value name="dHealthMax" value="20000"/>
 		<passive_effect name="HealthMax" operation="base_subtract" value="@$PlayerLevelBonus"/>

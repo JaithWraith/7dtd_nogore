@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Table_of_Contents -->
 <!-- Search_Find_All_for *** -->
@@ -27,8 +27,8 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attPerception"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
@@ -60,8 +60,8 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attStrength"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
@@ -94,8 +94,8 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attFortitude"/>
 			<requirement name="!IsAttachedToEntity"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
@@ -127,8 +127,8 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attAgility"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
@@ -160,8 +160,8 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attIntellect"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
-				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
+				<passive_effect name="HeadshotDamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value="0,0"/>
 		</effect_group>
 
@@ -641,7 +641,7 @@
 		</display_entry>
 		<display_entry icon="foodPumpkinBread,foodPumpkinPie,foodPumpkinCheesecake,foodMeatStew,foodSteakAndPotato" name_key="foodT2-1,foodT2-2,foodT2-3,foodT2-4,foodT2-5" has_quality="false" unlock_level="11,14,18,22,26" >
 			<unlock_entry item="foodPumpkinBread,foodBlueberryPie" unlock_tier="1"/>
-			<unlock_entry item="foodPumpkinPie" unlock_tier="2"/>
+			<unlock_entry item="foodPumpkinPie,drinkJarHoneyTea" unlock_tier="2"/>
 			<unlock_entry item="foodPumpkinCheesecake" unlock_tier="3"/>
 			<unlock_entry item="foodVegetableStew,foodMeatStew" unlock_tier="4"/>
 			<unlock_entry item="foodSteakAndPotato" unlock_tier="5"/>
@@ -651,12 +651,12 @@
 			<unlock_entry item="foodHoboStew" unlock_tier="2"/>
 			<unlock_entry item="foodFishTacos" unlock_tier="3"/>
 			<unlock_entry item="foodChiliDog" unlock_tier="4"/>
-			<unlock_entry item="foodShamChowder" unlock_tier="5"/>
+			<unlock_entry item="foodShamChowder,foodHoneyGlazedSham" unlock_tier="5"/>
 		</display_entry>
 		<display_entry icon="foodTunaFishGravyToast,foodShepardsPie,drinkJarGrandpasLearningElixir,foodSpaghetti,foodGumboStew" name_key="foodT4-1,foodT4-2,foodT4-3,foodT4-4,foodT4-5" has_quality="false" unlock_level="60,70,80,90,100" >
 			<unlock_entry item="foodTunaFishGravyToast,drinkJarGrandpasAwesomeSauce" unlock_tier="1"/>
 			<unlock_entry item="foodShepardsPie,drinkJarGrandpasMoonshine" unlock_tier="2"/>
-			<unlock_entry item="drinkJarGrandpasLearningElixir" unlock_tier="3"/>
+			<unlock_entry item="drinkJarGrandpasLearningElixir,foodHoneyBrisket" unlock_tier="3"/>
 			<unlock_entry item="foodSpaghetti" unlock_tier="4"/>
 			<unlock_entry item="foodGumboStew" unlock_tier="5"/>
 		</display_entry>
@@ -669,7 +669,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="foodBaconAndEggs,drinkJarCoffee"/>
 
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="foodPumpkinBread,foodBlueberryPie"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="foodPumpkinPie"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="foodPumpkinPie,drinkJarHoneyTea"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="18,100" value="1" tags="foodPumpkinCheesecake"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="22,100" value="1" tags="foodVegetableStew,foodMeatStew"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="foodSteakAndPotato"/>
@@ -678,11 +678,11 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="foodHoboStew"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="43,100" value="1" tags="foodFishTacos"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="51,100" value="1" tags="foodChiliDog"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="59,100" value="1" tags="foodShamChowder"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="59,100" value="1" tags="foodShamChowder,foodHoneyGlazedSham"/>
 
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="foodTunaFishGravyToast,drinkJarGrandpasAwesomeSauce"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="foodShepardsPie,drinkJarGrandpasMoonshine"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="80,100" value="1" tags="drinkJarGrandpasLearningElixir"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="80,100" value="1" tags="drinkJarGrandpasLearningElixir,foodHoneyBrisket"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="90,100" value="1" tags="foodSpaghetti"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="foodGumboStew"/>
 		</effect_group>
@@ -749,7 +749,7 @@
 	</crafting_skill>
 
 		<!-- *** TRAP_SKILLS -->
-	<crafting_skill name="craftingTraps" max_level="75" parent="attCrafting" name_key="craftingTrapsName" desc_key="craftingTrapsDesc" long_desc_key="craftingTrapsLongDesc" icon="ui_game_symbol_electric_turret">
+	<crafting_skill name="craftingTraps" max_level="100" parent="attCrafting" name_key="craftingTrapsName" desc_key="craftingTrapsDesc" long_desc_key="craftingTrapsLongDesc" icon="ui_game_symbol_electric_turret">
 
 		<display_entry icon="bladeTrap" name_key="trapsT1" has_quality="false" unlock_level="25" >
 			<unlock_entry item="electricfencepost,dartTrap,bladeTrap" unlock_tier="1"/>
@@ -760,46 +760,81 @@
 		<display_entry icon="autoTurret" name_key="trapsT3" has_quality="false" unlock_level="75" >
 			<unlock_entry item="autoTurret" unlock_tier="1"/>
 		</display_entry>
+		<display_entry icon="m60Turret" name_key="trapsT4" has_quality="false" unlock_level="100" >
+			<unlock_entry item="m60Turret" unlock_tier="1"/>
+		</display_entry>
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="electricfencepost,dartTrap,bladeTrap"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="shotgunTurret"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="autoTurret"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="100,100" value="1" tags="m60Turret"/>
 		</effect_group>
 	</crafting_skill>
 
 		<!-- *** WORKSTATION_SKILLS -->
 	<crafting_skill name="craftingWorkstations" max_level="75" parent="attCrafting" name_key="craftingWorkstationsName" desc_key="craftingWorkstationsDesc" long_desc_key="craftingWorkstationsLongDesc" icon="ui_game_symbol_workbench">
 
-		<display_entry icon="cntDewCollector,forge" name_key="workstationsT1-1,workstationsT1-2" has_quality="false" unlock_level="2,5" >
+		<display_entry icon="forge,toolBellows,workbench,resourceLockPick" name_key="workstationsT1-1,workstationsT1-3,workstationsT1-4,workstationsT1-5" has_quality="false" unlock_level="4,8,10,12">
+			<unlock_entry item="forge" unlock_tier="1"/>
+			<!-- <unlock_entry item="cntChickenCoop" unlock_tier="2"/> -->
+			<unlock_entry item="toolBellows" unlock_tier="2"/>
+			<unlock_entry item="workbench" unlock_tier="3"/>
+			<unlock_entry item="resourceLockPick" unlock_tier="4"/>
+			<!-- <unlock_entry item="toolChickenCoopLamp" unlock_tier="6"/> -->
+		</display_entry>
+		<display_entry icon="cntDewCollector,toolAnvil,toolDewGatherer" name_key="workstationsT2-1,workstationsT2-3,workstationsT2-6" has_quality="false" unlock_level="16,20,26">
 			<unlock_entry item="cntDewCollector" unlock_tier="1"/>
-			<unlock_entry item="forge" unlock_tier="2"/>
+			<!-- <unlock_entry item="toolChickenCoopRun" unlock_tier="2"/> -->
+			<unlock_entry item="toolAnvil" unlock_tier="2"/>
+			<!-- <unlock_entry item="toolToolbox" unlock_tier="4"/> --><!-- Planning for level 22 and workstationsT2-4-->
+			<!-- <unlock_entry item="toolChickenCoopNestingBox" unlock_tier="4"/> -->
+			<unlock_entry item="toolDewGatherer" unlock_tier="3"/>
 		</display_entry>
-		<display_entry icon="workbench,resourceLockPick,toolBellows,toolAnvil" name_key="workstationsT2-1,workstationsT2-2,workstationsT2-3,workstationsT2-4" has_quality="false" unlock_level="10,15,20,25" >
-			<unlock_entry item="workbench" unlock_tier="1"/>
-			<unlock_entry item="resourceLockPick" unlock_tier="2"/>
-			<unlock_entry item="toolBellows" unlock_tier="3"/>
-			<unlock_entry item="toolAnvil" unlock_tier="4"/>
+		<display_entry icon="cntApiary,toolDewTarp,cementMixer" name_key="workstationsT3-2,workstationsT3-3,workstationsT3-4" has_quality="false" unlock_level="30,32,34">
+			<!-- <unlock_entry item="toolVise" unlock_tier="1"/> --><!-- Planning for level 28 and workstationsT3-1 -->
+			<unlock_entry item="cntApiary" unlock_tier="1"/>
+			<unlock_entry item="toolDewTarp" unlock_tier="2"/>
+			<unlock_entry item="cementMixer" unlock_tier="3"/>
+			<!-- <unlock_entry item="toolReloadPress" unlock_tier="5"/> --><!-- Planning for level 36 and workstationsT3-5 -->
+			<!-- <unlock_entry item="toolEngineUpgrade" unlock_tier="6"/> --><!-- Planning for level 38 and workstationsT3-6 -->
 		</display_entry>
-		<display_entry icon="cementMixer" name_key="workstationsT3-1" has_quality="false" unlock_level="30" >
-			<unlock_entry item="cementMixer" unlock_tier="1"/>
+		<display_entry icon="toolApiaryExtractor,toolApiaryBroodBox,resourceWaterFilter,chemistryStation" name_key="workstationsT4-1,workstationsT4-3,workstationsT4-5,workstationsT4-6" has_quality="false" unlock_level="40,44,48,50">
+			<unlock_entry item="toolApiaryExtractor" unlock_tier="1"/>
+			<!-- <unlock_entry item="toolRockCrusher" unlock_tier="2"/> --><!-- Planning for level 42 and workstationsT4-2 -->
+			<unlock_entry item="toolApiaryBroodBox" unlock_tier="2"/>
+			<!-- <unlock_entry item="toolMixerBlade" unlock_tier="4"/> --><!-- Planning for level 46 and workstationsT4-4 -->
+			<unlock_entry item="toolDewFilter" unlock_tier="3"/>
+			<unlock_entry item="chemistryStation" unlock_tier="4"/>
 		</display_entry>
-		<display_entry icon="chemistryStation" name_key="workstationsT4" has_quality="false" unlock_level="50" >
-			<unlock_entry item="chemistryStation" unlock_tier="1"/>
-		</display_entry>
-		<display_entry icon="toolForgeCrucible" name_key="workstationsT5" has_quality="false" unlock_level="75" >
-			<unlock_entry item="toolForgeCrucible" unlock_tier="1"/>
+		<display_entry icon="toolApiarySmoker,toolForgeCrucible" name_key="workstationsT5-2,workstationsT5-5" has_quality="false" unlock_level="56,75">
+			<!-- <unlock_entry item="toolGlassware" unlock_tier="1"/> --><!-- Planning for level 54 and workstationsT5-1 -->
+			<unlock_entry item="toolApiarySmoker" unlock_tier="1"/>
+			<!-- <unlock_entry item="toolAdvancedBurner" unlock_tier="3"/> --><!-- Planning for level 60 and workstationsT5-3 -->
+			<!-- <unlock_entry item="toolBunsenBurner" unlock_tier="4"/> --><!-- Planning for level 66 and workstationsT5-4 -->
+			<unlock_entry item="toolForgeCrucible" unlock_tier="2"/>
 		</display_entry>
 
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="cntDewCollector"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,100" value="1" tags="forge"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,100" value="1" tags="forge"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="6,100" value="1" tags="cntChickenCoop"/> -->
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="8,100" value="1" tags="toolBellows"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="workbench"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="resourceLockPick"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolBellows"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolAnvil"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cementMixer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="12,100" value="1" tags="resourceLockPick"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="14,100" value="1" tags="toolChickenCoopLamp"/> -->
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="16,100" value="1" tags="cntDewCollector"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="18,100" value="1" tags="toolChickenCoopRun"/> -->
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolAnvil"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="24,100" value="1" tags="toolChickenCoopNestingBox"/> -->
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="toolDewGatherer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="cntApiary"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="32,100" value="1" tags="toolDewTarp"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="34,100" value="1" tags="cementMixer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="40,100" value="1" tags="toolApiaryExtractor"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="44,100" value="1" tags="toolApiaryBroodBox"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="48,100" value="1" tags="toolDewFilter"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="chemistryStation"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="56,100" value="1" tags="toolApiarySmoker"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="toolForgeCrucible"/>
 		</effect_group>
 	</crafting_skill>
@@ -1000,23 +1035,23 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkJavelinMaster"/>
 
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkJavelinMaster" operation="Equals" value="1"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkJavelinMaster" operation="Equals" value="2"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkJavelinMaster" operation="Equals" value="3"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkJavelinMaster" operation="Equals" value="4"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkJavelinMaster" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
 				</triggered_effect>
@@ -1084,17 +1119,17 @@
 			
 			<!-- Animal Tracking -->
 			<triggered_effect trigger="onSelfCrouch" action="AddBuff" buff="buffAnimalTracker">
-				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
+				<requirement name="!HasBuff" buff="buffAnimalTrackerAcquired"/>
 				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
 			</triggered_effect>
 			
 			<triggered_effect trigger="onSelfCrouchWalk" action="AddBuff" buff="buffAnimalTracker">
-				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
+				<requirement name="!HasBuff" buff="buffAnimalTrackerAcquired"/>
 				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
 			</triggered_effect>
 			
 			<triggered_effect trigger="onSelfCrouchRun" action="AddBuff" buff="buffAnimalTracker">
-				<requirement name="NotHasBuff" buff="buffAnimalTrackerAcquired"/>
+				<requirement name="!HasBuff" buff="buffAnimalTrackerAcquired"/>
 				<requirement name="ProgressionLevel" progression_name="perkAnimalTracker" operation="GT" value="0"/>
 			</triggered_effect>
 
@@ -1127,7 +1162,7 @@
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="8" desc_key="reqPerceptionLevel08"/></level_requirements>
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/></level_requirements>
 		<effect_group>
-			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.10,-.15,-.2,-.2,-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,turretRanged,perkPenetrator,perkArchery"/>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.1,-.15,-.2,-.2,-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,turretRanged,perkPenetrator,perkArchery"/>
 			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4,5" value="-.2,-.3,-.4,-.5,-.5" tags="perkJavelinMaster"/>
 
 			<!-- Note: the 1 penetration effect is on <item name="ammo762mmBulletAP"> and other AP bullets -->
@@ -1179,7 +1214,7 @@
 			<triggered_effect trigger="onTreasureRadiusEntered" action="AddBuff" buff="buffTreasureHunterAOE">
 				<requirement name="ProgressionLevel" progression_name="perkTreasureHunter" operation="GTE" value="3"/>
 				<requirement name="!IsBloodMoon"/>
-				<requirement name="NotHasBuff" buff="buffTreasureHunterAOE"/>
+				<requirement name="!HasBuff" buff="buffTreasureHunterAOE"/>
 			</triggered_effect>
 			
 			<triggered_effect trigger="onTreasureRadiusCompleted" action="AddBuff" buff="buffTreasureHunterAOEEnd">
@@ -1357,7 +1392,7 @@
 					<requirement name="ProgressionLevel" progression_name="perkBoomstick" operation="GTE" value="3"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryCrippled01">
 					<requirement name="ProgressionLevel" progression_name="perkBoomstick" operation="Equals" value="5"/>
 					<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 				</triggered_effect>
@@ -1432,37 +1467,37 @@
 
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".PummelPeteCombo" operation="add" value="1">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="GTE" value="3"/>
-					<requirement name="NotHasBuff" buff="buffPerkPummelPeteBonus"/>
+					<requirement name="!HasBuff" buff="buffPerkPummelPeteBonus"/>
 					<requirement name="IsAlive" target="other"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkPummelPete">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="GTE" value="3"/>
-					<requirement name="NotHasBuff" buff="buffPerkPummelPeteBonus"/>
+					<requirement name="!HasBuff" buff="buffPerkPummelPeteBonus"/>
 					<requirement name="IsAlive" target="other"/>
 				</triggered_effect>
 
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffStayDownKO">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffStayDownKO">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="Equals" value="1"/>
 					<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffStayDownKO">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffStayDownKO">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="Equals" value="2"/>
 					<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffStayDownKO">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffStayDownKO">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="Equals" value="3"/>
 					<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffStayDownKO">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffStayDownKO">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="Equals" value="4"/>
 					<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffStayDownKO">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffStayDownKO">
 					<requirement name="ProgressionLevel" progression_name="perkPummelPete" operation="Equals" value="5"/>
 					<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
@@ -1553,15 +1588,15 @@
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/>
 			</triggered_effect>
 
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffInjuryKnockdown01">
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal,bandit" buff="buffInjuryKnockdown01">
 				<requirement name="ProgressionLevel" progression_name="perkSkullCrusher" operation="Equals" value="3"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffInjuryKnockdown01">
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal,bandit" buff="buffInjuryKnockdown01">
 				<requirement name="ProgressionLevel" progression_name="perkSkullCrusher" operation="Equals" value="4"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.4" target_tags="zombie,animal" buff="buffInjuryKnockdown01">
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.4" target_tags="zombie,animal,bandit" buff="buffInjuryKnockdown01">
 				<requirement name="ProgressionLevel" progression_name="perkSkullCrusher" operation="Equals" value="5"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 			</triggered_effect>
@@ -1717,89 +1752,60 @@
 		<!-- Adds a chance to absorb damage -->
 		<effect_group>
 		<requirement name="ProgressionLevel" progression_name="perkPackMule" operation="Equals" value="1"/>
-		<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
-		<requirement name="!HasBuff" buff="buffInternalBleeding"/>
-		<requirement name="!HasBuff" buff="buffIsOnFire"/>
-		<requirement name="!HasBuff" buff="buffDrowning03"/>
-		<requirement name="!HasBuff" buff="buffShocked"/>
-		<requirement name="!HasBuff" buff="buffRadiationPool"/>
-		<requirement name="!HasBuff" buff="buffTwitchBurn"/>
-		<requirement name="!HasBuff" buff="buffTwitchShocked"/>
-		<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
-		<requirement name="!IsAttachedToEntity"/>
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
-			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+		<requirement name="IsAlive" target="self"/>
+		<requirement name="!IsAttachedToEntity"/>
+		<requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+		<requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
 			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
 			<passive_effect name="GeneralDamageResist" operation="base_add" level="1" value="1"/>
 		</effect_group>
 
 		<effect_group>
 		<requirement name="ProgressionLevel" progression_name="perkPackMule" operation="Equals" value="2"/>
-		<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
-		<requirement name="!HasBuff" buff="buffInternalBleeding"/>
-		<requirement name="!HasBuff" buff="buffIsOnFire"/>
-		<requirement name="!HasBuff" buff="buffDrowning03"/>
-		<requirement name="!HasBuff" buff="buffShocked"/>
-		<requirement name="!HasBuff" buff="buffRadiationPool"/>
-		<requirement name="!HasBuff" buff="buffTwitchBurn"/>
-		<requirement name="!HasBuff" buff="buffTwitchShocked"/>
-		<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
-		<requirement name="!IsAttachedToEntity"/>
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
-			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+		<requirement name="IsAlive" target="self"/>
+		<requirement name="!IsAttachedToEntity"/>
+		<requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+		<requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
 			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
 			<passive_effect name="GeneralDamageResist" operation="base_add" level="2" value="1"/>
 		</effect_group>
 
 		<effect_group>
 		<requirement name="ProgressionLevel" progression_name="perkPackMule" operation="Equals" value="3"/>
-		<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
-		<requirement name="!HasBuff" buff="buffInternalBleeding"/>
-		<requirement name="!HasBuff" buff="buffIsOnFire"/>
-		<requirement name="!HasBuff" buff="buffDrowning03"/>
-		<requirement name="!HasBuff" buff="buffShocked"/>
-		<requirement name="!HasBuff" buff="buffRadiationPool"/>
-		<requirement name="!HasBuff" buff="buffTwitchBurn"/>
-		<requirement name="!HasBuff" buff="buffTwitchShocked"/>
-		<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
-		<requirement name="!IsAttachedToEntity"/>
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
-			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+		<requirement name="IsAlive" target="self"/>
+		<requirement name="!IsAttachedToEntity"/>
+		<requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+		<requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
 			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
 			<passive_effect name="GeneralDamageResist" operation="base_add" level="3" value="1"/>
 		</effect_group>
 
 		<effect_group>
 		<requirement name="ProgressionLevel" progression_name="perkPackMule" operation="Equals" value="4"/>
-		<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
-		<requirement name="!HasBuff" buff="buffInternalBleeding"/>
-		<requirement name="!HasBuff" buff="buffIsOnFire"/>
-		<requirement name="!HasBuff" buff="buffDrowning03"/>
-		<requirement name="!HasBuff" buff="buffShocked"/>
-		<requirement name="!HasBuff" buff="buffRadiationPool"/>
-		<requirement name="!HasBuff" buff="buffTwitchBurn"/>
-		<requirement name="!HasBuff" buff="buffTwitchShocked"/>
-		<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
-		<requirement name="!IsAttachedToEntity"/>
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+		<requirement name="IsAlive" target="self"/>
+		<requirement name="!IsAttachedToEntity"/>
+		<requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+		<requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
 			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
 			<passive_effect name="GeneralDamageResist" operation="base_add" level="4" value="1"/>
 		</effect_group>
 
 		<effect_group>
 		<requirement name="ProgressionLevel" progression_name="perkPackMule" operation="Equals" value="5"/>
-		<requirement name="!HasBuff" buff="buffInjuryBleeding"/>
-		<requirement name="!HasBuff" buff="buffInternalBleeding"/>
-		<requirement name="!HasBuff" buff="buffIsOnFire"/>
-		<requirement name="!HasBuff" buff="buffDrowning03"/>
-		<requirement name="!HasBuff" buff="buffShocked"/>
-		<requirement name="!HasBuff" buff="buffRadiationPool"/>
-		<requirement name="!HasBuff" buff="buffTwitchBurn"/>
-		<requirement name="!HasBuff" buff="buffTwitchShocked"/>
-		<requirement name="!HasBuff" buff="buffTwitchRadiation"/>
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
-			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_at_self="true"/>
+		<requirement name="IsAlive" target="self"/>
+		<requirement name="!IsAttachedToEntity"/>
+		<requirement name="!HasBuff" buff="buffInjuryBleeding,buffInternalBleeding,buffIsOnFire,buffDrowning03,buffShocked,buffRadiationPool"/>
+		<requirement name="!HasBuff" buff="buffTwitchBurn,buffTwitchShocked,buffTwitchRadiation"/>
+			<triggered_effect trigger="onOtherAttackedSelf" action="PlaySound" sound="twitch_bucket_hit" play_in_head="true"/>
 			<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffPackMuleDisplay"/>
 			<passive_effect name="GeneralDamageResist" operation="base_add" level="5" value="1"/>
 		</effect_group>
@@ -2017,7 +2023,7 @@
 
 				<passive_effect name="DismemberChance" operation="base_add" level="5" value="0" tags="head"/>
 
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryStunned01">
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffInjuryStunned01">
 					<requirement name="ProgressionLevel" progression_name="perkBrawler" operation="GTE" value="2"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
 				</triggered_effect>
@@ -2026,7 +2032,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="HitLocation" body_parts="Head"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffBrawlerNoTeeth">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="zombie,animal,bandit" buff="buffBrawlerNoTeeth">
 					<requirement name="ProgressionLevel" progression_name="perkBrawler" operation="GTE" value="1"/>
 				</triggered_effect>
 
@@ -2230,7 +2236,7 @@
 			<!-- Fist weapons have a 5% chance to gain silver "fillings" from zombie kills -->
 			<requirement name="ProgressionLevel" progression_name="perkFortitudeMastery" operation="GTE" value="3"/>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
-			<requirement name="EntityTagCompare" target="other" tags="walker,crawler"/>
+			<requirement name="EntityTagCompare" target="other" tags="walker,crawler,bandit"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPerkTheDentistSilver"/>
 		</effect_group>
@@ -2239,7 +2245,7 @@
 			<!-- Fist weapons have a 5% chance to gain gold "fillings" from zombie kills -->
 			<requirement name="ProgressionLevel" progression_name="perkFortitudeMastery" operation="GTE" value="3"/>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
-			<requirement name="EntityTagCompare" target="other" tags="walker,crawler"/>
+			<requirement name="EntityTagCompare" target="other" tags="walker,crawler,bandit"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="95"/>
 				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffPerkTheDentistGold"/>
 		</effect_group>
@@ -2263,6 +2269,7 @@
 
 		<effect_group>
 		<requirement name="ItemHasTags" tags="melee"/>
+		<requirement name="!HasBuff" buff="buffStatusHungry03,buffStatusThirsty03"/>
 			<triggered_effect trigger="onSelfKilledOther" action="ModifyStats" stat="Health" operation="add" value="2">
 				<requirement name="ProgressionLevel" progression_name="perkSiphoningStrikes" operation="EQ" value="1"/>
 			</triggered_effect>
@@ -2300,8 +2307,7 @@
 			<!-- crit hit effects heal rate is assigned in buffStatusCheck02 -->
 
 			<!-- You cannot regen without food or water -->
-			<requirement name="NotHasBuff" buff="buffStatusHungry03"/>
-			<requirement name="NotHasBuff" buff="buffStatusThirsty03"/>
+			<requirement name="!HasBuff" buff="buffStatusHungry03,buffStatusThirsty03"/>
 
 			<passive_effect name="HealthChangeOT" operation="base_add" level="1,2,3,4,5" value=".011,.022,.05,.1,.16"/>
 
@@ -2313,7 +2319,7 @@
 		</effect_group>
 	</perk>
 
-		<!-- *** SLOW_METABOLISM -->
+		<!-- *** IRON_GUT -->
 	<perk name="perkSlowMetabolism" parent="skillFortitudeRecovery" name_key="perkSlowMetabolismName" desc_key="perkSlowMetabolismDesc" icon="ui_game_symbol_stomach">
 		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="1" desc_key="reqFortitudeLevel01"/></level_requirements>
 		<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="3" desc_key="reqFortitudeLevel03"/></level_requirements>
@@ -2431,6 +2437,7 @@
 			<!-- Increase the chance to find handguns and ammo with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="handgunSkill"/>
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="ammo9mm"/>
+			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="ammo44Mag"/>
 
 			<!-- Increase the chance to find handgun crafting skill magazines with each perk rank up to crafting skill 100 -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,5" value="2,10" tags="handgunsCSM">
@@ -2467,13 +2474,13 @@
 			<requirement name="ItemHasTags" tags="perkGunslinger"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".GunslingerCombo" operation="add" value="1">
 					<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
-					<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+					<requirement name="!HasBuff" buff="buffPerkGunslingerBonus"/>
 					<requirement name="IsAlive" target="other"/>
 				</triggered_effect>
 
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkGunslinger">
 					<requirement name="ProgressionLevel" progression_name="perkGunslinger" operation="GTE" value="3"/>
-					<requirement name="NotHasBuff" buff="buffPerkGunslingerBonus"/>
+					<requirement name="!HasBuff" buff="buffPerkGunslingerBonus"/>
 					<requirement name="IsAlive" target="other"/>
 				</triggered_effect>
 
@@ -2772,7 +2779,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkAgilityMastery" operation="GTE" value="1"/>
 			<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryCrippled01"/>
 		</effect_group>
 
 		<effect_group>
@@ -2783,16 +2790,27 @@
 		</effect_group>
 
 		<effect_group>
-			<!-- Handguns now cause bleeding -->
-			<requirement name="HoldingItemHasTags" tags="perkGunslinger"/>
+			<!-- Handguns cause bleeding -->
+			<requirement name="HoldingItemHasTags" tags="perkGunslinger,perkArchery"/>
 			<requirement name="ProgressionLevel" progression_name="perkAgilityMastery" operation="GTE" value="3"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
-
 		<effect_group>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- Bows and crossbows cause bleeding -->
+			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
+			<requirement name="ProgressionLevel" progression_name="perkAgilityMastery" operation="GTE" value="3"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="1" target="other"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 
 		<effect_group>
@@ -2830,7 +2848,6 @@
 		<effect_group name="regular weapons, sledgehammer"> <!-- blades, bows have item bonuses -->
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
-			<requirement name="!ItemHasTags" tags="perkSkullCrusher"/>
 				<passive_effect name="DamageBonus" operation="base_add" level="0,1,2,3,4,5" value="1.5,2,2.5,3,3.5,4"/> <!--For UI-->
 				<passive_effect name="EntityDamage" operation="perc_add" level="0,1,2,3,4,5" value=".5,1,1.5,2,2.5,3"/>
 
@@ -3173,7 +3190,7 @@
 			<!-- Each blow landed with a stun baton has a 10% higher chance for instant death -->
 			<requirement name="HoldingItemHasTags" tags="stunBaton"/>
 			<requirement name="IsAlive" target="other"/>
-			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+			<requirement name="EntityTagCompare" target="other" tags="zombie,animal,bandit"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				<passive_effect name="EntityDamage" operation="base_add" level="5" value="1500" tags="stunBaton"/>
 		</effect_group>
@@ -3329,8 +3346,6 @@
 			<!-- Batons only need 2 hits to charge -->
 			<!-- See logic in meleeWpnBatonT2StunBaton -->
 
-			<!-- Batons are always charged -->
-			<!-- See logic in meleeWpnBatonT2StunBaton -->
 		</effect_group>
 
 		<effect_group>
@@ -3370,7 +3385,7 @@
 			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorLightSkill"/>
 
 			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM">
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="4,20" tags="armorCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
 			</passive_effect>
 
@@ -3398,7 +3413,7 @@
 			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorMediumSkill"/>
 
 			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM">
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="4,20" tags="armorCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
 			</passive_effect>
 
@@ -3426,7 +3441,7 @@
 			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorHeavySkill"/>
 
 			<!-- Increase the chance to find armor crafting skill magazines with each perk rank up to crafting skill 100 -->
-			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="2,10" tags="armorCSM">
+			<passive_effect name="LootProb" operation="perc_add" level="1,4" value="4,20" tags="armorCSM">
 				<requirement name="ProgressionLevel" progression_name="craftingArmor" operation="LT" value="100"/>
 			</passive_effect>
 
@@ -3454,9 +3469,9 @@
 			<!-- Speed up cooking time of campfire recipes with each rank -->
 			<passive_effect name="CraftingTime" operation="perc_add" level="0,1,2,3" value="4,2,1,0" tags="perkMasterChef"/>
 			
-			<!-- perkMasterChef2 tag used in loot.xml adds a chance to find food in dumpsters -->
-			<passive_effect name="LootProb" operation="base_set" level="2,3" value="2" tags="perkMasterChef2"/>
-			
+			<!-- perkMasterChef2 tag used in loot.xml adds a chance to find food and/or seeds in dumpsters -->
+			<passive_effect name="LootProb" operation="base_set" level="2,3" value="8" tags="perkMasterChef2"/>
+			<passive_effect name="LootProb" operation="base_set" level="2,3" value="8" tags="perkMasterChefSeeds"/>
 			<!-- Increase the chance to find food items with each perk rank -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="foodSkill"/>
 			<!-- Increase the chance to find food crafting skill magazines with each perk rank up to crafting skill 100 -->
@@ -3523,14 +3538,14 @@
 			<!-- Increase the chance to find lockpicks with each perk rank -->
 			<passive_effect name="LootQuantity" operation="base_add" level="2,3" value="1,2" tags="lockPickSkill"/>
 
-			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 15 -->
+			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 12 -->
 			<passive_effect name="LootProb" operation="perc_add" level="1,3" value="2,10" tags="workstationCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="15"/>
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="12"/>
 			</passive_effect>
 
-			<!-- Once workstation crafting skill reaches 15, set the probability bonus of finding workstation crafting skill magazines to 0 -->
+			<!-- Once workstation crafting skill reaches 12, set the probability bonus of finding workstation crafting skill magazines to 0 -->
 			<passive_effect name="LootProb" operation="base_set" level="1,3" value="1,1" tags="workstationCSM">
-				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="GTE" value="15"/>
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="GTE" value="12"/>
 			</passive_effect>
 
 			<!-- Increase the chance to find The Great Heist books until each book is read -->
@@ -3558,9 +3573,10 @@
 		<!-- <level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="7" desc_key="reqPerceptionLevel07"/></level_requirements> -->
 
 		<effect_group>
-			<passive_effect name="LootStage" operation="perc_add" level="1,5" value=".05,.25"/>
 				<!-- LootStage only counts for containers that you open. It does not affect party loot GS. -->
-			<passive_effect name="ScavengingTime" operation="perc_subtract" level="1,2,3,4,5" value=".1,.2,.4,.6,.8"/>
+			<passive_effect name="LootStage" operation="perc_add" level="1,5" value=".05,.25"/>
+				<!-- Level 5 is .79 to prevent 0 time issues when stacked with Q6 Rogue Hood -->
+			<passive_effect name="ScavengingTime" operation="perc_subtract" level="1,2,3,4,5" value=".1,.2,.4,.6,.79"/>
 
 			<effect_description level="1" desc_key="perkLuckyLooterRank1Desc" long_desc_key="perkLuckyLooterRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkLuckyLooterRank2Desc" long_desc_key="perkLuckyLooterRank2LongDesc"/>
@@ -3652,7 +3668,7 @@
 		<effect_group>
 			<requirement name="IsNight"/>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
-			<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="1" target="other"/>
+			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1"/>
 		</effect_group>
 	</book>
@@ -3700,7 +3716,7 @@
 			<requirement name="IsNight"/>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 			<requirement name="IsSleeping" target="other"/>
-			<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="1" target="other"/>
+			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 				<passive_effect name="DamageBonus" operation="base_add" level="1" value=".5"/> <!--For UI-->
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".5"/>
 		</effect_group>
@@ -4100,7 +4116,7 @@
 	<!-- *** ART_OF_MINING_VOLUME_05_BUNDLES -->
 	<book name="perkArtOfMiningPallets" parent="skillArtOfMining" max_level="1" base_skill_point_cost="0" name_key="bookArtOfMiningPallets" desc_key="perkArtOfMiningPalletsDesc" long_desc_key="perkArtOfMiningPalletsLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceRockSmallBundle,resourceWoodBundle,resourceScrapIronBundle,resourceOilShaleBundle,resourcePotassiumNitratePowderBundle,resourceLeadBundle,resourceCoalBundle"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceRockSmallBundle,resourceWoodBundle,resourceScrapIronBundle,resourceOilShaleBundle,resourcePotassiumNitratePowderBundle,resourceLeadBundle,resourceScrapBrassBundle,resourceCoalBundle"/>
 		</effect_group>
 	</book>
 	<!-- *** ART_OF_MINING_VOLUME_06_AVALANCHE -->
@@ -4173,7 +4189,7 @@
 			<requirement name="ItemHasTags" tags="perkArchery"/>
 			<requirement name="ProgressionLevel" progression_name="perkRangersKnockdown" operation="Equals" value="1"/>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
-			<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="1" target="other"/>
+			<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
 		</effect_group>
@@ -4184,7 +4200,7 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleArrowStone,ammoBundleArrowIron,ammoBundleArrowFlaming,ammoBundleCrossbowBoltFlaming,ammoBundleArrowSteelAP,ammoBundleCrossbowBoltExploding,ammoBundleArrowExploding,ammoBundleCrossbowBoltIron,ammoBundleCrossbowBoltSteelAP,ammoBundleCrossbowBoltStone"/>
 		</effect_group>
 	</book>
-
+ 
 					<!-- *** -->
 
 	<!-- *** PISTOL_PETE_VOLUME_01_TAKE_AIM -->
@@ -4201,7 +4217,7 @@
 			<requirement name="ItemHasTags" tags="9mmGun"/>
 			<requirement name="ProgressionLevel" progression_name="perkPistolPeteSwissKnees" operation="Equals" value="1"/>
 			<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffPistolPeteSwissKnees"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffPistolPeteSwissKnees"/>
 		</effect_group>
 	</book>
 	<!-- *** PISTOL_PETE_VOLUME_03_STEADY_HAND -->
@@ -4299,7 +4315,7 @@
 	<!-- *** SHOTGUN_MESSIAH_VOLUME_07_PARTY_STARTER -->
 	<book name="perkShotgunMessiahPartyStarter" parent="skillShotguns" max_level="1" base_skill_point_cost="0" desc_key="perkShotgunMessiahPartyStarterDesc" long_desc_key="perkShotgunMessiahPartyStarterLongDesc">
 		<effect_group>
-			<requirement name="StatComparePercCurrentToMax" target="other" stat="Health" operation="GTE" value="1"/>
+			<requirement name="StatComparePercCurrentToMax" target="other" stat="Health" sample="StartOfFrame" operation="GTE" value="1"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".2" tags="perkBoomstick"/>
 		</effect_group>
 	</book>
@@ -4354,8 +4370,10 @@
 	<book name="perkSledgeSagaSavageReaper" parent="skillSledgeSaga" max_level="1" base_skill_point_cost="0" desc_key="perkSledgeSagaSavageReaperDesc" long_desc_key="perkSledgeSagaSavageReaperLongDesc">
 		<effect_group>
 			<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="1" tags="Kill">
+				<requirement name="IsLocalPlayer"/>
+				<requirement name="IsInstigator"/>
 				<requirement name="HitLocation" body_parts="Head"/>
-				<requirement name="ItemHasTags" tags="perkSkullCrusher"/>
+				<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
 			</passive_effect>
 		</effect_group>
 	</book>
@@ -4404,15 +4422,15 @@
 			<requirement name="HitLocation" body_parts="LeftUpperLeg,RightUpperLeg,LeftLowerLeg,RightLowerLeg"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryCrippled01">
 					<requirement name="!EntityTagCompare" target="other" tags="feral,radiated"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryCrippled01">
 					<requirement name="EntityTagCompare" target="other" tags="feral"/>
 					<requirement name="!EntityTagCompare" target="other" tags="radiated"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="80"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryCrippled01">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryCrippled01">
 					<requirement name="EntityTagCompare" target="other" tags="radiated"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
 				</triggered_effect>
@@ -4426,16 +4444,16 @@
 			<requirement name="HitLocation" body_parts="Head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="1" value="0"/>
 
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryStunned02">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryStunned02">
 					<requirement name="!EntityTagCompare" target="other" tags="feral,radiated"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryStunned02">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryStunned02">
 					<requirement name="EntityTagCompare" target="other" tags="feral"/>
 					<requirement name="!EntityTagCompare" target="other" tags="radiated"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffInjuryStunned01">
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffInjuryStunned01">
 					<requirement name="EntityTagCompare" target="other" tags="radiated"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
 				</triggered_effect>
@@ -4562,7 +4580,7 @@
 	<!-- *** AUTOMATIC_WEAPONS_HANDBOOK_VOLUME_06_RAGDOLL -->
 	<book name="perkAutoWeaponsRagdoll" parent="skillAutoWeapons" max_level="1" base_skill_point_cost="0" desc_key="perkAutoWeaponsRagdollDesc" long_desc_key="perkAutoWeaponsRagdollLongDesc">
 		<effect_group>
-			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker" buff="buffAutoWeaponsRagdoll">
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="walker,bandit" buff="buffAutoWeaponsRagdoll">
 				<requirement name="ItemHasTags" tags="perkBookAutoWeapons"/>
 				<requirement name="ProgressionLevel" progression_name="perkAutoWeaponsRagdoll" operation="Equals" value="1"/>
 			</triggered_effect>
@@ -4742,9 +4760,10 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling5AdrenalineHealing" operation="Equals" value="1"/>
-			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+			<requirement name="EntityTagCompare" target="other" tags="zombie,animal,bandit"/>
 			<requirement name="IsAlive" target="other"/>
 			<requirement name="!IsAttachedToEntity"/>
+			<requirement name="!HasBuff" buff="buffStatusHungry03,buffStatusThirsty03"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="add" value="1"/>
 		</effect_group>
 	</book>
@@ -4770,7 +4789,8 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling8Complete" operation="Equals" value="1"/>
-			<requirement name="NotHasBuff" buff="buffPerkBarBrawling8CompleteBonus"/>
+			<requirement name="!HasBuff" buff="buffPerkBarBrawling8CompleteBonus"/>
+			<requirement name="EntityTagCompare" target="other" tags="zombie,animal,bandit"/>
 			<requirement name="IsAlive" target="other"/>
 			<requirement name="!IsAttachedToEntity"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".BarBrawling8CompleteCombo" operation="add" value="1"/>
